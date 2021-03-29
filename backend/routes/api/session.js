@@ -1,6 +1,4 @@
 //This file will hold the resources for the route paths beginning with /api/session.
-
-
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 

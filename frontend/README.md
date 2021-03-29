@@ -1,3 +1,12 @@
+Sunday Night Questions:
+
+when do we put our styles in jsx and when in .css file?
+what about public/stylesheets for css files?
+should u make a css file for each component?
+Modal.css file vs .css files in log in and sign up component
+
+change git repo name unkobnb & heroku deploy name.
+
 
 # Create React App Template
 

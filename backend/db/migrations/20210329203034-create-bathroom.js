@@ -1,45 +1,55 @@
 'use strict';
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('Bathrooms', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      username: {
-        type: Sequelize.STRING(30),
+      ownerId: {
+        type: Sequelize.INTEGER,
         allowNull: false,
         unique: true,
+        references: { model: "Users"}
+
       },
-      firstName: {
-        type: Sequelize.STRING(30),
+      title: {
+        type: Sequelize.STRING,
         allowNull: false,
+
       },
-      lastName: {
-        type: Sequelize.STRING(30),
+      description: {
+        type: Sequelize.TEXT,
         allowNull: false,
+
       },
       address: {
         type: Sequelize.STRING(255),
         allowNull: false,
+
       },
       city: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING(50),
         allowNull: false,
       },
       state: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING(50),
+        allowNull: false,
+
+      },
+      costPerDay: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+
+      },
+      locationType: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      email: {
-        type: Sequelize.STRING(255),
-        allowNull: false,
-        unique: true,
-      },
-      hashedPassword: {
-        type: Sequelize.STRING.BINARY,
+      bathroomImgUrl: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       createdAt: {
@@ -50,11 +60,11 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('now'),
+        defaultValue: Sequelize.fn('now')
       }
     });
   },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Users');
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('Bathrooms');
   }
 };

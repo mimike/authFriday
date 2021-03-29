@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
+//import { Modal } from '../../context/Modal';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+//import { Redirect } from 'react-router-dom';
+
 import './LoginForm.css';
 
 //Render a form with a controlled input for the user login credential (username or email) and a controlled input for the user password.
-function LoginFormPage(){
+function LoginForm(){
     const dispatch = useDispatch();
-    const sessionUser = useSelector(state => state.session.user);
+    //const sessionUser = useSelector(state => state.session.user);
     const [credential, setCredential ] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
 
     //If there is a current session user in the Redux store, then redirect the user to the "/" path if trying to access the LoginFormPage.
-    if (sessionUser) return (
-        <Redirect to="/" />
-    );
-
+    // if (sessionUser) return (
+    //     <Redirect to="/" />
+    // );
 
     //On submit of the form, dispatch the login thunk action with the form input values. Make sure to handle and display errors from the login thunk action if there are any.
     const handleSubmit = (e) => {
@@ -33,10 +34,12 @@ function LoginFormPage(){
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
+            <h2>Log in</h2>
             <label>
-                Username or Email
+                {/* Email Address */}
                 <input
                     type="text"
+                    placeholder="Email Address"
                     value={credential}
                     onChange={(e) => setCredential(e.target.value)}
                     required
@@ -44,9 +47,10 @@ function LoginFormPage(){
             </label>
 
             <label>
-                Password
+                {/* Password */}
                 <input
                     type="password"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
@@ -54,11 +58,11 @@ function LoginFormPage(){
             </label>
 
             <label>
-                <button type="submit">Log In</button>
+                <button type="submit">Continue</button>
             </label>
         </form>
     );
 }
 
 
-export default LoginFormPage;
+export default LoginForm;

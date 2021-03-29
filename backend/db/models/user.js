@@ -4,6 +4,20 @@ const { Validator } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
+    firstName: {
+      validate: {
+        len: [1, 30]
+      },
+      type: DataTypes.STRING(30),
+      allowNull: false,
+    },
+    lastName: {
+      validate: {
+        len: [1, 30]
+      },
+      type: DataTypes.STRING(30),
+      allowNull: false,
+    },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,6 +30,29 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
+
+    address: {
+      type: DataTypes.STRING(255),
+      allowNull: false,
+      validate: {
+        len: [3, 30]
+      }
+    },
+    city: {
+      type: DataTypes.STRING(30),
+      allowNull: false,
+      validate: {
+        len: [3, 30]
+      }
+    },
+    state: {
+      type: DataTypes.STRING(30),
+      allowNull: false,
+      validate: {
+        len: [2, 30]
+      }
+    },
+
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -51,7 +88,11 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
   User.associate = function(models) {
-    // associations can be defined here
+    // associations can be defined here!!!!!!!
+    User.hasMany(models.Review, { foreignKey: 'reviewerId'});
+    User.hasMany(models.Reservation, { foreignKey: 'reserverId'});
+    User.hasMany(models.Bathroom, { foreignKey: 'ownerId'});
+
   };
 
 //These scopes need to be explicitly used when querying. For example, User.scope('currentUser').findByPk(id) will find a User by the specified id and return only the User fields that the currentUser model scope allows.
@@ -84,12 +125,21 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
 
-  User.signup = async function ({ username, email, password }) {
+  User.signup = async function ({ username, email, firstName, lastName, address, city, state, password }) {
+
+
+
     const hashedPassword = bcrypt.hashSync(password);
-    const user = await User.create({
+
+    const user = await User.create({     // do we have to all the
       username,
+      firstName,
+      lastName,
+      address,
+      city,
+      state,
       email,
-      hashedPassword,
+      hashedPassword, // saves the hashed
     });
     return await User.scope('currentUser').findByPk(user.id);
   };

@@ -15,15 +15,20 @@ const removeUser = () => {
     type: REMOVE_USER,
   };
 };
-
 //SIGNUP THUNK ACTION
 export const signup = (user) => async (dispatch) => {
-    const { username, email, password } = user;
-    const response = await csrfFetch("/api/users", {
+    
+    const { username, firstName, lastName, email, address, city, state, password } = user;
+    const response = await csrfFetch("/api/users", {  //here is a unique fetch handl
       method: "POST",
       body: JSON.stringify({
         username,
+        firstName,
+        lastName,
         email,
+        address,
+        city,
+        state,
         password,
       }),
     });
@@ -34,7 +39,7 @@ export const signup = (user) => async (dispatch) => {
 
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
-  const response = await csrfFetch('/api/session', {
+  const response = await csrfFetch('/api/session', {   //here
     method: 'POST',
     body: JSON.stringify({
       credential,
