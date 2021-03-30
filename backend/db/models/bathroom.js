@@ -1,33 +1,6 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Bathroom extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-      Bathroom.hasMany(models.Review, { foreignKey: 'bathroomId'});
-      Bathroom.belongsTo(models.User, {foreignKey: 'ownerId'});
-      //FK always references itself! refs User. ^^
-
-      Bathroom.belongsToMany(models.User, {     // do not ref reservation
-        through: 'Reservations',   ///JOINS TABLE!!
-        otherKey: 'reserverId',   //lives on Reservations
-        foreignKey: 'bathroomId'   // lives on reservations
-      })
-
-      //Bathroom.hasMany(models.Reservation, { foreignKey: 'bathroomId'});
-      //Bathroom.belongsTo(models.Reservation, { foreignKey: 'bathroomId'});
-      //or bathroomId?
-
-    }
-  };
-  Bathroom.init({
+  const Bathroom = sequelize.define('Bathroom', {
     ownerId: DataTypes.INTEGER,
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
@@ -37,9 +10,11 @@ module.exports = (sequelize, DataTypes) => {
     costPerDay: DataTypes.INTEGER,
     locationType: DataTypes.STRING,
     bathroomImgUrl: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Bathroom',
-  });
+  }, {});
+  Bathroom.associate = function(models) {
+    // associations can be defined here
+    Bathroom.hasMany(models.Review, { foreignKey: 'bathroomId'});
+    Bathroom.belongsTo(models.User, { foreignKey: 'ownerId'});
+  };
   return Bathroom;
 };

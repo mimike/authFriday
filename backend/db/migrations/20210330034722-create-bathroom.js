@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Bathrooms', {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable('Bathrooms', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -13,36 +13,30 @@ module.exports = {
         allowNull: false,
         unique: true,
         references: { model: "Users"}
-
       },
       title: {
         type: Sequelize.STRING,
         allowNull: false,
-
       },
       description: {
         type: Sequelize.TEXT,
         allowNull: false,
-
       },
       address: {
-        type: Sequelize.STRING(255),
+        type: Sequelize.STRING(50),
         allowNull: false,
-
       },
       city: {
         type: Sequelize.STRING(50),
         allowNull: false,
       },
       state: {
-        type: Sequelize.STRING(50),
+        type: Sequelize.STRING,
         allowNull: false,
-
       },
       costPerDay: {
         type: Sequelize.INTEGER,
         allowNull: false,
-
       },
       locationType: {
         type: Sequelize.STRING,
@@ -60,11 +54,11 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('now')
+        defaultValue: Sequelize.fn('now'),
       }
     });
   },
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Bathrooms');
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('Bathrooms');
   }
 };

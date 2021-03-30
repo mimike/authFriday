@@ -34,7 +34,7 @@
     "per-env": "^1.0.2",
     "pg": "^8.5.1",
     "run": "^1.4.0",
-    "sequelize": "^6.6.2",
-    "sequelize-cli": "^6.2.0"
+    "sequelize": "^5.22.4",
+    "sequelize-cli": "^5.5.1"
   }
 }

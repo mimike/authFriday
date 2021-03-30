@@ -2,7 +2,7 @@ const express = require('express');
 const apiRouter = require('./api');
 const router = express.Router();
 
-router.use('/api', apiRouter);
+router.use('/api', apiRouter); 
 
 if (process.env.NODE_ENV === 'production') {  // only run in heroku produc not local.
     const path = require('path');    //path comes from node, deals w/file systems path.

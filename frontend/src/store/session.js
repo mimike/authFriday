@@ -3,7 +3,7 @@ import { csrfFetch } from './csrf';
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
 
-const setUser = (user) => {
+const setUser = (user) => {  //makes an ob
   return {
     type: SET_USER,
     payload: user,
@@ -17,7 +17,7 @@ const removeUser = () => {
 };
 //SIGNUP THUNK ACTION
 export const signup = (user) => async (dispatch) => {
-    
+
     const { username, firstName, lastName, email, address, city, state, password } = user;
     const response = await csrfFetch("/api/users", {  //here is a unique fetch handl
       method: "POST",
@@ -32,8 +32,8 @@ export const signup = (user) => async (dispatch) => {
         password,
       }),
     });
-    const data = await response.json();
-    dispatch(setUser(data.user));
+    const data = await response.json();  // parse pojo USER data
+    dispatch(setUser(data.user)); //
     return response;
   };
 
@@ -52,14 +52,15 @@ export const login = (user) => async (dispatch) => {
 };
 
 const initialState = { user: null };
-
+//useselector is subscribing to the store whenever the store changes, getting the state out , whne the user changes 
+//reducer is just the slice ??
 const sessionReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
-    case SET_USER:
-      newState = Object.assign({}, state);
+    case SET_USER:  // if set_user is the type
+      newState = Object.assign({}, state);  //glues all the stuff and then add the new state. or do ...state
       newState.user = action.payload;
-      return newState;
+      return newState;  // this is what triggers the rendering!
     case REMOVE_USER:
       newState = Object.assign({}, state);
       newState.user = null;

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Reviews', {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable('Reviews', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,7 +12,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: { model: "Users"}
-
       },
       bathroomId: {
         type: Sequelize.INTEGER,
@@ -21,27 +20,28 @@ module.exports = {
 
       },
       reviewText: {
-        type: Sequelize.TEXT,
+        type: Sequelize.TEXT
       },
       rating: {
         type: Sequelize.INTEGER
       },
       reviewImgUrl: {
-        type: Sequelize.STRING(255)
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now')
+
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('now'),
+        defaultValue: Sequelize.fn('now')
       }
     });
   },
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Reviews');
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('Reviews');
   }
 };

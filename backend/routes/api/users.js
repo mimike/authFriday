@@ -41,17 +41,19 @@ const validateSignup = [
   // check('') finish later!!!
   handleValidationErrors,
 ];
+// returning data api 5000
 
+//post /api/users   ... this could be an empty str.
 router.post('/', validateSignup, asyncHandler(async (req, res) => {
   const { email, username, firstName, lastName, address, city, state, password } = req.body;
-  
+  // User.signup lives in the models/user.js file. Method on a MODEL
   const user = await User.signup({ email, username, firstName, lastName, address, city, state, password });
   // what all do we need here, we don't need this info unless they're posting a new BR.
 
-  await setTokenCookie(res, user);
+  await setTokenCookie(res, user); //security
 
   return res.json({
-    user,
+    user,    // returns userId find by pk w/o hashedPassword. 
   });
 }),
 );

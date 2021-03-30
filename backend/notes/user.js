@@ -1,4 +1,7 @@
 'use strict';
+const bcrypt = require('bcryptjs');
+const { Validator } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     firstName: {
@@ -83,30 +86,27 @@ module.exports = (sequelize, DataTypes) => {
       },
 
     },
-
   });
-
   User.associate = function(models) {
-    // associations can be defined here
+    // associations can be defined here!!!!!!!
     User.hasMany(models.Review, { foreignKey: 'reviewerId'});
     User.hasMany(models.Bathroom, { foreignKey: 'ownerId'});
-    User.hasMany(models.Reservation, { foreignKey: "reserverId"});
+    
+    User.belongsToMany(models.Bathroom, {
+      through: "Reservations",
+      foreignKey: "reserverId",
+      otherKey: "bathroomId",
+    })
 
-
-    // User.belongsToMany(models.Bathroom, {
-    //   through: "Reservations",
-    //   foreignKey: "reserverId",
-    //   otherKey: "bathroomId",
-    // })
-
-    // User.belongsToMany(models.Bathroom, {
-    //   through: "Reviews",
-    //   foreignKey: "reviewerId",
-    //   otherKey: "bathroomId",
-    // })
-
+    User.belongsToMany(models.Bathroom, {
+      through: "Reviews",
+      foreignKey: "reviewerId",
+      otherKey: "bathroomId",
+    })
 
   };
+
+//These scopes need to be explicitly used when querying. For example, User.scope('currentUser').findByPk(id) will find a User by the specified id and return only the User fields that the currentUser model scope allows.
 
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
     const { id, username, email } = this; // context will be the User instance
@@ -138,9 +138,11 @@ module.exports = (sequelize, DataTypes) => {
 
   User.signup = async function ({ username, email, firstName, lastName, address, city, state, password }) {
 
+
+
     const hashedPassword = bcrypt.hashSync(password);
 
-    const user = await User.create({
+    const user = await User.create({     // do we have to all the
       username,
       firstName,
       lastName,
@@ -151,7 +153,6 @@ module.exports = (sequelize, DataTypes) => {
       hashedPassword, // saves the hashed
     });
     return await User.scope('currentUser').findByPk(user.id);
-    // find the userId but exclude the hashedPassword
   };
   return User;
 };

@@ -1,1 +1,7 @@
-1. 
+1. index.js src is the first file that gets run. setting up the store boiler plate.
+2. app.js
+3. when the browser hits a paty in the browser, it will render such component.
+4. look in store session to see the signup action thunk that makes the fetch call to csrf Fetch from csrf.js.. made to use csrfFetch over and over, helper function.
+5.csrf.js everytime u use Fetch.
+4. export const signup in session.js we're sending. look in routes, api users.js. line 55.
+5. 
