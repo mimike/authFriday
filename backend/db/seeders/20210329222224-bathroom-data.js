@@ -4,7 +4,7 @@ const faker = require('faker');
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
-     await queryInterface.bulkInsert('Bathroom', [
+     await queryInterface.bulkInsert('Bathrooms', [
        {
          ownerId: 1,
          title: "Outdoor Portor Potty",
@@ -18,7 +18,6 @@ module.exports = {
 
        }
      ], {});
-
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -28,13 +27,7 @@ module.exports = {
  }
 };
 
-//   down: async (queryInterface, Sequelize) => {
 
-//      return queryInterface: { return QueryIn.bulkDelete('Bathroom', {
-//      });
-
-//   }
-// };
 
 
 // // down: (queryInterface, Sequelize) => {

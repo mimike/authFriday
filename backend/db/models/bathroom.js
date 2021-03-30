@@ -14,8 +14,16 @@ module.exports = (sequelize, DataTypes) => {
       Bathroom.hasMany(models.Review, { foreignKey: 'bathroomId'});
       Bathroom.belongsTo(models.User, {foreignKey: 'ownerId'});
       //FK always references itself! refs User. ^^
-      Bathroom.hasMany(models.Reservation, { foreignKey: 'bathroomId'});
-      Bathroom.belongsTo(models.Reservation, { foreignKey: 'bathroomId'});
+
+      Bathroom.belongsToMany(models.User, {     // do not ref reservation
+        through: 'Reservations',   ///JOINS TABLE!!
+        otherKey: 'reserverId',   //lives on Reservations
+        foreignKey: 'bathroomId'   // lives on reservations
+      })
+
+      //Bathroom.hasMany(models.Reservation, { foreignKey: 'bathroomId'});
+      //Bathroom.belongsTo(models.Reservation, { foreignKey: 'bathroomId'});
+      //or bathroomId?
 
     }
   };

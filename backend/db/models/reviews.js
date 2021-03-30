@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Reviews extends Model {
+  class Reviews extends Model {  //WHAT IS THIS
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Review.belongsTo( models.User, { foreignKey: 'reviewerId'})
       Review.belongsTo( models.Bathroom, { foreignKey: 'bathroomId'} )
-      
     }
   };
   Reviews.init({

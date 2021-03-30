@@ -3,17 +3,17 @@ const faker = require('faker');
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
-     await queryInterface.bulkInsert('Reservation', [{
+     await queryInterface.bulkInsert('Reservations', [{
        reservationId: 6,
        bathroomId: 9,
-       reservationDate: 
+       //reservationDate:
       }], {});
 
   },
 
   down: async (queryInterface, Sequelize) => {
 
-     await queryInterface.bulkDelete('Reservation', null, {});
+     await queryInterface.bulkDelete('Reservations', null, {});
 
   }
 };
