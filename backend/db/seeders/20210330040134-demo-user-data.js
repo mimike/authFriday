@@ -37,6 +37,59 @@ module.exports = {
           state: 'California',
           hashedPassword: bcrypt.hashSync(faker.internet.password()),
         },
+
+        {
+          email: faker.internet.email(),
+          firstName: "Marie",
+          lastName: "Mariesdottir",
+          username: 'FakeUser3',
+          address: '1 Paris Drive',
+          city: 'San Francisco',
+          state: 'California',
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+
+        {
+          email: faker.internet.email(),
+          firstName: "Sloan",
+          lastName: "Sloansdottir",
+          username: 'FakeUser4',
+          address: '10 Marrakesh Drive',
+          city: 'St. Paul',
+          state: 'Minnesota',
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: faker.internet.email(),
+          firstName: "Jason",
+          lastName: "Jones",
+          username: 'FakeUser5',
+          address: '11 Eleven Lane',
+          city: 'San Francisco',
+          state: 'California',
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: faker.internet.email(),
+          firstName: "Happy",
+          lastName: "Apple",
+          username: 'FakeUser6',
+          address: '10 Pojo Place',
+          city: 'San Francisco',
+          state: 'California',
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: faker.internet.email(),
+          firstName: "Jazzy",
+          lastName: "Jazzdottir",
+          username: 'FakeUser7',
+          address: '12 Bach Drive',
+          city: 'San Francisco',
+          state: 'California',
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        }
+        
     ], {});
 
   },
