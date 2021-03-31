@@ -1,6 +1,6 @@
 'use strict';
 
-const { default: bathroomReducer } = require("../../../frontend/src/store/bathroom");
+
 
 module.exports = (sequelize, DataTypes) => {
   const Review = sequelize.define('Review', {

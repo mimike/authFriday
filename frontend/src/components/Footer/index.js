@@ -4,13 +4,25 @@ function Footer(){
         <div className="footer-container" style={{
             backgroundImage: `url(images/unko4.jpeg)`
           }}>
-            <h1>This is a footer</h1>
-            <h2>About</h2>
-            <h3>How unkobnb works</h3>
-            <h3>Investors</h3>
-            <h2>Host</h2>
-            <h3>Host your bathroom</h3>
-            <h3>Responsible hosting</h3>
+            <div>
+                <h2>About</h2>
+            </div>
+            <div>
+                <h3>How unkobnb works</h3>
+            </div>
+            <div>
+                <h3>Investors</h3>
+            </div>
+            <div>
+                <h2>Host</h2>
+            </div>
+            <div>
+                <h3>Host your bathroom</h3>
+            </div>
+            <div>
+                <h3>Responsible hosting</h3>
+            </div>
+
             <div>
                 <i class="fab fa-facebook"></i>
                 <a href="https://www.facebook.com">facebook</a>

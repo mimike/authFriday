@@ -3,7 +3,7 @@ function HomePage(){
     return (
         <div className="home-container">
             <div className="main-image">
-                <img src="/images/unko5.jpeg" />
+                <img src="/images/unko5.jpeg" alt="some toilet" />
             </div>
 
             <div className= "text-container">
@@ -15,7 +15,7 @@ function HomePage(){
                     <h1>Your bathroom is worth sharing</h1>
                 </div>
                 <div className="info-image">
-                    <img src= "/images/unko2.jpeg" />
+                    <img src= "/images/unko2.jpeg" alt="toilet"/>
                 </div>
 
             </div>

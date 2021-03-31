@@ -1,14 +1,21 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 //const { check } = require('express-validator');
-const { handleValidationErrors } = require('../../utils/validation');
-
+//const { handleValidationErrors } = require('../../utils/validation');
+const  Sequelize = require("sequelize")
+const Op = Sequelize.Op;
+const router = express.Router();
 const { Bathroom } = require('../../db/models');
 
-const router = express.Router();
-
-router.get('/', asyncHandler(async(req, res) => {
-
+router.get('/:id', asyncHandler(async(req, res) => {
+    const userSearchInput = req.params.id;
+    //find all
+    const bathrooms = await Bathroom.findAll({
+        where: {
+            city: { [ Op.iLike]: `%${userSearchInput}%`}  //find all in a state
+        }
+    })
+    return res.json(bathrooms);
 }))
 
 module.exports = router;

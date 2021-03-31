@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
+import BathroomTile from '../BathroomPage/BathroomTile';
 import './Navigation.css';
+import { useHistory} from 'react-router-dom';
 
-function Navigation({ isLoaded }){
-
+function Navigation({ isLoaded }){  //isLoaded ?
+  const history = useHistory();
   const [ keyword, setKeyword ] = useState();
   const sessionUser = useSelector(state => state.session.user);
 
@@ -15,42 +17,74 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <ProfileButton user={sessionUser} />
-
     );
   } else {
     sessionLinks = (   // not sure if this is right. the modal sign up doesn't work.
       <>
-        <SignupFormModal />
-        <NavLink to="/user"></NavLink>
-        <LoginFormModal />
-        {/* <NavLink to="/">Log in!</NavLink> */}
+        <div className="nav-button-container">
+          <div className="signup-button">
+            <SignupFormModal />
+          </div>
+          <div className="login-button">
+            <LoginFormModal />
+          </div>
+        </div>
+
+
+        <div className="button-container">
+          <div>
+            <button className="nav-button" type="button" onClick={() => history.push('/feed')}>Feed</button>
+          </div>
+
+          <div>
+            <button className="nav-button" type="button" onClick={() => history.push('/bathroom')}>Cool Bathroom</button>
+          </div>
+
+          <div>
+            <button className="nav-button" type="button" onClick={() => history.push('/best')}>Best of the best</button>
+          </div>
+
+          <div>
+            <button className="nav-button" type="button" onClick={() => history.push('/new')}>Share ur bathroom</button>
+          </div>
+        </div>
+
+
       </>
     );
   }
 
+
+
+//bathroomsInCity.map((bathroom) =>  <BathroomTile bathroom={bathroom} key={bathroom.id}/>)
   return (   //search bar icon?!
     <ul>
-      {/* <li> */}
       <input
         style={{width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"}}
         key="random1"
         value={keyword}
         placeholder={"Where are you going?"}
-        onChange={(e) => setKeyword(e.target.value)}
-        onClick={(e) => {
-            // Op.or
-            // route to /feed
-            // <Feed />
-        }}
-    />
-    <i class="fas fa-search"></i>
-        <h1>unkobnb</h1>
-        {/* <NavLink exact to="/">THIS HOME BUTTON</NavLink> */}
-        <i class="fas fa-poop"></i>
+        onClick={(e) => setKeyword(e.target.value)}
+      />
+
+      <button style={{background:"white", borderRadius:"50%", height:"30px",
+  width:"30px"}} type="submit"><i class="fas fa-search"></i></button>
+
+
+        <div>
+          <h1>  <i class="fas fa-poop" style={{color:"pink"}}></i>   unkobnb</h1>
+          {/* <h1>unkobnb <i class="fas fa-poop"></i></h1> */}
+        </div>
+
+
         {isLoaded && sessionLinks}
       {/* </li> */}
+      <div>
+        {/* {mappedBathrooms} */}
+      </div>
     </ul>
+
   );
 }
-
 export default Navigation;
+//  // const bathrooms = useSelector(state => state.bathroom) || {};

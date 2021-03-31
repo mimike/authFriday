@@ -1,82 +1,82 @@
-// //## Bathroom Route
-// // - `/bathroom`
-// // - **GET** getting a list of bathrooms
-// // - **POST** create a new bathroom
-// import { csrfFetch } from 'react-redux'
-// import csrfFetch from "./csrf";
-// //import { useDispatch } from
+//## Bathroom Route
+// - `/bathroom`
+// - **GET** getting a list of bathrooms
+// - **POST** create a new bathroom
 
-// const LOAD = 'bathroom/LOAD';
-// //const SET_BATHROOMS = 'bathroom/SET_BATHROOMS' take the bathrooms and set them into the state.
-// const ADD_BATHROOMS = 'bathrooms/ADD_BATHROOMS';  // bathroom/ADD
+import csrfFetch from "./csrf";
 
-// const load = (list) => ({
-//     type= LOAD,
-//     list
-// })
-// //ACIONS
-// // export const setBathrooms = (bathrooms) => {
-// //     return {
-// //         type: SET_BATHROOMS,
-// //         payload: bathrooms
-// //     }
-// // }
+//const LOAD = 'bathroom/LOAD';
+const SET_BATHROOMS = 'bathroom/SET_BATHROOMS' //take the bathrooms and set them into the state.
+const ADD_BATHROOMS = 'bathrooms/ADD_BATHROOMS';  // bathroom/ADD
 
-// //ACTIONS
-// export const addBathroom = (bathroom) => {
-//     return {
-//         type: ADD_BATHROOMS,
-//         payload: bathroom
-//     }
-// }
+//ACTIONS
+export const setBathrooms = (bathrooms) => ({
+//return {} extra yellow parenthesis
+        type: SET_BATHROOMS,
+        payload: bathrooms
 
-// //THUNKS ASYNC ACTIONS
-// export const getBathrooms = () => async(dispatch) => { //set
-//     const response = await csrfFetch('/api/bathroom');
-//     if(response.ok) {
-//         const list = await response.json();
-//         dispatch(load(list));  // why dont need to invoke dispatch, because it's return?
-//     } else {
-//         throw response; // if(!response.ok) throw response
-//     }
+})
+// edit this later.
+export const addBathroom = (bathroom) => {
+    return {
+        type: ADD_BATHROOMS,
+        payload: bathroom
+    }
+}
+//THUNKS ASYNC ACTIONS
+export const getBathrooms = () => async(dispatch) => { //set
+    const response = await csrfFetch('/api/bathroom');
+    if(response.ok) {
+        const list = await response.json();
+        dispatch(setBathrooms(list));
+    } else {
+        throw response;
+    }
 
-//     const bathrooms = await response.json(); // returning batrooms DATA json p
-//     dispatch(setBathrooms(bathrooms));
-// }
-// //REDUCER
-// const initialState = {  //what do we want it to look like
-//     list: [] // id, description, title, etc.
-// }
+    // const bathrooms = await response.json(); // returning batrooms DATA json p
+    // dispatch(setBathrooms(bathrooms));
+}
+export const getBathroomsSearch = (bathroom) => async dispatch => {
+    const response = await csrfFetch(`/api/bathroom/${bathroom}`);
+    if(response.ok){
+        const bathrooms = await response.json();
+        dispatch(SET_BATHROOMS(bathrooms))
+        return bathrooms;
+    }
+}
+//REDUCER
+const initialState = {  //what do we want it to look like
+    list: {} // id, description, title, etc.
+}
 
-// const bathroomReducer = (state = initialState, action) => {  //state is bathrooms (slice)
-//     switch(action.type){
-//         case LOAD: {
-//             const allBathrooms = {};
-//             action.list.forEach((bathroom) => {
-//                 allBathrooms[bathroom.id] = bathroom
-//             });
+const bathroomReducer = (state = initialState, action) => {  //state is bathrooms (slice)
+    switch(action.type){
+        // case SET_BATHROOMS: {
+        //     const allBathrooms = {};
+        //     action.list.forEach((bathroom) => {
+        //         allBathrooms[bathroom.id] = bathroom
+        //     });
 
-//             return {
-//                 ...allBathrooms,
-//                 ...state,
-//             }
+        //     return {
+        //         ...allBathrooms,
+        //         ...state,
+        //     }
+        // }
 
-//         }
+        //bart's code...
+        case SET_BATHROOMS:
+            const bathrooms = action.payload;
+            const newBathrooms = {};
 
-//         //bart's code...
-//         case SET_BATHROOMS:
-//             const bathrooms = action.payload;
-//             const newBathrooms = {};
+            for(const bathroom of bathrooms) {  // bathrooms action.payload?
+                newBathrooms[bathroom.id] = bathroom; // doens't mutate. forEach would more expensive?
+            }
+            return newBathrooms;
 
-//             for(const bathroom of bathrooms) {  // bathrooms action.payload?
-//                 newBathrooms[bathroom.id] = bathroom; // doens't mutate. forEach would more expensive?
-//             }
-//             //////////////
-
-//         case ADD_BATHROOMS:
-//             return state;
-//         default:
-//             return state; //bathrooms
-//     }
-// }
-// export default bathroomReducer;
+        case ADD_BATHROOMS:
+            return state;
+        default:
+            return state; //bathrooms
+    }
+}
+export default bathroomReducer;

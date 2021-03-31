@@ -10,6 +10,13 @@ module.exports = {
          reviewText: "this bathroom is really great!!",
          rating: 5,
          reviewImgUrl: "some url"
+      },
+      {
+        reviewerId: 2,
+         bathroomId: 2,
+         reviewText: "this bathroom is really smelly!!",
+         rating: 3,
+         reviewImgUrl: "some url"
       }
     ], {});
 

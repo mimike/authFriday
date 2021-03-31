@@ -120,7 +120,7 @@ module.exports = (sequelize, DataTypes) => {
   User.getCurrentUserById = async function (id) {
     return await User.scope('currentUser').findByPk(id);
   };
-
+  
   User.login = async function ({ credential, password }) {
     const { Op } = require('sequelize');
     const user = await User.scope('loginUser').findOne({

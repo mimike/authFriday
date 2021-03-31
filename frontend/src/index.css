@@ -2,3 +2,16 @@
 body {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
+.nav-button-container{
+    display: flex;
+}
+
+
+
+.button-container{
+    display: flex;
+}
+
+.nav-button {
+    background-color: white;
+}

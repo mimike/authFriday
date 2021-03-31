@@ -1,13 +1,35 @@
 import * as bathroomActions from '../../store/bathroom';
-import { useState, useEffect } from "react";
-import { useDispatch } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import BathroomTile from "./BathroomTile";
+
+
 function BathroomPage(){
-    const [ title, setTitle ] = useState("");
-    const [ description, setDescription ] = useState("");
+    // const [ title, setTitle ] = useState("");
+    // const [ description, setDescription ] = useState("");
+    // const [ address, setAddress ] = useState("")
+    //finish these useStates
+
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatch(bathroomActions.getBathrooms())
+    }, [dispatch])
+
+    const bathrooms = useSelector(state => state.bathroom) || {};
+    const arrayBathrooms = Object.values(bathrooms);
+    const mappedComponents = arrayBathrooms.map(bathroom => (
+        <BathroomTile bathroom={bathroom} key= {bathroom.id}/>
+    ) )
 
     return (
         <div className="bathroom-container">
-            <h1>A very cool bathrooms in Iowa City</h1>
+            {/* <h1>A very cool bathrooms in Iowa City</h1> */}
+            {mappedComponents}
+            {/* {console.log("STUFF", arrayBathrooms)}
+            {arrayBathrooms.forEach(bathroom => {`${bathroom}`} */}
+
+            )}
         </div>
     )
 }

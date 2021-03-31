@@ -8,7 +8,13 @@ module.exports = {
           reserverId: 1,
           bathroomId: 1,
           reservationDate: new Date()
-      }
+      },
+      {
+        reserverId: 2,
+        bathroomId: 1,
+        reservationDate: new Date()
+    }
+
     ], {});
 
   },

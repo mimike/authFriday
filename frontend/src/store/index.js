@@ -2,10 +2,13 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import sessionReducer from './session';
 import bathroomReducer from './bathroom';
+import searchReducer from './search';
 
-const rootReducer = combineReducers({  //these all get run when root. but the switch statement default just return the state. 
+const rootReducer = combineReducers({  //these all get run when root. but the switch statement default just return the state.
   session: sessionReducer,
   bathroom: bathroomReducer,
+  search: searchReducer
+
 });
 
 let enhancer;
