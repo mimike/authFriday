@@ -1,0 +1,41 @@
+
+
+
+
+.main-image-container{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.main-image {
+}
+
+.made-possible-text {
+    /* color: white; */
+    text-align: center;
+}
+
+
+
+.info-image-container {
+    display: flex;
+    background-color: black;
+}
+
+.home-page-text {
+    color: white;
+    margin-left: 20px;
+}
+
+.info-box {
+    order: 1;
+    margin-right: 30px;
+}
+
+.info-image {
+    margin-left: 20px;
+    /* padding: 20px; */
+    order: 2;
+
+}

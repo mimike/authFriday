@@ -1,9 +1,8 @@
 //import { csrfFetch } from './csrf';
 const LOAD = 'search/LOAD';
-
 const load = list => ({
     type: LOAD,
-    list,   //payload
+    list,   //payload     key:
 });
 
 //THUNK
@@ -12,21 +11,19 @@ export const getSearch = (param) => async dispatch => {
     if(response.ok){
         const list = await response.json();  //this var name!
         dispatch(load(list))
-        return list
+        return list         //searchres
     }
 }
 
-const initialState = {
-    search: []
-}
 
-const searchReducer = (state = initialState, action) => {
+const searchReducer = (state = [], action) => {
     switch(action.type){
-        case LOAD: {
-            return { ...state, search: [ ...action.list]}
-        }
+        case LOAD:
+        const newState = action.list;  // []  we don't need past search   load.list?
+        return newState;
+
         default:
-            return state
+            return state;
     }
 }
 //REDUCER

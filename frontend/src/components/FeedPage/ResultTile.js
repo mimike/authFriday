@@ -3,21 +3,30 @@ function ResultTile( {bathroom} ){
     return (
         <div>
             <div>
-                {bathroom.title}
+                Title: {bathroom.title}
             </div>
 
             <div>
-                {bathroom.address}
+                Location: {bathroom.address}
+            </div>
+            
+            <div>
+                City: {bathroom.city}
             </div>
 
             <div>
-                {bathroom.description}
+                State: {bathroom.state}
             </div>
 
             <div>
-                {bathroom.costPerDay}
+                Description: {bathroom.description}
+            </div>
+
+            <div>
+                Cost: {bathroom.costPerDay}
             </div>
         </div>
     )
 }
+
 export default ResultTile;

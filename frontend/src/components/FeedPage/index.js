@@ -1,5 +1,4 @@
 //THIS PAGE WILL output the search results by city/location.
-
 import { useState } from "react";
 import { useSelector } from "react-redux";
 //import BathroomTile from "../BathroomPage/BathroomTile"
@@ -7,10 +6,9 @@ import ResultTile from "./ResultTile";
 
 function FeedPage(){
     //const [ keyword, setKeyword ] = useState();
-
-    const bathroomsInCity = useSelector(state => state.bathroom);  //bathrmReducer
-    const arrayBath = Object.values(bathroomsInCity);
-    const mappedBathrooms = arrayBath.map(bathroom => (
+    const bathroomsInCity = useSelector(state => state.search.bathrooms) || [];  //bathrmReducer
+    // const arrayBath = Object.values(bathroomsInCity);
+    const mappedBathrooms = bathroomsInCity.map(bathroom => (
     <ResultTile bathroom={bathroom} key={bathroom.id}/>
     ))
         return (
@@ -25,7 +23,6 @@ function FeedPage(){
         </ul>
     );
 }
-
 export default FeedPage;
 
    // function initMap(): void {
