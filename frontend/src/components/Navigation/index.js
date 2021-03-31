@@ -31,12 +31,12 @@ function Navigation({ isLoaded }){  //isLoaded ?
         </div>
 
         <div className="button-container">
-          <div>
+          {/* <div>
             <button className="nav-button" type="button" onClick={() => history.push('/feed')}>Feed</button>
-          </div>
+          </div> */}
 
           <div>
-            <button className="nav-button" type="button" onClick={() => history.push('/bathroom')}>Cool Bathroom</button>
+            <button className="nav-button" type="button" onClick={() => history.push('/bathroom')}>Cool Bathrooms</button>
           </div>
 
           <div>
@@ -80,4 +80,4 @@ function Navigation({ isLoaded }){  //isLoaded ?
   );
 }
 export default Navigation;
-//  
+//

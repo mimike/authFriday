@@ -8,16 +8,17 @@ function SearchBar(){
     const [ keyword, setKeyword ] = useState("");
     const history = useHistory();
     const dispatch = useDispatch();
+
     const submit = (e)=> {
         //when we click on button and
         e.preventDefault();
-        dispatch(getSearch(keyword));
+
+        dispatch(getSearch(keyword));       //
         history.push("/feed")
     }
 
         return ( //hit return or click for dumb users
         <form onSubmit={(e)=> submit(e)} >
-
             <input
                 style={{width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"}}
                 value={keyword}

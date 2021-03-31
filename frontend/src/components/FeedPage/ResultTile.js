@@ -1,31 +1,30 @@
+import { Link } from "react-router-dom";
+
 function ResultTile( {bathroom} ){
 
     return (
-        <div>
-            <div>
-                Title: {bathroom.title}
+        <>
+            <div className="result-tile-container">
+                <div>
+                    <Link to="/bathroom">{bathroom.title}</Link>
+                </div>
+
+                <div>
+                    {bathroom.city}, {bathroom.state}
+                </div>
+
+
+                <div>
+                    {bathroom.description}
+                </div>
+
+                <div className="random-toilet-image">
+                    <img src="/images/unko6.jpg" alt="toilet"/>
+                </div>
+                
             </div>
 
-            <div>
-                Location: {bathroom.address}
-            </div>
-            
-            <div>
-                City: {bathroom.city}
-            </div>
-
-            <div>
-                State: {bathroom.state}
-            </div>
-
-            <div>
-                Description: {bathroom.description}
-            </div>
-
-            <div>
-                Cost: {bathroom.costPerDay}
-            </div>
-        </div>
+        </>
     )
 }
 

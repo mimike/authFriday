@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
 
+import './NewBathroomPage.css';
+
 function NewBathroomPage(){
   let history = useHistory()
     //const dispatch = useDispatch();
@@ -31,129 +33,136 @@ function NewBathroomPage(){
         // return setErrors(['Confirm Password field must be the same as the Password field']);
     //}
         return (
-            <form
-            // onSubmit={handleSubmit}
-            >
-              {/* <ul>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-              </ul> */}
+          <>
+            <div className="new-container">
               <div>
-                  <h2>New Bathroom</h2>
+                <h2>New Bathroom</h2>
+              </div>
+
+              <form className="new-form"
+              // onSubmit={handleSubmit}
+              >
+                {/* <ul>
+                  {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul> */}
+
+                <div className="form-input">
+                  <label>
+                      Catchy title
+                      <input
+                      type="text"
+                      placeholder="Title of bathroom"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                      required
+                      />
+                  </label>
+                </div>
+
+                <div className="form-input">
+                  <label>
+                      Description
+                      <input
+                      type="text"
+                      placeholder="Description"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      required
+                      />
+                  </label>
+                </div>
+
+                <div className="form-input">
+                  <label>
+                      Address
+                      <input
+                      type="text"
+                      placeholder= "Address"
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
+                      required
+                      />
+                  </label>
+                </div>
+
+                <div className="form-input">
+                  <label>
+                      City
+                      <input
+                      type="text"
+                      value={city}
+                      placeholder="City"
+                      onChange={(e) => setCity(e.target.value)}
+                      required
+                      />
+                  </label>
+                </div>
+
+                <div className="form-input">
+                  <label>
+                      State
+                      <input
+                      type="text"
+                      value={state}
+                      placeholder="State"
+                      onChange={(e) => setState(e.target.value)}
+                      required
+                      />
+                  </label>
+                </div>
+
+              <div className="form-input">
+                  <label>
+                      Cost
+                      <input
+                      type="text"
+                      value={costPerDay}
+                      placeholder="How much is this bathroom"
+                      onChange={(e) => setCostPerDay(e.target.value)}
+                      required
+                      />
+                  </label>
               </div>
 
               <div className="form-input">
-                <label>
-                    Catchy title
-                    <input
-                    type="text"
-                    placeholder="Title of bathroom"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    required
-                    />
-                </label>
+                  <label>
+                      Location Type
+                      <input
+                      type="text"
+                      placeholder="What kinda bathroom"
+                      value={locationType}
+                      onChange={(e) => setLocationType(e.target.value)}
+                      required
+                      />
+                  </label>
               </div>
 
               <div className="form-input">
-                <label>
-                    Description
-                    <input
-                    type="text"
-                    placeholder="Description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    required
-                    />
-                </label>
+                  <label>
+                      Add a photo
+                      <input
+                      type="text"
+                      placeholder="Photo url here"
+                      value={bathroomImgUrl}
+                      onChange={(e) => setBathroomImgUrl(e.target.value)}
+                      required
+                      />
+                  </label>
               </div>
 
-              <div className="form-input">
-                <label>
-                    Address
-                    <input
-                    type="text"
-                    placeholder= "Address"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    required
-                    />
-                </label>
+              <div className="submit-new-bathroom-button">
+              <button type="submit">Add bathroom</button>
+
               </div>
 
-              <div className="form-input">
-                <label>
-                    City
-                    <input
-                    type="text"
-                    value={city}
-                    placeholder="City"
-                    onChange={(e) => setCity(e.target.value)}
-                    required
-                    />
-                </label>
-              </div>
+              <h3>Not logged in?</h3>
+              <button type="submit" onClick={() => history.push('/')}>log in!</button>
+              {/* <Link to="/" className="login-link">Log in</Link> */}
+              </form>
 
-              <div className="form-input">
-                <label>
-                    State
-                    <input
-                    type="text"
-                    value={state}
-                    placeholder="State"
-                    onChange={(e) => setState(e.target.value)}
-                    required
-                    />
-                </label>
-              </div>
-
-            <div className="form-input">
-                <label>
-                    Cost
-                    <input
-                    type="text"
-                    value={costPerDay}
-                    placeholder="How much is this bathroom"
-                    onChange={(e) => setCostPerDay(e.target.value)}
-                    required
-                    />
-                </label>
             </div>
 
-            <div className="form-input">
-                <label>
-                    Location Type
-                    <input
-                    type="text"
-                    placeholder="What kinda bathroom"
-                    value={locationType}
-                    onChange={(e) => setLocationType(e.target.value)}
-                    required
-                    />
-                </label>
-            </div>
-
-            <div className="form-input">
-                <label>
-                    Add a photo
-                    <input
-                    type="text"
-                    placeholder="Photo url here"
-                    value={bathroomImgUrl}
-                    onChange={(e) => setBathroomImgUrl(e.target.value)}
-                    required
-                    />
-                </label>
-            </div>
-
-            <div className="submit-new-bathroom-button">
-            <button type="submit">Add bathroom</button>
-
-            </div>
-
-            <h3>Not logged in?</h3>
-            <button type="submit" onClick={() => history.push('/')}>log in!</button>
-            {/* <Link to="/" className="login-link">Log in</Link> */}
-            </form>
+            </>
           );
 
 }

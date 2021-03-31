@@ -23,7 +23,7 @@ function BathroomPage(){
     return (
         <>
             <div className="bathroom-container">
-                <h1>A very cool bathrooms in Iowa City</h1>
+                <h1>Cool Bathrooms</h1>
                 {mappedComponents}
                 {/* {console.log("STUFF", arrayBathrooms)}
                 // {arrayBathrooms.forEach(bathroom => {`${bathroom}`} */}
