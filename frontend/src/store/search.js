@@ -1,5 +1,4 @@
-import { csrfFetch } from './csrf';
-
+//import { csrfFetch } from './csrf';
 const LOAD = 'search/LOAD';
 
 const load = list => ({
@@ -30,6 +29,5 @@ const searchReducer = (state = initialState, action) => {
             return state
     }
 }
-
 //REDUCER
 export default searchReducer;

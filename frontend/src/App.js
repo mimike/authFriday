@@ -14,6 +14,9 @@ import Footer from "./components/Footer";
 import NewBathroomPage from "./components/NewBathroomPage";
 import ReviewPage from "./components/ReviewPage";
 import BestPage from "./components/BestPage";
+import SearchBar from "./components/SearchBar";
+import About from "./components/About";
+import Host from "./components/Host";
 
 import * as sessionActions from "./store/session";
 
@@ -61,6 +64,16 @@ console.log(isLoaded)
 
           <Route path="/new">
             <NewBathroomPage />
+            <Footer />
+          </Route>
+
+          <Route path="/about">
+            <About />
+            <Footer />
+          </Route>
+
+          <Route path="/host">
+            <Host />
             <Footer />
           </Route>
 

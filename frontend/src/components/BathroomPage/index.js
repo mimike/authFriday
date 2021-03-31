@@ -3,13 +3,11 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BathroomTile from "./BathroomTile";
 
-
 function BathroomPage(){
     // const [ title, setTitle ] = useState("");
     // const [ description, setDescription ] = useState("");
     // const [ address, setAddress ] = useState("")
     //finish these useStates
-
     const dispatch = useDispatch();
 
     useEffect(()=>{
@@ -23,14 +21,14 @@ function BathroomPage(){
     ) )
 
     return (
-        <div className="bathroom-container">
-            {/* <h1>A very cool bathrooms in Iowa City</h1> */}
-            {mappedComponents}
-            {/* {console.log("STUFF", arrayBathrooms)}
-            {arrayBathrooms.forEach(bathroom => {`${bathroom}`} */}
-
-            )}
-        </div>
+        <>
+            <div className="bathroom-container">
+                <h1>A very cool bathrooms in Iowa City</h1>
+                {mappedComponents}
+                {/* {console.log("STUFF", arrayBathrooms)}
+                // {arrayBathrooms.forEach(bathroom => {`${bathroom}`} */}
+            </div>
+        </>
     )
 }
 

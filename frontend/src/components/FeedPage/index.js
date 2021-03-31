@@ -1,6 +1,34 @@
-function FeedPage(){
+//THIS PAGE WILL output the search results by city/location.
 
-    // function initMap(): void {
+import { useState } from "react";
+import { useSelector } from "react-redux";
+//import BathroomTile from "../BathroomPage/BathroomTile"
+import ResultTile from "./ResultTile";
+
+function FeedPage(){
+    //const [ keyword, setKeyword ] = useState();
+
+    const bathroomsInCity = useSelector(state => state.bathroom);  //bathrmReducer
+    const arrayBath = Object.values(bathroomsInCity);
+    const mappedBathrooms = arrayBath.map(bathroom => (
+    <ResultTile bathroom={bathroom} key={bathroom.id}/>
+    ))
+        return (
+        <ul>
+            <div className="feed-container">
+                <h1>A list of all the bathrooms</h1>
+            </div>
+
+            <div>
+                {mappedBathrooms}
+            </div>
+        </ul>
+    );
+}
+
+export default FeedPage;
+
+   // function initMap(): void {
     //     // The location of Uluru
     //     const uluru = { lat: -25.344, lng: 131.036 };
     //     // The map, centered at Uluru
@@ -11,22 +39,9 @@ function FeedPage(){
     //         center: uluru,
     //       }
     //     );
-
     //     // The marker, positioned at Uluru
     //     const marker = new google.maps.Marker({
     //       position: uluru,
     //       map: map,
     //     });
     //   }
-
-    return (
-        <div className="feed-container">
-            <h1>A list of all the bathrooms</h1>
-        </div>
-
-        // Initialize and add the map
-
-    )
-}
-
-export default FeedPage;

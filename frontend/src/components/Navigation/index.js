@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
-import BathroomTile from '../BathroomPage/BathroomTile';
+//import BathroomTile from '../BathroomPage/BathroomTile';
+import SearchBar from '../SearchBar';
 import './Navigation.css';
 import { useHistory} from 'react-router-dom';
 
 function Navigation({ isLoaded }){  //isLoaded ?
   const history = useHistory();
-  const [ keyword, setKeyword ] = useState();
-  const sessionUser = useSelector(state => state.session.user);
+  // const [ keyword, setKeyword ] = useState();
+  const sessionUser = useSelector(state => state.session.user); //?
 
   let sessionLinks;
   if (sessionUser) {
@@ -30,7 +30,6 @@ function Navigation({ isLoaded }){  //isLoaded ?
           </div>
         </div>
 
-
         <div className="button-container">
           <div>
             <button className="nav-button" type="button" onClick={() => history.push('/feed')}>Feed</button>
@@ -48,43 +47,37 @@ function Navigation({ isLoaded }){  //isLoaded ?
             <button className="nav-button" type="button" onClick={() => history.push('/new')}>Share ur bathroom</button>
           </div>
         </div>
-
-
       </>
     );
   }
 
-
-
 //bathroomsInCity.map((bathroom) =>  <BathroomTile bathroom={bathroom} key={bathroom.id}/>)
   return (   //search bar icon?!
-    <ul>
-      <input
-        style={{width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"}}
-        key="random1"
-        value={keyword}
-        placeholder={"Where are you going?"}
-        onClick={(e) => setKeyword(e.target.value)}
-      />
-
-      <button style={{background:"white", borderRadius:"50%", height:"30px",
-  width:"30px"}} type="submit"><i class="fas fa-search"></i></button>
-
-
-        <div>
-          <h1>  <i class="fas fa-poop" style={{color:"pink"}}></i>   unkobnb</h1>
-          {/* <h1>unkobnb <i class="fas fa-poop"></i></h1> */}
-        </div>
-
-
-        {isLoaded && sessionLinks}
-      {/* </li> */}
+    <>
       <div>
-        {/* {mappedBathrooms} */}
+        <SearchBar />
       </div>
-    </ul>
 
+      <ul>
+        {/* <input
+          style={{width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"}}
+          key="random1"
+          value={keyword}
+          placeholder={"Where are you going?"}
+          onChange={(e) => setKeyword(e.target.value)}
+        /> */}
+        {/* <button style={{background:"white", borderRadius:"50%", height:"30px",
+    width:"30px"}} type="submit"><i class="fas fa-search"></i></button> */}
+          <div>
+            <h1>  <i class="fas fa-poop" style={{color:"pink"}}></i>unkobnb</h1>
+          </div>
+          {isLoaded && sessionLinks}
+        {/* <div>
+          {mappedBathrooms}
+        </div> */}
+      </ul>
+    </>
   );
 }
 export default Navigation;
-//  // const bathrooms = useSelector(state => state.bathroom) || {};
+//  
