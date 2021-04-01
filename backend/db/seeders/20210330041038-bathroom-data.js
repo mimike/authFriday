@@ -21,8 +21,8 @@ module.exports = {
           title: "Brewery Urinals at Reunion Brewery",
           description: "The hoppiest place to pee while enjoying the hoppiest IPA from a hoppy restroom",
           address: "222 Beer Lane",
-          city: "Chicago",
-          state: "Illinois",
+          city: "Madison",
+          state: "Wisconsin",
           costPerDay: 10.00,
           locationType: "public bathroom",
           bathroomImgUrl: "https://www.google.com/url?sa=i&u"

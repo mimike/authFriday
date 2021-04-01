@@ -1,0 +1,18 @@
+.result-tile-container {
+
+   margin: 20px;
+   display: flex;
+
+
+}
+
+.result-text-container {
+     margin: 20px;
+
+}
+
+.random-toilet-image {
+    background-color: cornflowerblue;
+    margin: 20px;
+
+}

@@ -19,12 +19,15 @@ function BathroomPage(){
     const mappedComponents = arrayBathrooms.map(bathroom => (
         <BathroomTile bathroom={bathroom} key= {bathroom.id}/>
     ) )
+    console.log(mappedComponents)
 
     return (
         <>
             <div className="bathroom-container">
                 <h1>Cool Bathrooms</h1>
                 {mappedComponents}
+                {arrayBathrooms.forEach(bathroom => <div>{bathroom}</div>)}
+
                 {/* {console.log("STUFF", arrayBathrooms)}
                 // {arrayBathrooms.forEach(bathroom => {`${bathroom}`} */}
             </div>
