@@ -1,0 +1,11 @@
+  // case SET_BATHROOMS: {
+        //     const allBathrooms = {};
+        //     action.list.forEach((bathroom) => {
+        //         allBathrooms[bathroom.id] = bathroom
+        //     });
+
+        //     return {
+        //         ...allBathrooms,
+        //         ...state,
+        //     }
+        // }

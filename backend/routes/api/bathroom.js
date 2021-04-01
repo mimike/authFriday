@@ -16,20 +16,19 @@ const router = express.Router();
 //     handleValidationErrors,
 //   ];
 
+//http://localhost:5000/api/bathroom GET request
 router.get('/', asyncHandler(async(req, res) => {
     const bathrooms = await Bathroom.findAll();
     return res.json(bathrooms)
 }));
 
-router.get('/:bathroom', asyncHandler(async(req, res) => {
-    const city = req.params.bathroom;
+//just wrote this wednesday night, needs help.
+//http://localhost:5000/api/bathroom/:id     
+router.get('/:id', asyncHandler(async(req, res) => {
+    const bathroomId = req.params.id;
+    const bathroom = await Bathroom.findByPk(bathroomId)    // object that is the br of that ID
 
-    const bathroomInCity = await Bathroom.findAll({
-        where: {
-            city       // city: city
-        }
-    })
-    res.json(bathroomInCity);
+    return res.json(bathroom);
 }))
 
 router.post('/', asyncHandler(async(req, res) => {
@@ -55,7 +54,12 @@ router.post('/', asyncHandler(async(req, res) => {
         locationType,
         bathroomImgUrl
     });
-    res.json(bathroom)
+
+    if(bathroom) {
+        res.json(bathroom)      //
+    }
+    return bathroom;
+    // res.json(bathroom)
 }))
 
 module.exports = router

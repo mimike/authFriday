@@ -14,9 +14,9 @@ export const setBathrooms = (bathrooms) => ({
 //return {} extra yellow parenthesis
         type: SET_BATHROOMS,
         payload: bathrooms
-
 })
-// edit this later.
+
+// edit this later. wednesday night
 export const addBathroom = (bathroom) => {
     return {
         type: ADD_BATHROOMS,
@@ -24,6 +24,7 @@ export const addBathroom = (bathroom) => {
     }
 }
 //THUNKS ASYNC ACTIONS
+//gets a list of all the bathrms
 export const getBathrooms = () => async(dispatch) => { //set
     const response = await csrfFetch('/api/bathroom');
     if(response.ok) {
@@ -36,7 +37,9 @@ export const getBathrooms = () => async(dispatch) => { //set
     // const bathrooms = await response.json(); // returning batrooms DATA json p
     // dispatch(setBathrooms(bathrooms));
 }
-export const getBathroomsSearch = (bathroom) => async dispatch => {
+
+//get single bathroom (was getBathroomsSearch)
+export const getSingleBathroom = (bathroom) => async dispatch => {   //get single bathroom
     const response = await csrfFetch(`/api/bathroom/${bathroom}`);
     if(response.ok){
         const bathrooms = await response.json();
@@ -44,6 +47,7 @@ export const getBathroomsSearch = (bathroom) => async dispatch => {
         return bathrooms;
     }
 }
+
 //REDUCER
 const initialState = {  //what do we want it to look like
     list: {} // id, description, title, etc.
@@ -51,19 +55,7 @@ const initialState = {  //what do we want it to look like
 
 const bathroomReducer = (state = initialState, action) => {  //state is bathrooms (slice)
     switch(action.type){
-        // case SET_BATHROOMS: {
-        //     const allBathrooms = {};
-        //     action.list.forEach((bathroom) => {
-        //         allBathrooms[bathroom.id] = bathroom
-        //     });
 
-        //     return {
-        //         ...allBathrooms,
-        //         ...state,
-        //     }
-        // }
-
-        //bart's code...
         case SET_BATHROOMS:
             const bathrooms = action.payload;
             const newBathrooms = {};
@@ -79,4 +71,6 @@ const bathroomReducer = (state = initialState, action) => {  //state is bathroom
             return state; //bathrooms
     }
 }
+
+
 export default bathroomReducer;

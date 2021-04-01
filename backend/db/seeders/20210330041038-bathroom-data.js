@@ -13,7 +13,7 @@ module.exports = {
           state: "Wisconsin",
           costPerDay: 40.00,
           locationType: "public bathroom",
-          bathroomImgUrl: "https://www.google.com/url?sa=i&u"
+          bathroomImgUrl: "https://images.unsplash.com/photo-1465257474426-bd133d4db35e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80"
         },
 
         {
@@ -25,7 +25,8 @@ module.exports = {
           state: "Wisconsin",
           costPerDay: 10.00,
           locationType: "public bathroom",
-          bathroomImgUrl: "https://www.google.com/url?sa=i&u"
+          bathroomImgUrl: "https://images.unsplash.com/photo-1584346651592-3aacc3c99075?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80"
+          
         },
 
         {
@@ -37,7 +38,7 @@ module.exports = {
           state: "North Carolina",
           costPerDay: 20.00,
           locationType: "public bathroom",
-          bathroomImgUrl: "https://www.google.com/url?sa=i&u"
+          bathroomImgUrl: "https://cdn.pixabay.com/photo/2016/02/29/11/41/bathroom-1228427_960_720.jpg"
 
         },
 
@@ -50,7 +51,7 @@ module.exports = {
           state: "Missouri",
           costPerDay: 20.00,
           locationType: "public bathroom",
-          bathroomImgUrl: "https://www.google.com/url?sa=i&u"
+          bathroomImgUrl: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
         },
 
         {
@@ -62,7 +63,7 @@ module.exports = {
           state: "Oregon",
           costPerDay: 20.00,
           locationType: "public bathroom",
-          bathroomImgUrl: "https://www.google.com/url?sa=i&u"
+          bathroomImgUrl: "https://cdn.pixabay.com/photo/2020/04/09/06/39/architecture-5019972_960_720.jpg"
 
         },
 
@@ -75,7 +76,7 @@ module.exports = {
           state: "Colorado",
           costPerDay: 20.00,
           locationType: "public bathroom",
-          bathroomImgUrl: "https://www.google.com/url?sa=i&u"
+          bathroomImgUrl: "https://images.unsplash.com/photo-1552454799-ca5cfdc612c8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1334&q=80"
 
         },
 
@@ -88,7 +89,7 @@ module.exports = {
           state: "Pennsylvania",
           costPerDay: 20.00,
           locationType: "public bathroom",
-          bathroomImgUrl: "https://www.google.com/url?sa=i&u"
+          bathroomImgUrl: "https://images.unsplash.com/photo-1465257474426-bd133d4db35e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80"
         }
 
     ], {});

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import './FeedPage.css';
 
 function ResultTile( {bathroom} ){
-
     return (
         <>
             <div className="result-tile-container">
@@ -20,10 +19,12 @@ function ResultTile( {bathroom} ){
                     <div>
                         {bathroom.description}
                     </div>
+
+
                 </div>
 
-                <div className="random-toilet-image">
-                    <img src="/images/unko6.jpg" alt="toilet"/>
+                <div className="bathroom-tile-image">
+                    <img src={`${bathroom.bathroomImgUrl}`} alt="bathroom pic"/>
                 </div>
 
             </div>

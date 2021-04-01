@@ -3,11 +3,8 @@ const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const searchRouter = require('./search.js')
 const bathroomRouter = require('./bathroom.js');
-//const reviewRouter = require('./review.js');
+const reviewRouter = require('./review.js');
 //const reservationRouter = require('./reservation.js')
-
-
-// API just for organization here.
 
 // '/api/session
 router.use('/session', sessionRouter);
@@ -17,6 +14,8 @@ router.use('/users', usersRouter);
 router.use('/search', searchRouter);
 // api/bathroom
 router.use("/bathroom", bathroomRouter);
+//api/review
+router.use("/review", reviewRouter);
 
 //api/review
 //router.use("/review", reviewRouter);

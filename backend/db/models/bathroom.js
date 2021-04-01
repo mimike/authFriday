@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     state: DataTypes.STRING,
     costPerDay: DataTypes.INTEGER,
     locationType: DataTypes.STRING,
-    bathroomImgUrl: DataTypes.STRING
+    bathroomImgUrl: DataTypes.TEXT
   }, {});
   Bathroom.associate = function(models) {
     // associations can be defined here

@@ -17,6 +17,13 @@ module.exports = {
          reviewText: "this bathroom is really smelly!!",
          rating: 3,
          reviewImgUrl: "some url"
+      },
+      {
+        reviewerId: 3,
+         bathroomId: 4,
+         reviewText: "this is the greatest toilet ever!!",
+         rating: 3,
+         reviewImgUrl: "some url"
       }
     ], {});
 

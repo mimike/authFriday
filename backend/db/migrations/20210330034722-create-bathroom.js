@@ -11,7 +11,6 @@ module.exports = {
       ownerId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        unique: true,
         references: { model: "Users"}
       },
       title: {
@@ -43,7 +42,7 @@ module.exports = {
         allowNull: false,
       },
       bathroomImgUrl: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       createdAt: {

@@ -15,6 +15,16 @@ export const getSearch = (param) => async dispatch => {
     }
 }
 
+//get single bathroom when u click on it...
+export const getBathroom = (param) => async dispatch => {
+    const response = await (`/api/bathroom/${param}`);
+    if(response.ok){
+        const bathroomData = await response.json();
+        dispatch(load(bathroomData))
+        return bathroomData;
+    }
+}
+
 
 const searchReducer = (state = [], action) => {
     switch(action.type){

@@ -2,6 +2,7 @@ import * as bathroomActions from '../../store/bathroom';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BathroomTile from "./BathroomTile";
+//import { getBathroom} from "../..store/bathroom";
 
 function BathroomPage(){
     // const [ title, setTitle ] = useState("");
@@ -26,7 +27,8 @@ function BathroomPage(){
             <div className="bathroom-container">
                 <h1>Cool Bathrooms</h1>
                 {mappedComponents}
-                {arrayBathrooms.forEach(bathroom => <div>{bathroom}</div>)}
+
+                {/* {mappedComponents.forEach(bathroom => <div>{bathroom}</div>)} */}
 
                 {/* {console.log("STUFF", arrayBathrooms)}
                 // {arrayBathrooms.forEach(bathroom => {`${bathroom}`} */}

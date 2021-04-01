@@ -59,7 +59,7 @@ function NewBathroomPage(){
                   </label>
                 </div>
 
-                <div className="form-input">
+                <div className="description-form-input">
                   <label>
                       Description
                       <input
@@ -72,7 +72,7 @@ function NewBathroomPage(){
                   </label>
                 </div>
 
-                <div className="form-input">
+                <div className="address-form-input">
                   <label>
                       Address
                       <input

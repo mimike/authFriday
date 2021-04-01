@@ -7,16 +7,20 @@ const Op = Sequelize.Op;
 const router = express.Router();
 const { Bathroom } = require('../../db/models');
 
+//https//localhost:5000/api/search/madison
 router.get('/:find', asyncHandler(async(req, res) => {
 
     const userSearchInput = req.params.find;
     //find all
     const bathrooms = await Bathroom.findAll({
         where: {
-            city: { [ Op.iLike]: `%${userSearchInput}%`}  //find all in a state
+            [Op.or]: [
+                {city: { [ Op.iLike]: `%${userSearchInput}%`}}, //find all in a state
+                {state: { [ Op.iLike]: `%${userSearchInput}%`}}
+            ]
         }
     })
-    return res.json({bathrooms});     
+    return res.json({bathrooms});
 }))
 
 module.exports = router;
