@@ -1,12 +1,17 @@
 
-.nav-button-container{
-    display: flex;
-}
-
-.button-container{
+.navigation-button-container{
     display: flex;
 }
 
 .nav-button {
     background-color: white;
+
 }
+
+.button-container{
+    display: flex;
+}
+/* .nav-button i:hover
+{
+  transform: rotate(360deg);
+} */

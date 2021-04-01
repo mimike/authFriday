@@ -1,1 +1,57 @@
+.login-form-container{
 
+}
+.login-title{
+    text-align: center;
+}
+.email-box {
+    margin: 20px;
+}
+.password-box{
+    margin: 20px;
+}
+
+.login-modal-button{
+    text-align: center;
+    margin: 30px;
+}
+.login-button button{
+
+    /* background-color: rosybrown; */
+}
+.soc
+{
+  text-align: center;
+  margin: 20px 0px;
+}
+.soc a
+{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  border:1px solid #ddd;
+  border-radius: 50%;
+  margin: 5px;
+  transition: all .5s;
+}
+.soc a.fa-facebook
+{
+  border-color: #4E71A8;
+  color: #4E71A8;
+}
+.soc a.fa-twitter
+{
+  border-color: #1CB7EB;
+  color: #1CB7EB;
+}
+.soc a.fa-linkedin
+{
+  border-color: #1686B0;
+  color: #1686B0;
+}
+.soc a:hover
+{
+  transform: rotate(360deg);
+}

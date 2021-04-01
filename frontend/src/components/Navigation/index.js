@@ -21,7 +21,7 @@ function Navigation({ isLoaded }){  //isLoaded ?
   } else {
     sessionLinks = (   // not sure if this is right. the modal sign up doesn't work.
       <>
-        <div className="nav-button-container">
+        <div className="navigation-button-container">
           <div className="signup-button">
             <SignupFormModal />
           </div>
@@ -58,7 +58,7 @@ function Navigation({ isLoaded }){  //isLoaded ?
         <SearchBar />
       </div>
 
-     
+
       <ul>
         {/* <input
           style={{width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"}}

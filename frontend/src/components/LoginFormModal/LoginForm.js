@@ -35,31 +35,42 @@ function LoginForm(){
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
-            <h2>Log in</h2>
-            <label>
-                {/* Email Address */}
-                <input
-                    type="text"
-                    placeholder="Email Address"
-                    value={credential}
-                    onChange={(e) => setCredential(e.target.value)}
-                    required
-                />
-            </label>
+            <div className="login-title">
+              <h2>Log in</h2>
+            </div>
 
-            <label>
-                {/* Password */}
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-            </label>
 
+            <div className="login-form-container">
+              <div className="email-box">
+                  <input
+                      type="text"
+                      placeholder="Email Address"
+                      value={credential}
+                      onChange={(e) => setCredential(e.target.value)}
+                      required
+                  />
+              </div>
+
+              <div className="password-box">
+                  <input
+                      type="password"
+                      placeholder="Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                  />
+              </div>
+            </div>
             <label>
-                <button type="submit">Continue</button>
+                <div className="login-modal-button">
+                  <button type="submit">Continue</button>
+                </div>
+
+                <div class="soc">
+                    <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+                    <a href="https://twitter.com" class="fa fa-twitter"></a>
+                    <a href="https://linkedin.com" class="fa fa-linkedin"></a>
+                </div>
             </label>
         </form>
     );
