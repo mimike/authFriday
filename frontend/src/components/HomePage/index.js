@@ -41,6 +41,4 @@ function HomePage(){
 }
 
 export default HomePage;
- {/* <div className="footer-container" style={{
-                    backgroundImage: `url(images/unko4.jpeg)`
-                }}></div> */}
+

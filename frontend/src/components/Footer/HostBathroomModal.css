@@ -1,0 +1,51 @@
+.background {
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.397);
+    left: 0;
+    top: 0;
+    display: none;
+    min-height: 100%;
+    min-width: 100%;
+    z-index: 1;
+}
+
+.host-bathroom-slide-div {
+    position: absolute;
+    /* bottom: -30%; */
+    top: 60%;
+    left: -1000%;
+    background-color: white;
+    border: 2px solid yellow;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 500px;
+    justify-self: center;
+    z-index: 2;
+    transition: left;
+    transition-duration: .5s;
+    box-shadow: 3px, 3px, 3px, 1px rgba(124, 124, 124, 0.397);
+
+}
+
+/* .host-modal-button:hover {
+    cursor: pointer;
+} */
+
+/*
+.new-bathroom-title {
+    color: blue;
+    text-align: center;
+}
+
+.title-form-input {
+    background-color: indianred;
+}
+
+.description-form-input {
+    background-color: lightblue;
+}
+ .address-form-input {
+     background-color: lightpink;
+ } */

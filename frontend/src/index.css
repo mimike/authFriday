@@ -1,7 +1,21 @@
+@import url("./components/Footer/HostBathroomModal.css");
 /* TODO Add site wide styles */
+
 body {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
+
 }
+
+#root {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-x: none;
+
+}
+
+
 /* .nav-button-container{
     display: flex;
 }

@@ -16,14 +16,14 @@
     margin: 30px;
 }
 .login-button button{
-
-    /* background-color: rosybrown; */
+    background-color: rosybrown;
 }
-.soc
-{
+
+.soc{
   text-align: center;
   margin: 20px 0px;
 }
+
 .soc a
 {
   width: 40px;
@@ -55,6 +55,7 @@
 {
   transform: rotate(360deg);
 }
+
 #modal {
     position: fixed;
     top: 0;
@@ -64,6 +65,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 
   }
 
@@ -82,5 +84,9 @@
     position: absolute;
     background-color: blue;
     color: blue;
+
+     /* padding: 30px;
+    border: 2px solid yellow;
+    border-radius: 20px; */
 
   }

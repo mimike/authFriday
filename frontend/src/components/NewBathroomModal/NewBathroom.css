@@ -1,0 +1,48 @@
+  /* .form-input{
+    background-color: hotpink;
+    text-align: center;
+  } */
+
+  /* .description-form-input{
+      text-align: center;
+  } */
+
+  .submit-new-bathroom-button {
+    margin: 10px;
+    /* background-color: mediumpurple; */
+  }
+
+  /* .login-new-bathroom-button {
+      background-color: white;
+  } */
+
+  .submit-new-bathroom-button:hover{
+      cursor: pointer;
+  }
+
+  .new-bathroom-title {
+    color: blue;
+    text-align: center;
+}
+
+.form-input {
+    /* background-color: maroon; */
+    margin: 10px;
+
+    /* text-align: center; */
+}
+.new-form {
+    text-align:center;
+}
+
+.ugh1 {
+    background-color: white;
+    height: 40px;
+    width: 250px;
+}
+
+.ugh2 {
+    width: 120px;
+    background-color: white;
+
+}

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import './Footer.css'
+import HostBathroomModal from "./HostBathroomModal";
+
 function Footer(){
     return (
         <>
@@ -9,7 +11,7 @@ function Footer(){
             }}>
                 <div className="about-container">
                     <div>
-                        <h2>About</h2>
+                        <h3>ABOUT</h3>
                     </div>
 
                     <div>
@@ -23,12 +25,10 @@ function Footer(){
 
                 <div className="host-container">
                     <div>
-                        <h2>Host</h2>
+                        <h3>HOST</h3>
                     </div>
 
-                    <div>
-                        <Link to="/host" style={{textDecoration:"none"}}>Host your bathroom</Link>
-                    </div>
+                    <HostBathroomModal/>
 
                     <div>
                         <Link to="/host" style={{textDecoration:"none"}}>Responsible hosting</Link>
@@ -40,12 +40,12 @@ function Footer(){
 
                     <div className="facebook-link">
                         <i class="fab fa-facebook" ></i>
-                        <a href="https://www.facebook.com" style={{textDecoration:"none"}}>facebook</a>
+                        <a href="https://www.facebook.com" style={{textDecoration:"none"}}>    facebook</a>
                     </div>
 
                     <div className="instagram-link">
                         <i class="fab fa-instagram"></i>
-                        <a href="https://www.instagram.com" style={{textDecoration:"none"}}>instagram</a>
+                        <a href="https://www.instagram.com" style={{textDecoration:"none"}}>     instagram</a>
                     </div>
 
                 </div>
