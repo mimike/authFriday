@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px;
   }
 
   #modal-background {
@@ -16,9 +17,23 @@
     left: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
+
   }
 
   #modal-content {
     position: absolute;
-    background-color:white;
+    background-color: white;
+    padding: 30px;
+    border: 2px solid yellow;
+    border-radius: 20px;
+
+  }
+
+  .sign-up-container{
+    /* background-color: hotpink; */
+    text-align: center;
+  }
+
+  .signup-submit-button{
+    margin: 10px;
   }

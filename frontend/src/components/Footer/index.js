@@ -13,11 +13,11 @@ function Footer(){
                     </div>
 
                     <div>
-                        <li><Link to="/about">How unkobnb works</Link></li>
+                        <Link to="/about" style={{textDecoration:"none"}}>How unkobnb works</Link>
                     </div>
 
                     <div>
-                        <li><Link to="/about">Investors</Link></li>
+                        <Link to="/about" style={{textDecoration:"none"}}>Investors</Link>
                     </div>
                 </div>
 
@@ -27,11 +27,11 @@ function Footer(){
                     </div>
 
                     <div>
-                        <li><Link to="/host">Host your bathroom</Link></li>
+                        <Link to="/host" style={{textDecoration:"none"}}>Host your bathroom</Link>
                     </div>
 
                     <div>
-                        <li><Link to="/host">Responsible hosting</Link></li>
+                        <Link to="/host" style={{textDecoration:"none"}}>Responsible hosting</Link>
                     </div>
                 </div>
 
@@ -39,13 +39,13 @@ function Footer(){
                 <div className="social-media-container">
 
                     <div className="facebook-link">
-                        <i class="fab fa-facebook"></i>
-                        <a href="https://www.facebook.com">facebook</a>
+                        <i class="fab fa-facebook" ></i>
+                        <a href="https://www.facebook.com" style={{textDecoration:"none"}}>facebook</a>
                     </div>
 
                     <div className="instagram-link">
                         <i class="fab fa-instagram"></i>
-                        <a href="https://www.instagram.com">instagram</a>
+                        <a href="https://www.instagram.com" style={{textDecoration:"none"}}>instagram</a>
                     </div>
 
                 </div>

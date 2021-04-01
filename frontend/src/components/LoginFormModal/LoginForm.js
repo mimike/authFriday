@@ -36,7 +36,8 @@ function LoginForm(){
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
             <div className="login-title">
-              <h2>Log in</h2>
+              <h2><i class="fas fa-poop" style={{color:"pink"}}></i>    log in</h2>
+
             </div>
 
 
