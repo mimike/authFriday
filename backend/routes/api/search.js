@@ -7,7 +7,7 @@ const Op = Sequelize.Op;
 const router = express.Router();
 const { Bathroom } = require('../../db/models');
 
-//https//localhost:5000/api/search/madison
+//https//localhost:5000/api/search/madison WORKS
 router.get('/:find', asyncHandler(async(req, res) => {
 
     const userSearchInput = req.params.find;

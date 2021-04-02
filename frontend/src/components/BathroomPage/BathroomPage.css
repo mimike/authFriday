@@ -1,0 +1,11 @@
+.bathroom-div {
+    margin: 10px;
+}
+
+.bathroom-container > h1 {
+    color: blue;
+}
+
+.bathroom-container > a {
+    background-color: rosybrown;
+}

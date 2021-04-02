@@ -47,7 +47,7 @@ console.log(isLoaded)  // delete this
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/" exact>
+          <Route exact path="/">
             <HomePage />
           </Route>
 

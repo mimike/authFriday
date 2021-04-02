@@ -1,7 +1,9 @@
 .footer-container {
+  /* position: sticky; */
   display: flex;
   justify-content: space-around;
   max-height: 300px;
+  bottom: 0;
 }
 
 .about-container {
@@ -18,4 +20,7 @@
   order: 2;
   margin-top: 120px;
 
+}
+.host-modal-button {
+  cursor: pointer;
 }

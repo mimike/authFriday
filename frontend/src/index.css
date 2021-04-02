@@ -3,18 +3,23 @@
 
 body {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-
-
 }
 
 #root {
     position: relative;
-    height: 100%;
+    /* height: 100%; */
+    height: 100vh;
     width: 100%;
     overflow-x: none;
-
+    
 }
 
+#root button, link:hover {
+    cursor: pointer;
+}
+/* .host-modal-button {
+    cursor: pointer;
+} */
 
 /* .nav-button-container{
     display: flex;

@@ -4,7 +4,7 @@ const usersRouter = require('./users.js');
 const searchRouter = require('./search.js')
 const bathroomRouter = require('./bathroom.js');
 const reviewRouter = require('./review.js');
-//const reservationRouter = require('./reservation.js')
+const reservationRouter = require('./reservation.js')
 
 // '/api/session
 router.use('/session', sessionRouter);
@@ -17,10 +17,8 @@ router.use("/bathroom", bathroomRouter);
 //api/review
 router.use("/review", reviewRouter);
 
-//api/review
-//router.use("/review", reviewRouter);
 //api/reservation
-//router.use("/reservation", reservationRouter);
+router.use("/reservation", reservationRouter);
 
 
 module.exports = router;

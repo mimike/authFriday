@@ -16,21 +16,13 @@ const router = express.Router();
 //     handleValidationErrors,
 //   ];
 
-//http://localhost:5000/api/bathroom GET request
+//http://localhost:5000/api/bathroom GET request WORKS!
 router.get('/', asyncHandler(async(req, res) => {
     const bathrooms = await Bathroom.findAll();
     return res.json(bathrooms)
 }));
 
-//just wrote this wednesday night, needs help.
-//http://localhost:5000/api/bathroom/:id     
-router.get('/:id', asyncHandler(async(req, res) => {
-    const bathroomId = req.params.id;
-    const bathroom = await Bathroom.findByPk(bathroomId)    // object that is the br of that ID
-
-    return res.json(bathroom);
-}))
-
+//http://localhost:5000/api/bathroom POST request WORKS!
 router.post('/', asyncHandler(async(req, res) => {
     const {
         ownerId,
@@ -60,6 +52,32 @@ router.post('/', asyncHandler(async(req, res) => {
     }
     return bathroom;
     // res.json(bathroom)
+}))
+
+
+//just wrote this wednesday night, needs help?
+//http://localhost:5000/api/bathroom/:id GET by ID WORKS!
+router.get('/:id', asyncHandler(async(req, res) => {
+    const bathroomId = req.params.id;
+    const bathroom = await Bathroom.findByPk(bathroomId)    // object that is the br of that ID
+
+    return res.json(bathroom);
+}))
+
+//http://localhost:5000/api/bathroom/:id PATCH not done...
+router.patch('/:id', asyncHandler(async(req, res) => {
+
+}))
+
+//http://localhost:5000/api/bathroom/id DELETE WORKS!
+router.delete('/:id', asyncHandler(async(req, res) => {
+
+    const bathroomId = req.params.id;
+    const bathroom = await Bathroom.findByPk(bathroomId)
+
+    bathroom.destroy();
+    res.json(bathroom);
+
 }))
 
 module.exports = router

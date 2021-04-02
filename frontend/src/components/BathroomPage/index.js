@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BathroomTile from "./BathroomTile";
 //import { getBathroom} from "../..store/bathroom";
-
+import "./BathroomPage.css"
 function BathroomPage(){
     // const [ title, setTitle ] = useState("");
     // const [ description, setDescription ] = useState("");
@@ -20,18 +20,40 @@ function BathroomPage(){
     const mappedComponents = arrayBathrooms.map(bathroom => (
         <BathroomTile bathroom={bathroom} key= {bathroom.id}/>
     ) )
-    console.log(mappedComponents)
+    let count = 0;
+
 
     return (
         <>
             <div className="bathroom-container">
+
                 <h1>Cool Bathrooms</h1>
-                {mappedComponents}
+                {/* {mappedComponents} */}
 
-                {/* {mappedComponents.forEach(bathroom => <div>{bathroom}</div>)} */}
+                <a href="/">
+                    <div>
+                        {mappedComponents.map(bathroom => {
+                        count++
+                        return <div className={`bathroom-div-${count}`}>
+                        {bathroom}
+                    </div>}
+                )}</div>
 
-                {/* {console.log("STUFF", arrayBathrooms)}
-                // {arrayBathrooms.forEach(bathroom => {`${bathroom}`} */}
+
+                {count = 0}
+                </a>
+
+
+                {/* {mappedComponents.map(bathroom => {
+                    count++
+                    return <div className={`bathroom-div-${count}`}>
+                    THIS IS A NEW!{bathroom}
+                </div>}
+                )}
+                {count = 0} */}
+
+
+
             </div>
         </>
     )

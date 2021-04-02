@@ -3,11 +3,17 @@ import thunk from "redux-thunk";
 import sessionReducer from './session';
 import bathroomReducer from './bathroom';
 import searchReducer from './search';
+import reviewReducer from './review';
+//import reservationReducer from './reservation';
 
 const rootReducer = combineReducers({  //these all get run when root. but the switch statement default just return the state.
   session: sessionReducer,
   bathroom: bathroomReducer,
-  search: searchReducer
+  search: searchReducer,
+  //reservation: reservationReducer,
+  review: reviewReducer
+
+
 
 });
 

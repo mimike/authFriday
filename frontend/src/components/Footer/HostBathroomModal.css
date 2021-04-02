@@ -29,9 +29,9 @@
 
 }
 
-/* .host-modal-button:hover {
-    cursor: pointer;
-} */
+.host-modal-button {
+    color: rgb(82, 31, 116)
+}
 
 /*
 .new-bathroom-title {

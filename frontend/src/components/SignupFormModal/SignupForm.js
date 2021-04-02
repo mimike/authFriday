@@ -3,9 +3,14 @@ import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
 import { Link } from "react-router-dom";
 import "./SignupForm.css"
+import { useHistory} from 'react-router-dom';
+import { Modal } from '../../context/Modal';
+import LoginForm from '../LoginFormModal/LoginForm';
 
 function SignupForm(){
     const dispatch = useDispatch();
+    const history = useHistory();
+    const [showModal, setShowModal] = useState(false);
     //const sessionUser = useSelector((state) => state.session.user);
     const [ email, setEmail ] = useState("");
     const [ username, setUsername ] = useState("")
@@ -143,10 +148,27 @@ function SignupForm(){
               <div className="already-have-account">
                 <h3>Already have an account?</h3>
               </div>
-
+{/*
               <div>
                 <Link to="/" className="login-link" style={{textDecoration:"none"}}>Log in</Link>
-              </div>
+              </div> */}
+
+              {/* <button className="login-link" type="button" onClick={() => history.push('/')}>Log in!!!</button> */}
+
+              <button className="login-link" style={{backgroundColor: "white"}}onClick={() => setShowModal(true)}>Log in</button>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <LoginForm />
+        </Modal>
+      )}
+    {/* </> */}
+
+              <div>
+
+          </div>
+
+
+
 
           </div>
 
