@@ -1,37 +1,62 @@
 
 .best-text {
     color: blue;
-}
-.text-tile {
-    display: flex;
-    background-color: thistle;
-    text-decoration: none;
-}
-#bathroom-link {
-    list-style: none;
-    text-decoration: none;
+    padding: 5px;
     
 }
+
+.bathroom-container h1 {
+   padding: 30px;
+}
+
+.text-tile {
+    order: 1;
+    /* background-color: pink; */
+    text-decoration: none;
+    font-size: medium;
+
+
+    border-top: 1px solid rgb(190, 190, 190);
+    margin: 20px;
+    padding-top: 30px;
+
+}
+
 .text-tile a {
     text-decoration: none;
+    font-size: small;
+    color: black
+}
+.location-result{
+    padding: 10px;
+    margin: 20px;
 }
 .bathroom-div-1 {
     /* height: 100vh; */
     /* display: flex; */
-    background-color: teal;
+
 
     /* justify-content: space-between; */
 
 }
 .text-tile{
+    order: 2;
+    justify-content: space-between;
 
-    background-color:wheat;
 }
 .title-result {
 
-    background-color: skyblue;
 }
+
 .bathroom-tile-image img{
-    background-color: wheat;
+
     text-align: right;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    ;
+}
+#bathroom-link {
+    list-style: none;
+    text-decoration: none;
+
 }

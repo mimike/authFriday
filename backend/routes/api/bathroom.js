@@ -18,7 +18,8 @@ const router = express.Router();
 
 //http://localhost:5000/api/bathroom GET request WORKS!
 router.get('/', asyncHandler(async(req, res) => {
-    const bathrooms = await Bathroom.findAll();
+    const bathrooms = await Bathroom.findAll( { limit: 100 });
+
     return res.json(bathrooms)
 }));
 
@@ -76,7 +77,7 @@ router.delete('/:id', asyncHandler(async(req, res) => {
     const bathroom = await Bathroom.findByPk(bathroomId)
 
     bathroom.destroy();
-    res.json(bathroom);
+    return res.json(bathroom);
 
 }))
 

@@ -9,7 +9,7 @@ const { Bathroom } = require('../../db/models');
 
 router.get('/', asyncHandler(async (req, res) => {
     const reservation = await Reservation.findAll();
-    res.json(reservation);
+    return res.json(reservation);
   }),
   );
 //post /api/reservation
@@ -24,7 +24,7 @@ router.post('/', asyncHandler(async (req, res) => {
 
     const reservation = await Reservation.create({ reserverId, bathroomId, reservationDate });
     // if(Reservation) res.json("Reservation created!")
-    res.json(reservation)
+    return res.json(reservation)
   }),
   );
 

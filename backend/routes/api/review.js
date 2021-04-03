@@ -65,6 +65,24 @@ router.patch('/:id', asyncHandler(async (req, res) => {
   }),
   );
 
+  router.patch('/', asyncHandler(async (req, res) => {
+    const reviewId = req.body.id
+    const rating = req.body.rating
+    const reviewImgUrl = req.body.reviewImgUrl
+    const reviewText = req.body.reviewText // const reviewContent = req.
+    const review = await Review.findByPk(reviewId)  // {rev text, rating, etc}
+
+
+    review.reviewText = reviewText; //over riding , reassigned w/new content
+    review.rating = rating;
+    review.reviewImgUrl = reviewImgUrl;
+
+    await review.save()    // async for querying database
+    return res.json("review and rating edited")
+
+  }))
+  //PATCH
+
 //http://localhost:5000/api/review/id DELETE works!
 
   router.delete('/:id',  asyncHandler(async (req, res) => {
@@ -74,7 +92,7 @@ router.patch('/:id', asyncHandler(async (req, res) => {
     // if(!review){
     //     res.json("review is deleted!")
     // }
-    res.json(review);
+    return res.json(review);
   }),
   );
 

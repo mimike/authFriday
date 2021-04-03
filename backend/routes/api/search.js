@@ -12,7 +12,7 @@ router.get('/:find', asyncHandler(async(req, res) => {
 
     const userSearchInput = req.params.find;
     //find all
-    const bathrooms = await Bathroom.findAll({
+    const bathrooms = await Bathroom.findAll({ limit: 30,
         where: {
             [Op.or]: [
                 {city: { [ Op.iLike]: `%${userSearchInput}%`}}, //find all in a state

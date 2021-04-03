@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function SingleResultTile ( {bathroom}){
     return (
         <>
-            <h1>Loo in Portland with description, cost and Reviews and Reservations</h1>
+
             <div className="result-tile-container">
                 <div className="bathroom-tile-image">
                         <img src={`${bathroom.bathroomImgUrl}`} alt="bathroom pic"/>
@@ -34,7 +34,7 @@ function SingleResultTile ( {bathroom}){
                     </div>
 
                     <div className="reviews-container">
-                        <h3>All The Reviews for this loo:</h3>
+                        <p>Reviews:</p>
                     </div>
 
                 </div>

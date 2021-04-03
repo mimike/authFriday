@@ -20,6 +20,7 @@ body {
 
 #root button, link:hover {
     cursor: pointer;
+    /* border: none; */
 }
 /* .host-modal-button {
     cursor: pointer;

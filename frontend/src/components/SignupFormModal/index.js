@@ -8,7 +8,7 @@ function SignupFormModal() {
 
   return (
     <>
-      <button style={{backgroundColor: "white"}} onClick={() => setShowModal(true)}>Sign up</button>
+      <button style={{backgroundColor: "white", border:"none", fontSize:"1rem"}} onClick={() => setShowModal(true)}>Sign up</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <SignupForm />

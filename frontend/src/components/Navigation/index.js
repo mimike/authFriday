@@ -40,11 +40,11 @@ function Navigation({ isLoaded }){  //isLoaded ?
           </div> */}
 
           <div>
-            <button className="nav-button" type="button" onClick={() => history.push('/best')}>See the Best Loos</button>
+            <button className="nav-button" style={{color:"blue"}}type="button" onClick={() => history.push('/best')}>Discover</button>
           </div>
 
           <div>
-            <button className="nav-button" type="button" onClick={() => history.push('/new')}>Share ur loo</button>
+            <button className="nav-button" style={{color:"green"}} type="button" onClick={() => history.push('/new')}>Share</button>
           </div>
         </div>
       </>
@@ -70,7 +70,7 @@ function Navigation({ isLoaded }){  //isLoaded ?
         {/* <button style={{background:"white", borderRadius:"50%", height:"30px",
     width:"30px"}} type="submit"><i class="fas fa-search"></i></button> */}
           <div>
-            <h1>  <i class="fas fa-poop" style={{color:"pink"}}></i>unkobnb</h1>
+            <h1 > <a href="/" style={{textDecoration:"none", color:"black"}}><i class="fas fa-poop" style={{color:"pink", marginRight:"10px"}}></i>unkobnb</a></h1>
           </div>
           {isLoaded && sessionLinks}
         {/* <div>

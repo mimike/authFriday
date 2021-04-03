@@ -22,10 +22,13 @@ function BathroomTile( {bathroom} ){
 
                 <div className="location-result">
                     {bathroom.city}, {bathroom.state}
+
+                    <div>
+                        {bathroom.description}
+                    </div>
+
                 </div>
-                <div>
-                    {bathroom.description}
-                </div>
+
 
             </div>
 

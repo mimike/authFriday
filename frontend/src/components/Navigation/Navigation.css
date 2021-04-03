@@ -4,9 +4,17 @@
 }
 
 .nav-button {
-    background-color: white;
+    background-color: transparent;
+    width: 200px;
+    border: none;
+    outline: none;
+
+
 
 }
+.nav-button
+
+
 
 .button-container{
     display: flex;
