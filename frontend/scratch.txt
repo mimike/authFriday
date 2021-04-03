@@ -24,3 +24,17 @@ therefore u should make this conponent get that data if it's dependant on that d
 basically NavLinks & Links are bad.
 
 <a tags are bad. (because they are  default underline)
+
+-----
+free, delete add on.
+
+add heroku postgres
+
+git push heroku
+
+heroku run npm run sequelize db:migrate
+heroku """""" sequelize db:seed:all
+
+
+
+npx dotenv
