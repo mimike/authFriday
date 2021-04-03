@@ -14,7 +14,7 @@ function SearchBar(){
         e.preventDefault();
 
         dispatch(getSearch(keyword));       //
-        history.push("/feed")
+        history.push(`/feed/${keyword}`)
     }
 
         return ( //hit return or click for dumb users

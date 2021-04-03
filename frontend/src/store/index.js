@@ -13,8 +13,6 @@ const rootReducer = combineReducers({  //these all get run when root. but the sw
   //reservation: reservationReducer,
   review: reviewReducer
 
-
-
 });
 
 let enhancer;

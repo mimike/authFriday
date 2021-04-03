@@ -7,7 +7,7 @@ import csrfFetch from "./csrf";
 //const LOAD = 'bathroom/LOAD';
 const SET_BATHROOMS = 'bathroom/SET_BATHROOMS' //take the bathrooms and set them into the state.
 const ADD_BATHROOM = 'bathrooms/ADD_BATHROOMS';  // bathroom/ADD
-const GET_BATHROOMS = 'bathrooms/GET_BATHROOMS;' //plural?!
+const GET_BATHROOM = 'bathrooms/GET_BATHROOM;' //plural?!
 
 //ACTIONS
 export const setBathrooms = (bathrooms) => ({
@@ -23,7 +23,15 @@ export const addBathroom = (bathroom) => {
         payload: bathroom
     }
 }
-//THUNKS ASYNC ACTIONS
+
+
+export const getBathroom = (bathroom) => {
+    return {
+        type: GET_BATHROOM,
+        payload: bathroom
+    }
+}
+//THUNKS ASYNC ACTIONS  need add bathroom thunk
 //gets a list of all the bathrms
 export const getBathrooms = () => async(dispatch) => { //set
     const response = await csrfFetch('/api/bathroom');
@@ -39,18 +47,19 @@ export const getBathrooms = () => async(dispatch) => { //set
 }
 
 //get single bathroom (was getBathroomsSearch)
-export const getSingleBathroom = (bathroom) => async dispatch => {   //get single bathroom
-    const response = await csrfFetch(`/api/bathroom/${bathroom}`);
+export const getSingleBathroom = (bathroomId) => async dispatch => {   //get single bathroom
+    const response = await csrfFetch(`/api/bathroom/${bathroomId}`);
     if(response.ok){
-        const bathrooms = await response.json();
-        dispatch(SET_BATHROOMS(bathrooms))
-        return bathrooms;
+        const bathroom = await response.json();
+        dispatch(getBathroom(bathroom))
+        return bathroom;
     }
 }
 
 //REDUCER
 const initialState = {  //what do we want it to look like
-    list: {} // id, description, title, etc.
+    list: {}, // id, description, title, city, state, etc.
+    singleBathroom: {}
 }
 
 const bathroomReducer = (state = initialState, action) => {  //state is bathrooms (slice)
@@ -58,17 +67,23 @@ const bathroomReducer = (state = initialState, action) => {  //state is bathroom
 
         case SET_BATHROOMS:
             const bathrooms = action.payload;
-            const newBathrooms = {};
-
+            const setNewStateBathrooms = Object.assign({}, state)              //{4, description, etc}
+            setNewStateBathrooms.test = [];
             for(const bathroom of bathrooms) {  // bathrooms action.payload?
-                newBathrooms[bathroom.id] = bathroom; // doens't mutate. forEach would more expensive?
+                setNewStateBathrooms.list[bathroom.id] = bathroom; // doens't mutate. forEach takes up more memory
+                setNewStateBathrooms.test.push(bathroom)
             }
-            return newBathrooms;
+            return setNewStateBathrooms;
 
         case ADD_BATHROOM:
             return state;
-        case GET_BATHROOMS: //need to finish this. plural?!
-            return state;
+        case GET_BATHROOM: //need to finish this.
+            const bathroom = action.payload;
+            //create a copy a of the old state
+            const newStateBathroom = Object.assign( {}, state)   // passing in new empty and old state
+            newStateBathroom.singleBathroom = bathroom;  // old state, singleBr property gets over written after new state gets returned
+
+            return newStateBathroom;
         default:
             return state; //bathrooms
     }

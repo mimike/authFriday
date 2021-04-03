@@ -15,6 +15,9 @@ import BestPage from "./components/BestPage";
 import About from "./components/About";
 import Host from "./components/Host";
 import * as sessionActions from "./store/session";
+import NewBathroomPage from "./components/NewBathroomModal/NewBathroomPage";
+import SingleResult from "./components/SingleResult";
+
 // import NewBathroom from "./components/NewBathroomModal/NewBathroom";
 function App() {
   const dispatch = useDispatch();
@@ -33,7 +36,6 @@ function App() {
                 backgroundRef.current.style.display = "block"
                 formModalRef.current.style.left = "45%";
           }
-
       }
     }
 
@@ -51,7 +53,7 @@ console.log(isLoaded)  // delete this
             <HomePage />
           </Route>
 
-          <Route path="/feed">
+          <Route path="/feed/:value">     
             <FeedPage />
           </Route>
 
@@ -59,8 +61,14 @@ console.log(isLoaded)  // delete this
             <BestPage />
           </Route>
 
-          <Route path="/bathroom">
+        {/* COOL BR
+          <Route path="/coolbathroom">
             <BathroomPage />
+          </Route> */}
+
+         {/* how to do THIS make sure u do EXACT bc styles will bleed and u already have /bathroom above. */}
+          <Route exact path="/bathroom/:id">
+            <SingleResult />
           </Route>
 
           <Route path="/reservation">
@@ -69,11 +77,11 @@ console.log(isLoaded)  // delete this
 
           <Route path="/review">
             <ReviewPage />
-
           </Route>
 
           <Route path="/new">
             <Host />
+            <NewBathroomPage />
 
           </Route>
 

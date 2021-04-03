@@ -35,4 +35,29 @@
 
   .signup-submit-button{
     margin: 10px;
+    width: 300px;
+  }
+  .email {
+    margin: 10px;
+  }
+  .user-name{
+    margin: 10px;
+  }
+  .first-name {
+    margin: 10px;
+  }
+  .last-name {
+    margin: 10px;
+  }
+  .address {
+    margin: 10px;
+  }
+  .city{
+    margin: 10px;
+  }
+  .state {
+    margin:10px;
+  }
+  .password {
+    margin: 10px;
   }

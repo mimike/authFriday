@@ -20,13 +20,11 @@ const router = express.Router();
 //http://localhost:5000/api/review GET all WORKS!
 router.get('/',  asyncHandler(async (req, res) => {
     const reviews = await Review.findAll(
-    //     where: {
-    //             reviewText
-    //     }
-    //
+        // where: {
+        //         reviewText
+        // }
+      )
     // TOMORROW: how to make a query for reviews that belong to a bathrooom
-
-);
     return res.json(reviews);
   }),
   );
@@ -44,7 +42,9 @@ router.post('/',  asyncHandler(async (req, res) => {
 
 //api/review/id GET not done
 router.get('/:id',  asyncHandler(async(req, res)=> {
-
+    const id = req.params.id;
+    const reviews = await Review.findAll({where: { bathroomId: id}})
+    return res.json(reviews)
 }))
 
 //api/review/id

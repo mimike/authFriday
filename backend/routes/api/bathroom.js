@@ -58,7 +58,7 @@ router.post('/', asyncHandler(async(req, res) => {
 //just wrote this wednesday night, needs help?
 //http://localhost:5000/api/bathroom/:id GET by ID WORKS!
 router.get('/:id', asyncHandler(async(req, res) => {
-    const bathroomId = req.params.id;
+    const bathroomId = Number(req.params.id);  //parsing into an actual num
     const bathroom = await Bathroom.findByPk(bathroomId)    // object that is the br of that ID
 
     return res.json(bathroom);

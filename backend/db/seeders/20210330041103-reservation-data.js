@@ -5,15 +5,20 @@ module.exports = {
 
       return queryInterface.bulkInsert('Reservations', [
         {
-          reserverId: 1,
+          reserverId: 7,
           bathroomId: 1,
           reservationDate: new Date()
-      },
-      {
-        reserverId: 2,
-        bathroomId: 1,
-        reservationDate: new Date()
-    }
+        },
+        {
+          reserverId: 6,
+          bathroomId: 1,
+          reservationDate: new Date()
+        },
+        {
+          reserverId: 5,
+          bathroomId: 3,
+          reservationDate: new Date()
+        }
 
     ], {});
 

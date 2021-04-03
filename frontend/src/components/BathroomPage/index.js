@@ -2,7 +2,8 @@ import * as bathroomActions from '../../store/bathroom';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BathroomTile from "./BathroomTile";
-//import { getBathroom} from "../..store/bathroom";
+//import { Link } from "react-router-dom";
+
 import "./BathroomPage.css"
 function BathroomPage(){
     // const [ title, setTitle ] = useState("");
@@ -21,24 +22,20 @@ function BathroomPage(){
         <BathroomTile bathroom={bathroom} key= {bathroom.id}/>
     ) )
     let count = 0;
-
-
     return (
         <>
             <div className="bathroom-container">
 
-                <h1>Cool Bathrooms</h1>
-                {/* {mappedComponents} */}
-
+                <h1>ALL THE COOL BATHROOMS</h1>
                 <a href="/">
                     <div>
                         {mappedComponents.map(bathroom => {
                         count++
-                        return <div className={`bathroom-div-${count}`}>
+                        return <div style={{textDecoration:"none"}}className={`bathroom-div-${count}`}>
+
                         {bathroom}
                     </div>}
                 )}</div>
-
 
                 {count = 0}
                 </a>

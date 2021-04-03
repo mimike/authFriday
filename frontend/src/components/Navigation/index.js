@@ -35,16 +35,16 @@ function Navigation({ isLoaded }){  //isLoaded ?
             <button className="nav-button" type="button" onClick={() => history.push('/feed')}>Feed</button>
           </div> */}
 
+          {/* <div>
+            <button className="nav-button" type="button" onClick={() => history.push('/coolbathroom')}>Cool Bathrooms</button>
+          </div> */}
+
           <div>
-            <button className="nav-button" type="button" onClick={() => history.push('/bathroom')}>Cool Bathrooms</button>
+            <button className="nav-button" type="button" onClick={() => history.push('/best')}>See the Best Loos</button>
           </div>
 
           <div>
-            <button className="nav-button" type="button" onClick={() => history.push('/best')}>Best of the best</button>
-          </div>
-
-          <div>
-            <button className="nav-button" type="button" onClick={() => history.push('/new')}>Share ur bathroom</button>
+            <button className="nav-button" type="button" onClick={() => history.push('/new')}>Share ur loo</button>
           </div>
         </div>
       </>

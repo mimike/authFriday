@@ -26,7 +26,7 @@ module.exports = {
           costPerDay: 10.00,
           locationType: "public bathroom",
           bathroomImgUrl: "https://images.unsplash.com/photo-1584346651592-3aacc3c99075?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80"
-          
+
         },
 
         {
@@ -41,7 +41,6 @@ module.exports = {
           bathroomImgUrl: "https://cdn.pixabay.com/photo/2016/02/29/11/41/bathroom-1228427_960_720.jpg"
 
         },
-
         {
           ownerId: 4,
           title: "The Novel Neighbor",
@@ -64,7 +63,6 @@ module.exports = {
           costPerDay: 20.00,
           locationType: "public bathroom",
           bathroomImgUrl: "https://cdn.pixabay.com/photo/2020/04/09/06/39/architecture-5019972_960_720.jpg"
-
         },
 
         {
@@ -90,6 +88,62 @@ module.exports = {
           costPerDay: 20.00,
           locationType: "public bathroom",
           bathroomImgUrl: "https://images.unsplash.com/photo-1465257474426-bd133d4db35e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80"
+        },
+
+        {
+          ownerId: 6,
+          title: "Varsity Theater Bathroom",
+          description: "The Varsity Theater in Minneapolis won Cintas' America's Best Bathroom of 2013 thanks to its luxe and trippy design. The ornate and fantastical decor inside the bathrooms of the old vaudeville theatre is like Harry Potter meets Alice in Wonderland. Sinks are operated by foot pedal, and bartenders even serve drinks to waiting concertgoers, who can relax and recline on the bathrooms couches. It is an unexpected VIP experience that is every bit as popular with visitors as the artists on stage.",
+          address: "1 Number One Lane",
+          city: "Minneapolis",
+          state: "Minnesota",
+          costPerDay: 10.00,
+          locationType: "public bathroom",
+          bathroomImgUrl: "https://i.pinimg.com/564x/02/76/dd/0276ddcc5a930ef0d46cf854ec6b04b6.jpg"
+        },
+        {
+          ownerId: 5,
+          title: "Over-Exposure: The Uritottoirs",
+          description: "The new urinals, housed in flower boxes, are fully out there for all to see on street corners, are painted bright red and have nearby signs advertising their presence. While these eco-urinals have a straw layer that eliminates odour, and were installed in areas where public urination is a problem, who really wants to pee into a bright red box in full view of passersby? Seriously, just hold it in.",
+          address: "10 Main Lane",
+          city: "Oberlin",
+          state: "Ohio",
+          costPerDay: 10.00,
+          locationType: "public bathroom",
+          bathroomImgUrl: "https://static2.thetravelimages.com/wordpress/wp-content/uploads/2018/08/gettyimages-1016170282.jpg?q=50&fit=crop&w=740&h=416"
+        },
+        {
+          ownerId: 4,
+          title: "Origami Inspiration",
+          description: "Colourful origami cranes were the inspiration for the 17 restrooms sprinkled throughout Hiroshima Park, a memorial park dedicated to the legacy of the city as the first in the world to suffer a nuclear attack.The restrooms are constructed entirely from concrete, which is punctured to create very small circular windows to allow for plenty of air. The restrooms also come in three different shapes, but each one has a unique colour. The outside walls are coated in a glossy paint chosen for easy maintenance.",
+          address: "10 Hiroshima Space",
+          city: "Boulder",
+          state: "Colorado",
+          costPerDay: 10.00,
+          locationType: "public bathroom",
+          bathroomImgUrl: "https://static0.thetravelimages.com/wordpress/wp-content/uploads/2018/08/975329759f88e0282a832d0dcd9ba7b6.jpg.png?q=50&fit=crop&w=740&h=583"
+        },
+        {
+          ownerId: 3,
+          title: "Toilets That Pop-Up From The Ground",
+          description: "As dusk hits, strange circles rise slowly out of sidewalks. Taos streets are curbing public number ones with a futuristic solution - toilets that emerge from the ground during the nighttime hours then retract and disappear during the day.Some of these pop-ups are just walk-in urinals, while others are fully equipped pop-up loos with doors, offering a little more privacy. So if you see a toilet emerge from the ground on a night out in Amsterdam, do not worry, you are not seeing things.",
+          address: "10 Popup Place",
+          city: "Taos",
+          state: "New Mexico",
+          costPerDay: 1.00,
+          locationType: "public bathroom",
+          bathroomImgUrl: "https://static2.thetravelimages.com/wordpress/wp-content/uploads/2018/08/Urilift-Combi-Dam-Amsterdam.jpg?q=50&fit=crop&w=740&h=503"
+        },
+        {
+          ownerId: 2,
+          title: "On The Edge Of Your Seat",
+          description: "The public toilet at Eugene sits 2,133 feet above the city - it looks like its hanging over a cliff. The overlook offers incredible mountain views, making this possibly one of the most scenic bathrooms in the world and a popular stop for travellers. Architects have created a facade that is inaccessible to the public, so people can look out from the inside, but no one can look in. Its stunning minimalist design in combination with spectacular views will certainly glue you to your seat.",
+          address: "85 Beautiful Highway",
+          city: "Eugene",
+          state: "Oregon",
+          costPerDay: 1.00,
+          locationType: "public bathroom",
+          bathroomImgUrl: "https://static2.thetravelimages.com/wordpress/wp-content/uploads/2018/08/norway-1.jpg?q=50&fit=crop&w=740&h=492"
         }
 
     ], {});

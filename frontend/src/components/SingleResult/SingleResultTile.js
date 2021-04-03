@@ -1,10 +1,10 @@
+import "./SingleResult.css"
 import { Link } from "react-router-dom";
-import './FeedPage.css';
 
-function ResultTile( {bathroom} ){
+function SingleResultTile ( {bathroom}){
     return (
         <>
-
+            <h1>Loo in Portland with description, cost and Reviews and Reservations</h1>
             <div className="result-tile-container">
                 <div className="bathroom-tile-image">
                         <img src={`${bathroom.bathroomImgUrl}`} alt="bathroom pic"/>
@@ -16,9 +16,8 @@ function ResultTile( {bathroom} ){
                         {bathroom.locationType}
                     </div>
 
-
                     <div className="title-result">
-                        {/* <Link to="/bathroom">{bathroom.title}</Link> */}
+
                         <Link to={`/bathroom/${bathroom.id}`}>{bathroom.title}</Link>
                     </div>
 
@@ -34,6 +33,10 @@ function ResultTile( {bathroom} ){
                         <p>${bathroom.costPerDay} / day </p>
                     </div>
 
+                    <div className="reviews-container">
+                        <h3>All The Reviews for this loo:</h3>
+                    </div>
+
                 </div>
             </div>
 
@@ -41,4 +44,6 @@ function ResultTile( {bathroom} ){
     )
 }
 
-export default ResultTile;
+
+
+export default SingleResultTile;

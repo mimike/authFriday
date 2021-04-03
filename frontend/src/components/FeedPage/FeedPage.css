@@ -1,20 +1,44 @@
 .result-tile-container {
-
    margin: 20px;
+   box-sizing: border-box;
+   border-top: 1px solid rgba(216, 216, 216, 0.74);
    display: flex;
-
+   justify-content: space-around;
 }
+.bathroom-tile-image img {
+    width: 400px;
 
+    /* flex-direction: column; */
+}
 .result-text-container {
-     margin: 20px;
-     background-color: grey;
+     width: 400px;
 
 }
 
 .bathroom-tile-image {
-    background-color: cornflowerblue;
+    max-width: 300px;
     margin: 20px;
-
     /* max-height: 50px;
     min-height: 50px; */
+}
+
+.title-result a {
+    text-decoration: none;
+    color: black;
+    
+    font-size: 20px;
+}
+.city-state-result {
+    margin-top: 20px;
+}
+.location-type-result{
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.description-result {
+    color: black;
+}
+.cost-result {
+    font-weight: bold;
 }

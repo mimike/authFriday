@@ -5,25 +5,16 @@ const load = list => ({
     list,   //payload     key:
 });
 
-//THUNK
+//THUNK the good one.
 export const getSearch = (param) => async dispatch => {
     const response = await fetch(`/api/search/${param}`);
     if(response.ok){
         const list = await response.json();  //this var name!
         dispatch(load(list))
-        return list         //searchres
+        return list         //searches
     }
 }
 
-//get single bathroom when u click on it...
-export const getBathroom = (param) => async dispatch => {
-    const response = await (`/api/bathroom/${param}`);
-    if(response.ok){
-        const bathroomData = await response.json();
-        dispatch(load(bathroomData))
-        return bathroomData;
-    }
-}
 
 
 const searchReducer = (state = [], action) => {

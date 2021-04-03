@@ -6,6 +6,32 @@
     color: blue;
 }
 
-.bathroom-container > a {
-    background-color: rosybrown;
+/* .bathroom-container > div {
+    /* background-color: rosybrown; */
+    /* text-decoration: none; */
+.title-result {
+    border-top: 1px solid rgba(196, 196, 196, 0.829);
+    padding-top: 25px;
 }
+.title-result a {
+
+    text-decoration: none;
+
+}
+/*
+ .bathroom-div-1 {
+    height: 100vh; 
+    display: flex;
+    background-color: teal;
+    justify-content: space-between;
+
+}
+.text-tile {
+    order: 1;
+    background-color: skyblue;
+}
+.bathroom-tile-image img{
+    order: 2;
+    text-align: right;
+}
+*/

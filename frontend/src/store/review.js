@@ -44,23 +44,24 @@ export const createReview = (review) => async (dispatch) => {
 
   };
 
-export const loadReviews = () => async (dispatch) => {    //get all review
-    const response = await csrfFetch("api/review");
 
-    if(response.ok){
-        const data = await response.json();
-        dispatch(getReviews(data))
-        return data;     // what do u return
+
+export const loadReviews = (id) => async (dispatch) => {
+    const response = await csrfFetch(`/api/reviews/${id}`);
+
+    if (response.ok) {
+      const reviews = await response.json();
+      dispatch(getReviews(reviews));
+      return reviews;
     }
-}
-
+  }
 const initialState = {};
 
 const reviewReducer = (state = initialState, action) => {  //state is bathrooms (slice)
     switch(action.type){
 
         case SET_REVIEW:
-            const reviews = action.list;
+            const reviews = action.list;   //instead of payload ^
             const somethingReviews = {};
 
             for(const review of reviews) {
@@ -75,11 +76,18 @@ const reviewReducer = (state = initialState, action) => {  //state is bathrooms 
             })
             return allReviews;
 
-            return state;
+            // return state;
         default:
             return state; //reviews
     }
-
-
 }
 export default reviewReducer;
+// export const loadReviews = () => async (dispatch) => {    //get all review
+//     const response = await csrfFetch("api/review");
+
+//     if(response.ok){
+//         const data = await response.json();
+//         dispatch(getReviews(data))
+//         return data;     // what do u return
+//     }
+// }

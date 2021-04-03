@@ -48,7 +48,7 @@ function SignupForm(){
 
             <div className="sign-up-container">
 
-              <div>
+              <div className="email">
                 <input
                   type="text"
                   placeholder="Email Address"
@@ -58,7 +58,7 @@ function SignupForm(){
                 />
               </div>
 
-              <div>
+              <div className="user-name">
                 <input
                   type="text"
                   placeholder="User name"
@@ -68,7 +68,7 @@ function SignupForm(){
                 />
               </div>
 
-              <div>
+              <div className="first-name">
                 <input
                   type="text"
                   placeholder= "First Name"
@@ -78,7 +78,7 @@ function SignupForm(){
                 />
               </div>
 
-              <div>
+              <div className="last-name">
                 {/* Last Name */}
                 <input
                   type="text"
@@ -89,7 +89,7 @@ function SignupForm(){
                 />
               </div>
 
-              <div>
+              <div className="address">
                 {/* Address */}
                 <input
                   type="text"
@@ -100,7 +100,7 @@ function SignupForm(){
                 />
               </div>
 
-              <div>
+              <div className="city">
                 <input
                   type="text"
                   placeholder="City"
@@ -110,7 +110,7 @@ function SignupForm(){
                 />
               </div>
 
-              <div>
+              <div className="state">
                 <input
                   type="text"
                   value={state}
@@ -120,7 +120,7 @@ function SignupForm(){
                 />
               </div>
 
-              <div>
+              <div className="password">
                 {/* Password */}
                 <input
                   type="password"
@@ -130,7 +130,7 @@ function SignupForm(){
                   required
                 />
               </div>
-              <div>
+              <div className="password">
                 {/* Confirm Password */}
                 <input
                   type="password"
