@@ -81,7 +81,7 @@ function BestPage( {bathroom} ){
 
     const bathrooms = useSelector(state => state.bathroom.list)
     const bathroomTest = useSelector(state => state.bathroom.test)
-    // console.log("BATHROOMS", bathrooms)
+
     const arrayBathrooms = Object.values(bathrooms);
     // console.log("ARRAYBR", arrayBathrooms)
     // const mappedComponents = [];
@@ -108,18 +108,16 @@ function BestPage( {bathroom} ){
 
         <div>
             <div className="best-container">
-                <h3>best br</h3>
+
             </div>
 
             <div className="bathroom-container">
-                <h1>Cool Bathrooms</h1>
-
+                <h1>BEST (All the) Bathrooms</h1>
             </div>
-            <a href="/">
+
                     <div>
                         {mappedComponents?.map(bathroom => {
                         count++
-                        console.log("asdfff")
                         return <div className={`bathroom-div-${count}`}>
                         {bathroom}
                     </div>}
@@ -127,7 +125,7 @@ function BestPage( {bathroom} ){
 
 
                 {count = 0}
-                </a>
+
             {/* <div>
                 {bathroom.description}
             </div> */}

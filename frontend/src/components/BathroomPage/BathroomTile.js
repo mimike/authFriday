@@ -1,30 +1,32 @@
 import { Link } from "react-router-dom";
 import "./BathroomPage.css"
 import { useEffect } from 'react';
+import { useHistory } from "react-router-dom"
 
 function BathroomTile( {bathroom} ){
+    let history = useHistory();
 // useEffect (() => {
 //     console.log("baaaathrile", bathroom)
 // }, [])
-
+    let bathroomLink = () => {
+        history.push(`/bathroom/${bathroom.id}`)
+    }
     return (
 
         <div>
 
             <div className="text-tile">
-                <div className="title-result">
-                    <Link to={`/bathroom/${bathroom.id}`}>{bathroom.title}</Link>
 
-                    {/* <Link to={`/bathroom/${bathroom.id}`}/> */}
+            <a href={`/bathroom/${bathroom.id}`} id="bathroom-link">{bathroom.title}</a>
+
+
+                <div className="location-result">
+                    {bathroom.city}, {bathroom.state}
                 </div>
-
-                <div>
-                    {bathroom.address}
-                </div>
-
                 <div>
                     {bathroom.description}
                 </div>
+
             </div>
 
             <div className="bathroom-tile-image">
@@ -34,3 +36,6 @@ function BathroomTile( {bathroom} ){
     )
 }
 export default BathroomTile;
+ {/* <div className="title-result">
+                    <Link to={`/bathroom/${bathroom.id}`}/>
+                </div> */}

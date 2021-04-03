@@ -2,20 +2,36 @@
 .best-text {
     color: blue;
 }
+.text-tile {
+    display: flex;
+    background-color: thistle;
+    text-decoration: none;
+}
+#bathroom-link {
+    list-style: none;
+    text-decoration: none;
+    
+}
+.text-tile a {
+    text-decoration: none;
+}
 .bathroom-div-1 {
     /* height: 100vh; */
-    display: flex;
+    /* display: flex; */
     background-color: teal;
-    justify-content: space-between;
+
+    /* justify-content: space-between; */
 
 }
-.text-tile {
-    order: 1;
+.text-tile{
+
+    background-color:wheat;
+}
+.title-result {
 
     background-color: skyblue;
 }
 .bathroom-tile-image img{
-    order: 2;
+    background-color: wheat;
     text-align: right;
 }
-

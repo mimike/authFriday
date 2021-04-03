@@ -14,7 +14,7 @@ function FeedPage(){
     //const [ keyword, setKeyword ] = useState();
     const bathroomsInCity = useSelector(state => state.search.bathrooms) || [];  //bathrmReducer
     // const arrayBath = Object.values(bathroomsInCity);
-    console.log("BR!!!", bathroomsInCity)
+    
 
     useEffect(() => {
         dispatch(getSearch(value));

@@ -53,7 +53,7 @@ console.log(isLoaded)  // delete this
             <HomePage />
           </Route>
 
-          <Route path="/feed/:value">     
+          <Route path="/feed/:value">
             <FeedPage />
           </Route>
 
@@ -62,7 +62,7 @@ console.log(isLoaded)  // delete this
           </Route>
 
         {/* COOL BR
-          <Route path="/coolbathroom">
+          <Route path="/bathroom">
             <BathroomPage />
           </Route> */}
 

@@ -18,9 +18,13 @@
     text-decoration: none;
 
 }
+#bathroom-link {
+    font-size: 2rem;
+    text-decoration: none;
+}
 /*
  .bathroom-div-1 {
-    height: 100vh; 
+    height: 100vh;
     display: flex;
     background-color: teal;
     justify-content: space-between;

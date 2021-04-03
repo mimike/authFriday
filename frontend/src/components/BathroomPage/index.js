@@ -27,7 +27,7 @@ function BathroomPage(){
             <div className="bathroom-container">
 
                 <h1>ALL THE COOL BATHROOMS</h1>
-                <a href="/">
+                <div>
                     <div>
                         {mappedComponents.map(bathroom => {
                         count++
@@ -38,7 +38,7 @@ function BathroomPage(){
                 )}</div>
 
                 {count = 0}
-                </a>
+                </div>
 
 
                 {/* {mappedComponents.map(bathroom => {

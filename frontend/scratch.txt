@@ -20,3 +20,7 @@ if youre using a nav link and thakes u somet where else,
 the component that is going to be rendered at that route defined by the nav link, e.g, Profile/:id, if it's dependant on data that another component generated, and a user refreshes, the new route doesnt have the ablity to go get the data because it was the other components job.
 
 therefore u should make this conponent get that data if it's dependant on that data.
+
+basically NavLinks & Links are bad.
+
+<a tags are bad. (because they are  default underline)
