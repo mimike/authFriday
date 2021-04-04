@@ -46,6 +46,8 @@ function Navigation({ isLoaded }){  //isLoaded ?
           <div>
             <button className="nav-button" style={{color:"green"}} type="button" onClick={() => history.push('/new')}>Share</button>
           </div>
+
+
         </div>
       </>
     );

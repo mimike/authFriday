@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "./BathroomPage.css"
 import { useEffect } from 'react';
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
+
 
 function BathroomTile( {bathroom} ){
     let history = useHistory();
@@ -20,21 +21,24 @@ function BathroomTile( {bathroom} ){
             <a href={`/bathroom/${bathroom.id}`} id="bathroom-link">{bathroom.title}</a>
 
 
+
+
                 <div className="location-result">
                     {bathroom.city}, {bathroom.state}
 
                     <div>
                         {bathroom.description}
                     </div>
-
                 </div>
-
-
-            </div>
+           </div>
 
             <div className="bathroom-tile-image">
                 <img src={`${bathroom.bathroomImgUrl}`} alt="bathroom pic"/>
             </div>
+
+
+
+
         </div>
     )
 }

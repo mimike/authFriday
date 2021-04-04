@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BathroomTile from "./BathroomTile";
 //import { Link } from "react-router-dom";
-
 import "./BathroomPage.css"
+
 function BathroomPage(){
     // const [ title, setTitle ] = useState("");
     // const [ description, setDescription ] = useState("");

@@ -16,7 +16,7 @@ export const setBathrooms = (bathrooms) => ({
         payload: bathrooms
 })
 
-// edit this later. wednesday night
+// edit this later. wednesday night  //post
 export const addBathroom = (bathroom) => {
     return {
         type: ADD_BATHROOM,
@@ -25,7 +25,7 @@ export const addBathroom = (bathroom) => {
 }
 
 
-export const getBathroom = (bathroom) => {
+export const getBathroom = (bathroom) => {  //get
     return {
         type: GET_BATHROOM,
         payload: bathroom

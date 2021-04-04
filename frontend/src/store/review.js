@@ -2,27 +2,29 @@ import csrfFetch from "./csrf";
 
 const GET_REVIEWS = "reviews/GET_REVIEWS";   // GET
 const SET_REVIEW = 'reviews/SET_REVIEWS';   // POST (add)
-//const EDIT_REVIEW = 'reviews/EDIT_REVIEW'                                // PATCH (edit)
-
-//ACTION
+const EDIT_REVIEW = 'reviews/EDIT_REVIEW'     // PATCH (edit)
 
 
 //ACTION are not exported!
-const getReviews = list => ({
+const getReviews = reviews => ({
     type: GET_REVIEWS,
-    list,
+    payload: reviews
     // if you re just retrieving or doing a get, convention might be to not include payload: list.
 });
-
 //ACTION
-const setReview = (reviews) => ({  //post
+const setReview = (review) => ({  //post
         type: SET_REVIEW,
-        payload: reviews
+        payload: review
         //payload, hey you're sending something.
     })
+//ACTION saturday afternoon start
+const editReview = (review) => ({
+  type: EDIT_REVIEW,
+  payload: review
+})
 
-//SIGNUP THUNK ACTION
-export const createReview = (review) => async (dispatch) => {
+//THUNK ACTION
+export const createReview = (review) => async (dispatch) => {  //POST
 
     const { reviewerId, bathroomId, reviewText, reviewerImgUrl} = review
     const response = await csrfFetch("/api/review", {  //here is a unique fetch handlr
@@ -41,12 +43,8 @@ export const createReview = (review) => async (dispatch) => {
         return data;  // where do u return and nec?
     }
 
-
   };
-
-
-
-export const loadReviews = (id) => async (dispatch) => {
+export const loadReviews = (id) => async (dispatch) => {   //GET
     const response = await csrfFetch(`/api/reviews/${id}`);
 
     if (response.ok) {
@@ -57,7 +55,12 @@ export const loadReviews = (id) => async (dispatch) => {
   }
 const initialState = {};
 
-const reviewReducer = (state = initialState, action) => {  //state is bathrooms (slice)
+export const oopsReview = (id) => async (dispatch) => {  //PATCH, route exists, but do i really want users to edit reviews??
+  const response = await csrfFetch(`/api/reviews/${id}`);
+}
+
+//REDUCER
+const reviewReducer = (state = initialState, action) => {  
     switch(action.type){
 
         case SET_REVIEW:
@@ -77,11 +80,15 @@ const reviewReducer = (state = initialState, action) => {  //state is bathrooms 
             return allReviews;
 
             // return state;
+        case EDIT_REVIEW:
+          return;
         default:
             return state; //reviews
     }
 }
+
 export default reviewReducer;
+
 // export const loadReviews = () => async (dispatch) => {    //get all review
 //     const response = await csrfFetch("api/review");
 

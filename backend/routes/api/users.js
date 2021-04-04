@@ -28,16 +28,16 @@ const validateSignup = [
     .exists({ checkFalsy: true })
     .isLength({ min: 6 })
     .withMessage('Password must be 6 characters or more.'),
-  check('address')
-    .exists({ checkFalsy: true })
-    .isLength({ max: 255 })
-    .withMessage('u need an address'),
-  check('city')
-    .exists({ checkFalsy: true })
-    .withMessage('u need an city'),
-  check('state')
-    .exists({ checkFalsy: true })
-    .withMessage('u need a state'),
+  // check('address')
+  //   .exists({ checkFalsy: true })
+  //   .isLength({ max: 255 })
+  //   .withMessage('u need an address'),
+  // check('city')
+  //   .exists({ checkFalsy: true })
+  //   .withMessage('You need an city'),
+  // check('state')
+  //   .exists({ checkFalsy: true })
+  //   .withMessage('You need a state'),
   // check('') finish later!!!
   handleValidationErrors,
 ];
@@ -53,7 +53,7 @@ router.post('/', validateSignup, asyncHandler(async (req, res) => {
   await setTokenCookie(res, user); //security
 
   return res.json({
-    user,    // returns userId find by pk w/o hashedPassword. 
+    user,    // returns userId find by pk w/o hashedPassword.
   });
 }),
 );

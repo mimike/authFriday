@@ -9,17 +9,11 @@
     border: none;
     outline: none;
 
-
-
 }
-.nav-button
+
 
 
 
 .button-container{
     display: flex;
 }
-/* .nav-button i:hover
-{
-  transform: rotate(360deg);
-} */

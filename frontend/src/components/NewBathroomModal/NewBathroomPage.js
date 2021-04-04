@@ -102,7 +102,7 @@ function NewBathroomPage(){
                       style={{width:"450px"}}
                       type="text"
                       value={costPerDay}
-                      placeholder="How much is this bathroom"
+                      placeholder="Cost Per Day"
                       onChange={(e) => setCostPerDay(e.target.value)}
                       required
                       />
@@ -115,7 +115,7 @@ function NewBathroomPage(){
                       <input
                       style={{width:"450px"}}
                       type="text"
-                      placeholder="What kinda bathroom"
+                      placeholder="What kind of bathroom?"
                       value={locationType}
                       onChange={(e) => setLocationType(e.target.value)}
                       required

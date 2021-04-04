@@ -5,16 +5,20 @@ import { useSelector } from "react-redux";
 import { useDispatch} from "react-redux";
 import { getSearch } from '../../store/search';
 import { useParams } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
+
+
 //import BathroomTile from "../BathroomPage/BathroomTile"
 import ResultTile from "./ResultTile";
 
 function FeedPage(){
+    let history = useHistory();
     const {value} = useParams();
     const dispatch = useDispatch();
     //const [ keyword, setKeyword ] = useState();
     const bathroomsInCity = useSelector(state => state.search.bathrooms) || [];  //bathrmReducer
     // const arrayBath = Object.values(bathroomsInCity);
-    
+
 
     useEffect(() => {
         dispatch(getSearch(value));
@@ -32,6 +36,9 @@ function FeedPage(){
             </div>
 
             <div>
+                <div>
+            <button className="nav-button" style={{color:"green"}} type="button" onClick={() => history.push('/new')}>Share</button>
+           </div>
                 {mappedBathrooms}
             </div>
         </ul>

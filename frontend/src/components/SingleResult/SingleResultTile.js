@@ -1,7 +1,9 @@
 import "./SingleResult.css"
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function SingleResultTile ( {bathroom}){
+    let history = useHistory();
     return (
         <>
 
@@ -33,9 +35,14 @@ function SingleResultTile ( {bathroom}){
                         <p>${bathroom.costPerDay} / day </p>
                     </div>
 
-                    <div className="reviews-container">
+                    <a href="/review" style={{textDecoration:"none"}}>Review this Loo</a>
+                    {/* <div className="reviews-container">
                         <p>Reviews:</p>
-                    </div>
+                    </div> */}
+
+
+
+
 
                 </div>
             </div>
