@@ -4,12 +4,11 @@ import { useHistory } from "react-router-dom";
 
 function SingleResultTile ( {bathroom}){
     let history = useHistory();
-    if(!bathroom.Reviews){   //guard clause 
+    if(!bathroom.Reviews){   //guard clause
         return null;
     }
     return (
         <>
-
             <div className="result-tile-container">
                 <div className="bathroom-tile-image">
                         <img src={`${bathroom.bathroomImgUrl}`} alt="bathroom pic"/>
@@ -39,33 +38,76 @@ function SingleResultTile ( {bathroom}){
                     </div>
 
                     <a href={`/review/${bathroom.id}`} style={{textDecoration:"none"}}>Review this Loo</a>
-                    {/* <div className="reviews-container">
+                     <div className="reviews-container">
                         <p>Reviews:</p>
-                    </div> */}
-
-                    <div>
-                        <h1>A collection of all the reviews of this loo</h1>
-                        <div>
-                            <p>{bathroom.Reviews.map(review => (
-                                <div>
-                                    {review.User.firstName}
-                                </div>
-                            ))}</p>
-
-
-
-                        </div>
                     </div>
-
-
-
-                </div>
+                 </div>
             </div>
 
+            <div className= "review-container">
+                <h1>
+                    <i class="fas fa-star" style={{color:"pink"}}></i>
+
+                    {/* {
+                        bathroom.Reviews.map(rating => {
+
+                    })
+
+                    } */}
+                </h1>
+
+
+                <div className="reviewer-first-name-last-inital">{bathroom.Reviews.map(review => (
+                                <div>
+                                    <div
+                                    style={{margin:"20px", fontWeight:"bold"}}>
+                                    {review.User.firstName} {review.User.lastName[0]}.
+                                    </div>
+
+                                   <div style={{margin:"20px"}}>
+                                    {review.reviewText}
+                                   </div>
+
+                                   <div style={{margin:"20px"}}>
+                                   Rating: {review.rating} / 5
+                                   </div>
+
+                                   <div style={{margin:"20px"}}>
+                                   {review.createdAt.toString().slice(0,10)}
+                                   </div>
+
+
+
+
+                                </div>
+                            ))}
+                </div>
+
+                {/* <div className="reviewer-text" style={{marginTop:"10px", marginBottom:"10px"}}>{bathroom.Reviews.map(review => (
+                    <div>
+                        Review: {review.reviewText}
+                    </div>
+                ))}
+                </div>
+
+                <div className="reviewer-rating">{bathroom.Reviews.map(review => (
+                    <div>
+                        Rating: {review.rating} / 5
+                    </div>
+                ))}
+                </div> */}
+
+                {/* <div className="reviewer-date" style={{marginTop:"10px", marginBottom:"10px"}}>{bathroom.Reviews.map(review => (
+                    <div>
+                        {review.createdAt.toString().slice(0,10)}
+                    </div>
+                ))}
+                </div> */}
+
+
+            </div>
         </>
     )
 }
-
-
 
 export default SingleResultTile;

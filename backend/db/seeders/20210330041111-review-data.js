@@ -1,33 +1,108 @@
-'use strict';
-const { Random } = require('random-js');
-const faker = require('faker');
-const random = new Random();  //object
+"use strict";
+const { Random } = require("random-js");
+const faker = require("faker");
+const random = new Random(); //object
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
     //for random reviewText
-    let randomReviewText=function(){
-      const words = ["The", "a", "for", "smells", "hate", "worst", "love", "Loo", "Bathroom", "Toilet", "porta potty", "Squatter", "urinal", "hole", "Spa", "Peu", "unique", "Lavendar", "Lavatory", "Twinkle", "Powder", "Wash", "Privy", "smelliest", "Pan", "Outdoor", "Latrine", "Outhouse", "Bog", "Potty", "Watercloset", "Bidet", "Dunny", "Shabby Chic", "Flamboyant", "Jazzy", "Radiant", "Glowing", "fresh", "iridescent", "Drab", "never want to leave", "sooty", "Rustic", "Somber", "Muddy", "Dump", "Number 2", "Sudatory", "Dirty", "Merde", "this is", "Toilettes", "Merda", "Dung", "Putrid", "Pungent", "Blooming", "Antiseptic", "Crater", "Sinkhole", "Pothole", "Pit"]
-      const reviewTextLength = random.integer(5, 20);
+    let randomReviewText = function () {
+      const words = [
+
+        "smells",
+        "hate",
+        "worst",
+        "love",
+        "loo",
+        "bathroom",
+        "toilet",
+        "porta potty",
+        "squatter",
+        "urinal",
+        "hole",
+        "spa",
+        "peu",
+        "unique",
+        "lavendar",
+        "lavatory",
+        "twinkle",
+        "Powder",
+        "Wash",
+        "Privy",
+        "smelliest",
+        "Pan",
+        "Outdoor",
+        "Latrine",
+        "Outhouse",
+        "bog",
+        "potty",
+        "Watercloset",
+        "Bidet",
+        "Dunny",
+        "Shabby Chic",
+        "Flamboyant",
+        "Jazzy",
+        "Radiant",
+        "fresh",
+        "iridescent",
+        "Drab",
+        "never want to leave",
+        "sooty",
+        "Rustic",
+        "Somber",
+        "Muddy",
+        "Dump",
+        "Number 2",
+        "Sudatory",
+        "Dirty",
+        "Merde",
+        "this is",
+        "Toilettes",
+        "Merda",
+        "dung",
+        "pungent",
+        "blooming",
+        "Antiseptic",
+        "crater",
+        "sinkhole",
+        "Pothole",
+        "Pit",
+      ];
+
+      const randomStartingWord = ["this", "the", "my"]
+      const randomNoun = ["toilet", "bathroom", "business", "bidet"]
+      const randomLinkingVerb = ["is", "has", "was", "were", "does", "doesn't"]
+      const randomVerbs = ["sit", "squat", "pee", "poo", "visit"];
+      const randomPronouns = ["she", "he", "they", "them"];
+      const randomPunctuation = ["!", "."];
+      const randomAdjectives = ["putrid", "unique", "dirty", "muddy", "glowing"]
+
+
+// This toilet is the dirtiest bathroom I have ever experienced!
+// random starting word, linkingverb, random starting word,
+
+
+      const reviewTextLength = random.integer(5, 30);
       const reviewText = [];
-      for (let i = 0; i < reviewTextLength; i++){
-        let newWord = words[random.integer(0, words.length - 1)]
-        reviewText.push(newWord)
+      for (let i = 0; i < reviewTextLength; i++) {
+        let newWord = words[random.integer(0, words.length - 1)];
+        reviewText.push(`${randomStartingWord[random.integer(0, randomStartingWord.length - 1)]} ${randomNoun[random.integer(0, randomNoun.length - 1)]} ${randomLinkingVerb[random.integer(0, randomLinkingVerb.length - 1)]} ${randomAdjectives[random.integer(0, randomAdjectives.length - 1)]} ${randomPronouns[random.integer(0, randomPronouns.length - 1)]} ${randomVerbs[random.integer(0, randomVerbs.length - 1)]} ${randomPunctuation[random.integer(0, randomPunctuation.length - 1)]}`)
+        reviewText.push(newWord);
       }
+
+      // if it's a period, .split(" ") and join("") ?
       return reviewText.join(" ");
-    }
+    };
 
     let seederData = [];
-    for(let i = 0; i < 1000; i++){
-      seederData.push(
-        {
-          reviewerId: random.integer(1, 8),
-          bathroomId: random.integer(1, 1000),
-          reviewText: randomReviewText(),
-          rating: random.integer(1, 5),
-          reviewImgUrl: faker.image.imageUrl()
-        }
-      )
+    for (let i = 0; i < 1400; i++) {
+      seederData.push({
+        reviewerId: random.integer(1, 8),
+        bathroomId: random.integer(1, 810),
+        reviewText: randomReviewText(),
+        rating: random.integer(1, 5),
+        reviewImgUrl: faker.image.imageUrl(),
+      });
     }
 
     //   return queryInterface.bulkInsert('Reviews', [
@@ -54,13 +129,10 @@ module.exports = {
     //   // },
     //   ...seederData    // b4 the return runs, its spreading
     // ], {});
-    return queryInterface.bulkInsert('Reviews', seederData, {});
-
-
+    return queryInterface.bulkInsert("Reviews", seederData, {});
   },
 
   down: (queryInterface, Sequelize) => {
-      return queryInterface.bulkDelete('Reviews', null, {});
-
-  }
+    return queryInterface.bulkDelete("Reviews", null, {});
+  },
 };

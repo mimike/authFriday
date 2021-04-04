@@ -101,7 +101,7 @@ module.exports = {
 
 
     let seederData = [];
-    for(let i = 0; i < 1000; i++){
+    for(let i = 0; i < 800; i++){
       seederData.push(
         {
           ownerId: random.integer(1, 8),

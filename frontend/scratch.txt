@@ -38,3 +38,22 @@ heroku """""" sequelize db:seed:all
 
 
 npx dotenv
+
+
+singleresulttile.js
+ {/* <div className= "review-text">
+                                    Review: {review.reviewText}
+                                </div>
+
+                            <div>{bathroom.Reviews.map(review => (
+                                <div>
+                                    Review: {review.reviewText}
+                                </div>
+                            ))}</div>
+
+                            <div className = "review-rating">{bathroom.Reviews.map(review => (
+                                <div>
+                                    Rating: {review.rating}
+                                </div>
+                            ))}
+                            </div> */}
