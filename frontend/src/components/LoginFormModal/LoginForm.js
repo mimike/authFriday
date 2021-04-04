@@ -4,17 +4,17 @@ import * as sessionActions from '../../store/session';
 import { useDispatch } from 'react-redux';
 //import { useSelector } from 'react-redux'
 //import { Redirect } from 'react-router-dom';
-
+import { useHistory} from 'react-router-dom';
 import './LoginForm.css';
 
 //Render a form with a controlled input for the user login credential (username or email) and a controlled input for the user password.
 function LoginForm(){
+    const history = useHistory();
     const dispatch = useDispatch();
     //const sessionUser = useSelector(state => state.session.user);
     const [credential, setCredential ] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
-
     //If there is a current session user in the Redux store, then redirect the user to the "/" path if trying to access the LoginFormPage.
     // if (sessionUser) return (
     //     <Redirect to="/" />
@@ -29,6 +29,7 @@ function LoginForm(){
                 const data = await res.json();
                 if (data && data.errors) setErrors(data.errors)
             });
+            history.push('/')
     }
     return (
         <form onSubmit={handleSubmit}>

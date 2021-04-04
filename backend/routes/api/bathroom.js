@@ -1,9 +1,10 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 //const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { Bathroom } = require('../../db/models');
-//const { check } = require('express-validator');
+const { Bathroom, Review, User } = require('../../db/models');
+const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
+const review = require('../../db/models/review');
 
 const router = express.Router();
 
@@ -60,7 +61,14 @@ router.post('/', asyncHandler(async(req, res) => {
 //http://localhost:5000/api/bathroom/:id GET by ID WORKS!
 router.get('/:id', asyncHandler(async(req, res) => {
     const bathroomId = Number(req.params.id);  //parsing into an actual num
-    const bathroom = await Bathroom.findByPk(bathroomId)    // object that is the br of that ID
+
+    const bathroom = await Bathroom.findByPk(bathroomId, {
+        include:
+        {      // include the model Review assoc w/the Bathrm.
+             model: Review,
+             include: User  // inlcude the model User assoc w/the review
+        }
+    })    // object that is the br of that ID
 
     return res.json(bathroom);
 }))

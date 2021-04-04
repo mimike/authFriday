@@ -1,4 +1,9 @@
 'use strict';
+// imports below usestrict
+const bcrypt = require('bcryptjs');
+const { Validator } = require("sequelize");
+
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     firstName: {
@@ -120,7 +125,7 @@ module.exports = (sequelize, DataTypes) => {
   User.getCurrentUserById = async function (id) {
     return await User.scope('currentUser').findByPk(id);
   };
-  
+
   User.login = async function ({ credential, password }) {
     const { Op } = require('sequelize');
     const user = await User.scope('loginUser').findOne({

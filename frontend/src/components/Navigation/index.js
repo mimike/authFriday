@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 //import BathroomTile from '../BathroomPage/BathroomTile';
 import SearchBar from '../SearchBar';
 import './Navigation.css';
-import { useHistory} from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+import * as sessionActions from '../../store/session';
 
 function Navigation({ isLoaded }){  //isLoaded ?
+  let dispatch = useDispatch();
   const history = useHistory();
   // const [ keyword, setKeyword ] = useState();
   const sessionUser = useSelector(state => state.session.user); //?
+  const handleClick = () => {
+    dispatch(sessionActions.demoLogin())
 
+  }
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -27,6 +32,9 @@ function Navigation({ isLoaded }){  //isLoaded ?
           </div>
           <div className="login-button">
             <LoginFormModal />
+          </div>
+          <div>
+            <Link to="/" onClick={handleClick}>Demo User</Link>
           </div>
         </div>
 

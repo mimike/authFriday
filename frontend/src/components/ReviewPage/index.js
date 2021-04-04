@@ -3,12 +3,16 @@
 //the review button will live on the bathroom tile of each bathroom. users will click the button on that bathroom tile and takes u to this review page.
 //import css file
 import React, { useState } from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-
+import "./Review.css";
 import * as sessionActions from '../../store/session';
+import { createReview } from "../../store/review";
+import { useParams } from "react-router-dom";
 
 function ReviewPage(){
+    const { id } = useParams();  // because we have :id in url
+    const bathroomId = id;
     const dispatch = useDispatch();
     let history = useHistory();
     const [ reviewText, setReviewText ] = useState("");
@@ -16,18 +20,23 @@ function ReviewPage(){
     const [ reviewImgUrl, setReviewImgUrl ] = useState("");
     const [errors, setErrors ] = useState([]);
 
+    //const reviewerId = useSelector((state) => state.session.user.id); // i don't care if they are logged  in
+    //const bathroomId = useSelector((state) => state.session.bathroom.id)
+    //const bathroomId = useSelector(state => state.bathroom.id)
+    const user = useSelector(state => state.session.user) // object w/all the properties
     //On submit of the form, dispatch the login thunk action with the form input values. Make sure to handle and display errors from the login thunk action if there are any.
 
-    //line 21, change.
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     setErrors([]);
-    //     return dispatch(sessionActions.login({ credential, password }))
-    //         .catch(async (res) => {
-    //             const data = await res.json();
-    //             if (data && data.errors) setErrors(data.errors)
-    //         });
-    // }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setErrors([]);
+
+        dispatch(createReview({ reviewerId: user.id, bathroomId, reviewText, rating, reviewImgUrl }))
+            // .then(async (res) => {
+            //     const data = await res.json();
+            //     if (data && data.errors) setErrors(data.errors)
+            // });
+            history.push(`/bathroom/${id}`)
+    }
 
     return (
         <>
@@ -36,11 +45,11 @@ function ReviewPage(){
         </div>
 
         <form className="reviewform"
-              // onSubmit={handleSubmit}
+              onSubmit={handleSubmit}
               >
-                {/* <ul>
+                <ul>
                   {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul> */}
+                </ul>
 
                 <div className="form-input">
                   {/* <label> */}

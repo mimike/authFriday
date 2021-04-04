@@ -51,8 +51,22 @@ export const login = (user) => async (dispatch) => {
   return response;
 };
 
+export const demoLogin = () => async (dispatch) => {
+  //console.log("asdfdsafdfa")
+  const response = await csrfFetch('/api/session', {
+    method: 'POST',
+    body: JSON.stringify({
+      credential: "Demo-lition",
+      password: "password"
+    }),
+  })
+  const data = await response.json()
+  dispatch(setUser(data.user));   //post route from api session.js
+  return response;
+}
+
 const initialState = { user: null };
-//useselector is subscribing to the store whenever the store changes, getting the state out , whne the user changes 
+//useselector is subscribing to the store whenever the store changes, getting the state out , whne the user changes
 //reducer is just the slice ??
 const sessionReducer = (state = initialState, action) => {
   let newState;

@@ -75,7 +75,7 @@ console.log(isLoaded)  // delete this
             {/* <Reservation /> */}
           </Route>
 
-          <Route path="/review">
+          <Route path="/review/:id">
             <ReviewPage />
           </Route>
 

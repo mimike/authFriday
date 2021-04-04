@@ -10,7 +10,7 @@ module.exports = {
       },
       reviewerId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        // allowNull: false,
         references: { model: "Users"}
       },
       bathroomId: {

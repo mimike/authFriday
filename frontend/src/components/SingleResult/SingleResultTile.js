@@ -4,6 +4,9 @@ import { useHistory } from "react-router-dom";
 
 function SingleResultTile ( {bathroom}){
     let history = useHistory();
+    if(!bathroom.Reviews){   //guard clause 
+        return null;
+    }
     return (
         <>
 
@@ -35,12 +38,24 @@ function SingleResultTile ( {bathroom}){
                         <p>${bathroom.costPerDay} / day </p>
                     </div>
 
-                    <a href="/review" style={{textDecoration:"none"}}>Review this Loo</a>
+                    <a href={`/review/${bathroom.id}`} style={{textDecoration:"none"}}>Review this Loo</a>
                     {/* <div className="reviews-container">
                         <p>Reviews:</p>
                     </div> */}
 
+                    <div>
+                        <h1>A collection of all the reviews of this loo</h1>
+                        <div>
+                            <p>{bathroom.Reviews.map(review => (
+                                <div>
+                                    {review.User.firstName}
+                                </div>
+                            ))}</p>
 
+
+
+                        </div>
+                    </div>
 
 
 

@@ -77,7 +77,7 @@ module.exports = {
           address: '10 Pojo Place',
           city: 'San Francisco',
           state: 'California',
-          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+          hashedPassword:bcrypt.hashSync(faker.internet.password()),
         },
         {
           email: faker.internet.email(),
@@ -89,7 +89,7 @@ module.exports = {
           state: 'California',
           hashedPassword: bcrypt.hashSync(faker.internet.password()),
         }
-        
+
     ], {});
 
   },

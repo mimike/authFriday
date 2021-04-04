@@ -31,6 +31,7 @@ function SignupForm(){
                     const data = await res.json();
                     if (data && data.errors) setErrors(data.errors);
                 });
+            
         //}
         //If the confirm password is not the same as the password, display an error message for this.
         //return setErrors(['Confirm Password field must be the same as the Password field']);
