@@ -44,7 +44,7 @@ function Navigation({ isLoaded }){  //isLoaded ?
 
 
           <div>
-            <Link to="/" onClick={handleClick} style={{textDecoration:"none"}}>Demo</Link>
+            <Link to="/" onClick={handleClick} style={{textDecoration:"none", fontSize:"medium", marginLeft: "10px"}}>Demo</Link>
           </div>
           {/* <div>
             <h1 > <a href="/" style={{textDecoration:"none", color:"black"}}><i class="fas fa-poop" style={{color:"pink", marginRight:"10px"}}></i>unkoooobnb</a></h1>
@@ -87,7 +87,7 @@ function Navigation({ isLoaded }){  //isLoaded ?
         {/* <button style={{background:"white", borderRadius:"50%", height:"30px",
     width:"30px"}} type="submit"><i class="fas fa-search"></i></button> */}
           <div>
-            <h1 > <a href="/" style={{textDecoration:"none", color:"black"}}><i class="fas fa-poop" style={{color:"pink", marginRight:"10px"}}></i>unkbnb</a></h1>
+            <h1 > <a href="/" style={{textDecoration:"none", color:"black"}}><i class="fas fa-poop" style={{color:"pink", marginRight:"10px"}}></i>unkobnb</a></h1>
           </div>
                 {/* {isLoaded} */}
                 {sessionLinks}
