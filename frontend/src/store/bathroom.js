@@ -101,7 +101,7 @@ const bathroomReducer = (state = initialState, action) => {  //state is bathroom
             return setNewStateBathrooms;
 
         case ADD_BATHROOM:
-            newState = [ state, action.addBathroom]
+            newState = [ ...state, action.addBathroom ]
             return newState;
         case GET_BATHROOM: //need to finish this.
             const bathroom = action.payload;

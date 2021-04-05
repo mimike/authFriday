@@ -88,7 +88,63 @@ module.exports = {
           city: 'San Diego',
           state: 'California',
           hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+
+        {
+          email: faker.internet.email(),
+          firstName: "Jeb",
+          lastName: "Giffy,",
+          username: 'FakeUser8',
+          address: '12 Bach Drive',
+          city: 'San Diego',
+          state: 'California',
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
         }
+        ,
+        {
+          email: faker.internet.email(),
+          firstName: "Bryan",
+          lastName: "Bebe",
+          username: 'FakeUser9',
+          address: '1 Bey Drive',
+          city: 'San Diego',
+          state: 'California',
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        }
+        ,
+        {
+          email: faker.internet.email(),
+          firstName: "Nat",
+          lastName: "Oof",
+          username: 'FakeUser10',
+          address: '19 Binch Drive',
+          city: 'San Diego',
+          state: 'California',
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+
+        {
+          email: faker.internet.email(),
+          firstName: "Jon",
+          lastName: "C",
+          username: 'FakeUser11',
+          address: '2 Loch Drive',
+          city: 'San Diego',
+          state: 'California',
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+
+        {
+          email: faker.internet.email(),
+          firstName: "Mimi",
+          lastName: "Abc",
+          username: 'FakeUser12',
+          address: '1 Boch Drive',
+          city: 'San Diego',
+          state: 'California',
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        }
+
 
     ], {});
 

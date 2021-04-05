@@ -45,6 +45,16 @@ router.post('/', validateReview, asyncHandler(async (req, res) => {
 router.get('/:id', asyncHandler(async(req, res)=> {
     const id = req.params.id;
     const reviews = await Review.findAll({where: { bathroomId: id}})
+
+    //let averageRating = 0;
+    //loop through every review inside reviews array.
+    //for(review of reviews){
+
+    //}
+    //divide by reviews.length
+
+    //res.json({averageRating, reviews})
+
     return res.json(reviews)
 }))
 

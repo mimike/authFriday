@@ -38,25 +38,7 @@ function Navigation({ isLoaded }){  //isLoaded ?
           </div>
         </div>
 
-        <div className="button-container">
-          {/* <div>
-            <button className="nav-button" type="button" onClick={() => history.push('/feed')}>Feed</button>
-          </div> */}
 
-          {/* <div>
-            <button className="nav-button" type="button" onClick={() => history.push('/coolbathroom')}>Cool Bathrooms</button>
-          </div> */}
-
-          <div>
-            <button className="nav-button" style={{color:"blue"}}type="button" onClick={() => history.push('/best')}>Discover</button>
-          </div>
-
-          <div>
-            <button className="nav-button" style={{color:"green"}} type="button" onClick={() => history.push('/new')}>Share</button>
-          </div>
-
-
-        </div>
       </>
     );
   }
@@ -85,6 +67,25 @@ function Navigation({ isLoaded }){  //isLoaded ?
           {mappedBathrooms}
         </div> */}
       </ul>
+      <div className="button-container">
+          {/* <div>
+            <button className="nav-button" type="button" onClick={() => history.push('/feed')}>Feed</button>
+          </div> */}
+
+          {/* <div>
+            <button className="nav-button" type="button" onClick={() => history.push('/coolbathroom')}>Cool Bathrooms</button>
+          </div> */}
+
+          <div>
+            <button className="nav-button" style={{color:"blue"}}type="button" onClick={() => history.push('/best')}>Discover</button>
+          </div>
+
+          <div>
+            <button className="nav-button" style={{color:"green"}} type="button" onClick={() => history.push('/new')}>Share</button>
+          </div>
+
+
+        </div>
     </>
   );
 }

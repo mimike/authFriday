@@ -161,7 +161,7 @@ function NewBathroomPage(){
               </div>
 
               <div className="submit-new-bathroom-button">
-                <button className="ugh1" type="submit">Add bathroom</button>
+                <button className="ugh1" onClick={() => history.push('/')}type="submit">Add bathroom</button>
               </div>
 
               <h3>Not logged in?</h3>
@@ -177,3 +177,4 @@ function NewBathroomPage(){
   )
 }
 export default NewBathroomPage;
+//on line 164 redir to /bathroom /feed and their new bathoroom will be there

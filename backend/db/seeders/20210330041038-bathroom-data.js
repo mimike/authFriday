@@ -104,7 +104,7 @@ module.exports = {
     for(let i = 0; i < 800; i++){
       seederData.push(
         {
-          ownerId: random.integer(1, 7),
+          ownerId: random.integer(1, 12),
           title: randomTitle(),
           description: randomDescriptionTitle(),
           address: faker.address.streetAddress(),

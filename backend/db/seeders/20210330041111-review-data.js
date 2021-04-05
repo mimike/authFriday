@@ -87,7 +87,7 @@ module.exports = {
       for (let i = 0; i < reviewTextLength; i++) {
         let newWord = words[random.integer(0, words.length - 1)];
 
-        reviewText.push(`${randomStartingWord[random.integer(0, randomStartingWord.length - 1)]} ${randomNoun[random.integer(0, randomNoun.length - 1)]} ${randomLinkingVerb[random.integer(0, randomLinkingVerb.length - 1)]} ${randomAdjectives[random.integer(0, randomAdjectives.length - 1)]} ${randomPronouns[random.integer(0, randomPronouns.length - 1)]} ${randomVerbs[random.integer(0, randomVerbs.length - 1)]} ${randomPunctuation[random.integer(0, randomPunctuation.length - 1)]}`)
+        reviewText.push(`${randomStartingWord[random.integer(0, randomStartingWord.length - 1)]} ${randomNoun[random.integer(0, randomNoun.length - 1)]} ${randomLinkingVerb[random.integer(0, randomLinkingVerb.length - 1)]} ${randomStartingWord[random.integer(0, randomStartingWord.length - 1)]} ${randomAdjectives[random.integer(0, randomAdjectives.length - 1)]} ${randomPronouns[random.integer(0, randomPronouns.length - 1)]} ${randomVerbs[random.integer(0, randomVerbs.length - 1)]} ${randomPunctuation[random.integer(0, randomPunctuation.length - 1)]}`)
 
         reviewText.push(newWord);
       }
@@ -100,7 +100,7 @@ module.exports = {
     };
 
     let seederData = [];
-    for (let i = 0; i < 2000; i++) {
+    for (let i = 0; i < 1550; i++) {
       seederData.push({
         reviewerId: random.integer(1, 8),
         bathroomId: random.integer(1, 810),
