@@ -34,7 +34,7 @@ function Navigation({ isLoaded }){  //isLoaded ?
             <LoginFormModal />
           </div>
           <div>
-            <Link to="/" onClick={handleClick}>Demo User</Link>
+            <Link to="/" onClick={handleClick} style={{textDecoration:"none"}}>Demo User</Link>
           </div>
         </div>
 
