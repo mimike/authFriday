@@ -1,9 +1,10 @@
 .footer-container {
   /* position: sticky; */
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   max-height: 300px;
   bottom: 0;
+  /* font-family: Roboto; */
 }
 
 .about-container {
@@ -12,14 +13,18 @@
   padding: 50px;
 }
 .host-container {
-  order: 3;
+  order: 2;
   margin: 20px;
   padding: 50px;
 }
 .social-media-container {
-  order: 2;
-  margin-top: 120px;
+  order: 3;
+  margin-top: 30px;
 
+  
+}
+.social-media-container div {
+  margin: 20px;
 }
 .host-modal-button {
   cursor: pointer;

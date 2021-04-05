@@ -1,4 +1,6 @@
-
+div {
+     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
 .main-image-container{
     display: flex;
     justify-content: center;
@@ -23,6 +25,7 @@
 
 .home-page-text {
     color: white;
+    /* font-family: 'Roboto', sans-serif; */
     margin-left: 20px;
 }
 

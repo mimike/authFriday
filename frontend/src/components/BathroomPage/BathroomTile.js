@@ -14,7 +14,7 @@ function BathroomTile( {bathroom} ){
     }
     return (
 
-        <div>
+        <div className="nishi-container">
             <div className="text-tile">
 
             <a href={`/bathroom/${bathroom.id}`} id="bathroom-link">{bathroom.title}</a>

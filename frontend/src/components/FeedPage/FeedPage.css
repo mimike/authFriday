@@ -1,4 +1,11 @@
+div {
+    
+        font-family: Roboto;
+
+
+}
 .result-tile-container {
+   font-family: Roboto;
    margin: 20px;
    box-sizing: border-box;
    border-top: 1px solid rgba(216, 216, 216, 0.74);
@@ -25,7 +32,7 @@
 .title-result a {
     text-decoration: none;
     color: black;
-    
+
     font-size: 20px;
 }
 .city-state-result {

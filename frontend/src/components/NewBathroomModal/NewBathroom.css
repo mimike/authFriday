@@ -23,11 +23,13 @@
   .new-bathroom-title {
     color: blue;
     text-align: center;
+
 }
 
 .form-input {
     /* background-color: maroon; */
     margin: 10px;
+    margin-left: 30px;
 
     /* text-align: center; */
 }
@@ -39,10 +41,26 @@
     background-color: white;
     height: 40px;
     width: 250px;
+    border-radius: 15px;
 }
 
 .ugh2 {
     width: 120px;
     background-color: white;
+    border-radius: 15px;
+}
+.login-new-bathroom-button{
+    margin-bottom: 30px;
+}
 
+.login-new-bathroom-button {
+    margin-left: 40px;
+}
+.submit-new-bathroom-button {
+    margin: 40px;
+
+}
+
+.not-logged-in{
+    margin: 40px;
 }

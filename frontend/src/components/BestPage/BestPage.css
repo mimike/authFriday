@@ -1,8 +1,13 @@
+.best-container{
 
+        font-family: Roboto;
+
+
+}
 .best-text {
     color: blue;
     padding: 5px;
-    
+
 }
 
 .bathroom-container h1 {
@@ -14,6 +19,8 @@
     /* background-color: pink; */
     text-decoration: none;
     font-size: medium;
+    font: 'font-family: 'Roboto', sans-serif;';
+
 
 
     border-top: 1px solid rgb(190, 190, 190);
@@ -46,6 +53,10 @@
 }
 .title-result {
 
+}
+
+.text-tile div {
+    margin: 10px;
 }
 
 .bathroom-tile-image img{

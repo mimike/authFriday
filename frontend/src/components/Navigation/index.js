@@ -8,6 +8,7 @@ import SearchBar from '../SearchBar';
 import './Navigation.css';
 import { useHistory, Link } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
+import NewBathroomModal from '../NewBathroomModal';
 
 function Navigation({ isLoaded }){  //isLoaded ?
   let dispatch = useDispatch();
@@ -36,6 +37,12 @@ function Navigation({ isLoaded }){  //isLoaded ?
           <div className="login-button">
             <LoginFormModal />
           </div>
+
+          <div className="share-bathroom-button">
+            <NewBathroomModal />
+          </div>
+
+
           <div>
             <Link to="/" onClick={handleClick} style={{textDecoration:"none"}}>Demo</Link>
           </div>
@@ -89,20 +96,20 @@ function Navigation({ isLoaded }){  //isLoaded ?
         </div> */}
       </ul>
       <div className="button-container">
-          <div>
+          {/* <div>
             <button className="nav-button" type="button" onClick={() => history.push('/feed')}>Feed</button>
-          </div>
+          </div> */}
 
-          <div>
+          {/* <div>
             <button className="nav-button" type="button" onClick={() => history.push('/coolbathroom')}>Cool Bathrooms</button>
+          </div> */}
+
+          <div>
+            <button className="nav-button" style={{color:"blue", fontSize:"medium", fontWeight:"bold"}}type="button" onClick={() => history.push('/best')}>Discover</button>
           </div>
 
           <div>
-            <button className="nav-button" style={{color:"blue"}}type="button" onClick={() => history.push('/best')}>Discover</button>
-          </div>
-
-          <div>
-            <button className="nav-button" style={{color:"green"}} type="button" onClick={() => history.push('/new')}>Share</button>
+            <button className="nav-button" style={{color:"green", fontSize:"medium", fontWeight:"bold"}} type="button" onClick={() => history.push('/new')}>Share</button>
           </div>
 
 

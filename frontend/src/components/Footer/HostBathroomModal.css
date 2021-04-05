@@ -1,4 +1,4 @@
-.background {
+/* .background {
     position: absolute;
     background-color: rgba(128, 128, 128, 0.397);
     left: 0;
@@ -11,7 +11,7 @@
 
 .host-bathroom-slide-div {
     position: absolute;
-    /* bottom: -30%; */
+
     top: 60%;
     left: -1000%;
     background-color: white;
@@ -31,7 +31,7 @@
 
 .host-modal-button {
     color: rgb(82, 31, 116)
-}
+} */
 
 /*
 .new-bathroom-title {

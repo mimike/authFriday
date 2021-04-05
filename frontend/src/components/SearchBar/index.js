@@ -20,7 +20,7 @@ function SearchBar(){
         return ( //hit return or click for dumb users
         <form onSubmit={(e)=> submit(e)} >
             <input
-                style={{width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"}}
+                style={{marginLeft:"25px", width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"}}
                 value={keyword}
                 placeholder={"Where are you going?"}
                 onChange={(e) => setKeyword(e.target.value)}

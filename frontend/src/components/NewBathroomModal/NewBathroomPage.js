@@ -66,7 +66,7 @@ function NewBathroomPage(){
                   {/* <label> */}
                       {/* Description: */}
                       <input
-                      style={{width:"450px"}}
+                      style={{width:"450px", height:"200px"}}
                       type="text"
                       placeholder="Description"
                       value={description}
@@ -164,7 +164,10 @@ function NewBathroomPage(){
                 <button className="ugh1" onClick={() => history.push('/')}type="submit">Add bathroom</button>
               </div>
 
-              <h3>Not logged in?</h3>
+              <div className="not-logged-in">
+                  <h3>Not logged in?</h3>
+              </div>
+
 
               <div className="login-new-bathroom-button">
                 <button className="ugh2" type="submit" onClick={() => history.push('/')}>log in!</button>

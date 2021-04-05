@@ -28,7 +28,8 @@ function Footer(){
                         <h3>HOST</h3>
                     </div>
 
-                    <HostBathroomModal/>
+                    {/* <HostBathroomModal/> */}
+                    <Link to="/new" style={{textDecoration:"none"}}>Share Your Loo</Link>
 
                     <div>
                         <Link to="/host" style={{textDecoration:"none"}}>Responsible hosting</Link>
@@ -38,15 +39,25 @@ function Footer(){
 
                 <div className="social-media-container">
 
-                    <div className="facebook-link">
-                        <i class="fab fa-facebook" ></i>
-                        <a href="https://www.facebook.com" style={{textDecoration:"none"}}>    facebook</a>
+                    <div className="github-link">
+                    <a href="https://www.instagram.com"  style={{textDecoration:'none', fontSize:"1.1em"}}><i class="fab fa-github-alt" style={{fontSize: '3em'}}></i></a>
+
+
                     </div>
 
+
                     <div className="instagram-link">
-                        <i class="fab fa-instagram"></i>
-                        <a href="https://www.instagram.com" style={{textDecoration:"none"}}>     instagram</a>
+                    <a href="https://www.instagram.com"  style={{textDecoration:'none', fontSize:"1.1em"}}><i class="fab fa-instagram" style={{fontSize: '3em'}}></i></a>
                     </div>
+
+
+
+                    <div className="instagram-link">
+                    <a href="https://www.facebook.com"  style={{textDecoration:'none', fontSize:"1.1em"}}><i class="fab fa-facebook" style={{fontSize: '3em'}}></i></a>
+                    </div>
+
+
+
 
                 </div>
             </div>
@@ -55,3 +66,5 @@ function Footer(){
 }
 
 export default Footer;
+{/* <i class="fab fa-github-alt" style={{fontSize: '3em'}}></i>
+<i class="fab fa-linkedin" style={{fontSize: '3em'}}></i> */}
