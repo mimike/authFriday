@@ -25,7 +25,8 @@ router.get('/', asyncHandler(async(req, res) => {
 }));
 
 //http://localhost:5000/api/bathroom POST request WORKS!
-router.post('/', asyncHandler(async(req, res) => {
+router.post('/create', asyncHandler(async(req, res) => {
+    console.log("DSIfjlaiogfhpeaoiufhwedpil")
     const {
         ownerId,
         title,

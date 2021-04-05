@@ -14,6 +14,7 @@ export const setBathrooms = (bathrooms) => ({
 //return {} extra yellow parenthesis
         type: SET_BATHROOMS,
         payload: bathrooms
+
 })
 
 // edit this later. wednesday night  //post
@@ -55,14 +56,38 @@ export const getSingleBathroom = (bathroomId) => async dispatch => {   //get sin
         return bathroom;
     }
 }
+//THUNK ACTION
+export const createBathroom = (bathroom) => async(dispatch) => { //POST
+    const { ownerId, title, description, address, city, state, costPerDay, locationType, bathroomImgUrl } = bathroom
+
+    const response = await csrfFetch("/api/bathroom/create", {
+        method: "POST",
+        body: JSON.stringify({
+            ownerId,
+            title,
+            description,
+            address,
+            city,
+            state,
+            costPerDay,
+            locationType,
+            bathroomImgUrl
+        }),
+    });
+    const data = await response.json();  // parse pojo USER data
+    dispatch(addBathroom(data.bathroom));
+    return response;
+
+}
 
 //REDUCER
 const initialState = {  //what do we want it to look like
     list: {}, // id, description, title, city, state, etc.
-    singleBathroom: {}
+    singleBathroom: {}  // why did we set this one  to empty obj
 }
 
 const bathroomReducer = (state = initialState, action) => {  //state is bathrooms (slice)
+    let newState;
     switch(action.type){
 
         case SET_BATHROOMS:
@@ -76,7 +101,8 @@ const bathroomReducer = (state = initialState, action) => {  //state is bathroom
             return setNewStateBathrooms;
 
         case ADD_BATHROOM:
-            return state;
+            newState = [ state, action.addBathroom]
+            return newState;
         case GET_BATHROOM: //need to finish this.
             const bathroom = action.payload;
             //create a copy a of the old state

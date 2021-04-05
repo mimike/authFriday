@@ -74,8 +74,8 @@ module.exports = {
       const randomLinkingVerb = ["is", "has", "was", "were", "does", "doesn't"]
       const randomVerbs = ["sit", "squat", "pee", "poo", "visit"];
       const randomPronouns = ["she", "he", "they", "them"];
-      const randomPunctuation = ["!", "."];
       const randomAdjectives = ["putrid", "unique", "dirty", "muddy", "glowing"]
+      const randomPunctuation = ["!", "."];
 
 
 // This toilet is the dirtiest bathroom I have ever experienced!
@@ -86,16 +86,21 @@ module.exports = {
       const reviewText = [];
       for (let i = 0; i < reviewTextLength; i++) {
         let newWord = words[random.integer(0, words.length - 1)];
+
         reviewText.push(`${randomStartingWord[random.integer(0, randomStartingWord.length - 1)]} ${randomNoun[random.integer(0, randomNoun.length - 1)]} ${randomLinkingVerb[random.integer(0, randomLinkingVerb.length - 1)]} ${randomAdjectives[random.integer(0, randomAdjectives.length - 1)]} ${randomPronouns[random.integer(0, randomPronouns.length - 1)]} ${randomVerbs[random.integer(0, randomVerbs.length - 1)]} ${randomPunctuation[random.integer(0, randomPunctuation.length - 1)]}`)
+
         reviewText.push(newWord);
       }
-
-      // if it's a period, .split(" ") and join("") ?
+      // if it's a randomPunctuation, .split(" ") and join("") ?
+      //needs space before but not after.
+      if(reviewText.includes(randomPunctuation)){
+        reviewText.join().split
+      }
       return reviewText.join(" ");
     };
 
     let seederData = [];
-    for (let i = 0; i < 1400; i++) {
+    for (let i = 0; i < 2000; i++) {
       seederData.push({
         reviewerId: random.integer(1, 8),
         bathroomId: random.integer(1, 810),

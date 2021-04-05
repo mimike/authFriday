@@ -26,7 +26,7 @@ function SearchBar(){
                 onChange={(e) => setKeyword(e.target.value)}
             />
 
-            <button onClick={(e) => submit(e)} style={{background:"white", borderRadius:"50%", height:"30px", width:"30px"}} type="submit"><i class="fas fa-search"></i></button>
+            <button onClick={(e) => submit(e)} style={{background:"white", borderRadius:"50%", height:"30px", margin:"10px", width:"30px"}} type="submit"><i class="fas fa-search"></i></button>
         </form>
     );
 }

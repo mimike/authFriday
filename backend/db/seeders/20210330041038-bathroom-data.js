@@ -104,7 +104,7 @@ module.exports = {
     for(let i = 0; i < 800; i++){
       seederData.push(
         {
-          ownerId: random.integer(1, 8),
+          ownerId: random.integer(1, 7),
           title: randomTitle(),
           description: randomDescriptionTitle(),
           address: faker.address.streetAddress(),
@@ -147,7 +147,7 @@ module.exports = {
           ownerId: 3,
           title: "Underground Bathroom in a Himalayan Salt Cave",
           description: "The most relaxing place to rest surrounded by real organic himalayan salt. Feel recharged after your rest.",
-          address: "6 NewAge Ave",
+          address: "6 New Age Ave",
           city: "Asheville",
           state: "North Carolina",
           costPerDay: 20.00,
@@ -275,8 +275,8 @@ module.exports = {
           title: randomTitle(),
           description: randomDescriptionTitle(),
           address: faker.address.streetAddress(),
-          city: "Eugene",
-          state: "Oregon",
+          city: "San Diego",
+          state: "California",
           costPerDay: random.integer(1, 100),
           locationType: randomLocationType(),
           bathroomImgUrl: randomPhotoUrl()
@@ -286,7 +286,7 @@ module.exports = {
           title: randomTitle(),
           description: randomDescriptionTitle(),
           address: faker.address.streetAddress(),
-          city: "Eugene",
+          city: "Medford",
           state: "Oregon",
           costPerDay: random.integer(1, 100),
           locationType: randomLocationType(),

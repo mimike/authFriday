@@ -8,9 +8,9 @@ module.exports = {
       return queryInterface.bulkInsert('Users', [
         {
           email: 'demo@user.io',
-          username: 'Demo-lition',
-          firstName: "Jonny",
-          lastName: "Smiths",
+          username: 'Bart-Dorsey',
+          firstName: "Bart",
+          lastName: "Dorsey",
           address: '12 Massy Ave',
           city: 'Madison',
           state: 'Wisconsin',
@@ -20,8 +20,8 @@ module.exports = {
         {
           email: faker.internet.email(),
           username: 'FakeUser1',
-          firstName: "Jane",
-          lastName: "Old",
+          firstName: "Josh",
+          lastName: "Toopiss",
           address: '123 Disney World',
           city: 'Iowa City',
           state: 'Iowa',
@@ -29,8 +29,8 @@ module.exports = {
         },
         {
           email: faker.internet.email(),
-          firstName: "Jake",
-          lastName: "Jacobson",
+          firstName: "Kent",
+          lastName: "Barchair",
           username: 'FakeUser2',
           address: '1 Beijing Place',
           city: 'San Francisco',
@@ -40,8 +40,8 @@ module.exports = {
 
         {
           email: faker.internet.email(),
-          firstName: "Marie",
-          lastName: "Mariesdottir",
+          firstName: "Andrew",
+          lastName: "Loo",
           username: 'FakeUser3',
           address: '1 Paris Drive',
           city: 'San Francisco',
@@ -51,8 +51,8 @@ module.exports = {
 
         {
           email: faker.internet.email(),
-          firstName: "Sloan",
-          lastName: "Sloansdottir",
+          firstName: "Jim",
+          lastName: "Guny",
           username: 'FakeUser4',
           address: '10 Marrakesh Drive',
           city: 'St. Paul',
@@ -61,8 +61,8 @@ module.exports = {
         },
         {
           email: faker.internet.email(),
-          firstName: "Jason",
-          lastName: "Jones",
+          firstName: "Troy",
+          lastName: "Dawsin",
           username: 'FakeUser5',
           address: '11 Eleven Lane',
           city: 'San Francisco',
@@ -75,17 +75,17 @@ module.exports = {
           lastName: "Apple",
           username: 'FakeUser6',
           address: '10 Pojo Place',
-          city: 'San Francisco',
-          state: 'California',
+          city: 'Moore',
+          state: 'Oklahoma',
           hashedPassword:bcrypt.hashSync(faker.internet.password()),
         },
         {
           email: faker.internet.email(),
-          firstName: "Jazzy",
-          lastName: "Jazzdottir",
+          firstName: "Tristan",
+          lastName: "Sand",
           username: 'FakeUser7',
           address: '12 Bach Drive',
-          city: 'San Francisco',
+          city: 'San Diego',
           state: 'California',
           hashedPassword: bcrypt.hashSync(faker.internet.password()),
         }
@@ -97,7 +97,7 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete('Users', {
-      username: { [Op.in]: ['Demo-lition', 'FakeUser1', 'FakeUser2'] }
+      username: { [Op.in]: ['Bart-Dorsey', 'FakeUser1', 'FakeUser2'] }
     }, {});
   }
 };

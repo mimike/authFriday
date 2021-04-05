@@ -7,9 +7,9 @@ module.exports = {
     return queryInterface.bulkInsert('Users', [
       {
         email: 'demo@user.io',
-        username: 'Demo-lition',
-        firstName: "Jonny",
-        lastName: "Smiths",
+        username: 'Bart-Dorsey',
+        firstName: "Bart",
+        lastName: "Dorsey",
         address: '12 Massy Ave',
         city: 'Madison',
         state: 'Wisconsin',
@@ -42,7 +42,7 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete('Users', {
-      username: { [Op.in]: ['Demo-lition', 'FakeUser1', 'FakeUser2'] }
+      username: { [Op.in]: ['Bart-Dorsey', 'FakeUser1', 'FakeUser2'] }
     }, {});
   }
 };

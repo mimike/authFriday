@@ -38,9 +38,9 @@ function SingleResultTile ( {bathroom}){
                     </div>
 
                     <a href={`/review/${bathroom.id}`} style={{textDecoration:"none"}}>Review this Loo</a>
-                     <div className="reviews-container">
+                     {/* <div className="reviews-container">
                         <p>Reviews:</p>
-                    </div>
+                    </div> */}
                  </div>
             </div>
 

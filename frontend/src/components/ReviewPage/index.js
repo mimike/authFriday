@@ -1,5 +1,4 @@
 //Review a bathroom. Anyone logged in can review a bathroom, u do not need to have booked it.
-
 //the review button will live on the bathroom tile of each bathroom. users will click the button on that bathroom tile and takes u to this review page.
 //import css file
 import React, { useState } from 'react';
@@ -23,7 +22,7 @@ function ReviewPage(){
     //const reviewerId = useSelector((state) => state.session.user.id); // i don't care if they are logged  in
     //const bathroomId = useSelector((state) => state.session.bathroom.id)
     //const bathroomId = useSelector(state => state.bathroom.id)
-    const user = useSelector(state => state.session.user) // object w/all the properties
+    const user = useSelector(state => state.session.user)  || []; // object w/all the properties
     //On submit of the form, dispatch the login thunk action with the form input values. Make sure to handle and display errors from the login thunk action if there are any.
 
     const handleSubmit = (e) => {
@@ -94,7 +93,7 @@ function ReviewPage(){
               </div>
 
               <div className="submit-review-btn">
-                <button className="submit-review-button" type="submit">Submit Loo Review</button>
+                <button className="submit-review-button" disabled={!user} type="submit">Submit Loo Review</button>
               </div>
 
               <h3>Not logged in?</h3>

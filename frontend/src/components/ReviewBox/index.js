@@ -1,11 +1,13 @@
 function ReviewBox (){
+
+    // rating reduce finish help
     return (
         <>
             <h1>
                 <i class="fas fa-star" style={{color:"pink"}}></i>
-                {bathroom.Reviews.reduce((accum, value) =>{
-                    return accum + value
-                }
+
+                {bathroom.Reviews.rating.reduce((accum, value) => accum + value
+
                     )}
                 Review
             </h1>

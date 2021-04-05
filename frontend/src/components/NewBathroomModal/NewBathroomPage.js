@@ -1,25 +1,48 @@
 import React from "react";
 import { useState } from "react";
 import { useHistory } from 'react-router-dom';
+import "./NewBathroom.css";
+import { createBathroom } from "../../store/bathroom";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 
 function NewBathroomPage(){
-  let history = useHistory()
+  let history = useHistory();
+  const dispatch = useDispatch();
+
+  // const { id } = useParams(); // because we will have :id
+  //const dispatch = useDispatch();
 
   const [ title, setTitle ] = useState("");
   const [ description, setDescription ] = useState("")
   const [ address, setAddress ] = useState("");
   const [ city, setCity ] = useState("")
   const [ state, setState ] = useState("");
-
   const [ costPerDay, setCostPerDay ] = useState("");
   const [ locationType, setLocationType ] = useState("");
   const [ bathroomImgUrl, setBathroomImgUrl ] = useState("");
+  const [ errors, setErrors ] = useState([]);
+
+  const user = useSelector(state => state.session.user) // object w/all the properties
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+
+    dispatch(createBathroom({ ownerId: user.id, title, description, address, city, state, costPerDay, locationType, bathroomImgUrl }))
+        // .then(async (res) => {
+        //     const data = await res.json();
+        //     if (data && data.errors) setErrors(data.errors)
+        // });
+        history.push("/best")
+        // history.push(`/bathroom/${id}`)
+}
 
     return (
-
     <>
       <form className="new-form"
-              // onSubmit={handleSubmit}
+              onSubmit={handleSubmit}
               >
                 {/* <ul>
                   {errors.map((error, idx) => <li key={idx}>{error}</li>)}

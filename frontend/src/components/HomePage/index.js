@@ -5,7 +5,7 @@ function HomePage(){
         <>
             <div className="home-container">
                 <div className="main-image-container">
-                    <div className="main-image" style={{backgroundSize:"cover"}}>
+                    <div className="main-image" style={{display:"flex", flex:"column"}}>
                         <img src="/images/unko5.jpeg" alt="some toilet"/>
                     </div>
                 </div>
@@ -41,4 +41,3 @@ function HomePage(){
 }
 
 export default HomePage;
-

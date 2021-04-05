@@ -32,14 +32,17 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu} style={{border:"red", width:"60px", height:"30px", borderRadius:"20px", backgroundColor:"white"}}>
-        {/* <i class="fab fa-airbnb"></i> */}
+    {/* <i class="fas fa-toilet" style={{fontSize:"1.5em"}}></i> */}
 
-        <i class="fas fa-grip-lines"></i>
+      <button onClick={openMenu} style={{border:"red", width:"60px", height:"30px", borderRadius:"20px", backgroundColor:"white"}}>
+        <i class="fas fa-toilet"></i>
+
       </button>
+
+
       {showMenu && (
         <button className="profile-dropdown" style={{height:"200px", width:"200px", backgroundColor:"white", borderRadius:"10px", margin:"10px"}}>
-          <div>Hello {user.firstName}</div>
+          <div>Welcome {user.firstName}!</div>
           <div>{user.email}</div>
           <div>
             <Link onClick={logout} style={{textDecoration:"none", color:"blue"}}>Help</Link>
