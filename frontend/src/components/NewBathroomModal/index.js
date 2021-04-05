@@ -7,12 +7,7 @@ function NewBathroomModal() {
 
   return (
     <>
-      <button style={{backgroundColor: "white"}} onClick={() => setShowModal(true)}>Sign up</button>
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <NewBathroomModal />
-        </Modal>
-      )}
+     
     </>
   );
 }

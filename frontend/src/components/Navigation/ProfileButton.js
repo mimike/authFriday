@@ -68,7 +68,10 @@ function ProfileButton({ user }) {
               <Link onClick={() => history.push('/about')} style={{textDecoration:"none", color:"black"}}>Help</Link>
             </div>
             <div>
-              <Link onClick={() => history.push('/about')} style={{textDecoration:"none", color:"black"}}>Log out</Link>
+
+            <Link onClick={logout} style={{textDecoration:"none", color:"black"}}>Logout</Link>
+
+              {/* <Link onClick={() => history.push({logout})} style={{textDecoration:"none", color:"black"}}>Log out</Link> */}
             </div>
           </div>
 
