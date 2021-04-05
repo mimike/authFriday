@@ -81,7 +81,7 @@ console.log(isLoaded)  // delete this
 
           <Route path="/new">
             <Host />
-            <NewBathroomPage />
+            {/* <NewBathroomPage /> */}
 
           </Route>
 

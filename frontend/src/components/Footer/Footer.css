@@ -20,11 +20,14 @@
 .social-media-container {
   order: 3;
   margin-top: 30px;
+  margin-right: 50px;
 
-  
+
 }
 .social-media-container div {
   margin: 20px;
+
+
 }
 .host-modal-button {
   cursor: pointer;

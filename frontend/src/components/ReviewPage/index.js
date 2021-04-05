@@ -95,11 +95,13 @@ function ReviewPage(){
               <div className="submit-review-btn">
                 <button className="submit-review-button" disabled={!user} type="submit">Submit Loo Review</button>
               </div>
+              <div className="not-logged-in">
+                <h3>Not logged in?</h3>
+              </div>
 
-              <h3>Not logged in?</h3>
 
               <div className="login-new-bathroom-button">
-                <button className="ugh2" type="submit" onClick={() => history.push('/')}>log in!</button>
+                <button className="ugh2" type="submit" onClick={() => history.push('/')}>Log in</button>
               </div>
 
               {/* <Link to="/" className="login-link">Log in</Link> */}

@@ -37,7 +37,7 @@ function SingleResultTile ( {bathroom}){
                         <p>${bathroom.costPerDay} / day </p>
                     </div>
 
-                    <a href={`/review/${bathroom.id}`} style={{textDecoration:"none"}}>Review this Loo</a>
+                    <a href={`/review/${bathroom.id}`} style={{textDecoration:"none"}}>Rate this Loo</a>
                      {/* <div className="reviews-container">
                         <p>Reviews:</p>
                     </div> */}
@@ -46,7 +46,8 @@ function SingleResultTile ( {bathroom}){
 
             <div className= "review-container">
                 <h1>
-                    <i class="fas fa-star" style={{color:"pink"}}></i>
+                    <i class="fas fa-star" style={{color:"pink", margin:"20px"}}></i>
+                    <span>Reviews</span>
 
                     {/* {
                         bathroom.Reviews.map(rating => {

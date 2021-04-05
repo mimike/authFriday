@@ -1,16 +1,13 @@
 .new-loo-container {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
 }
 .unko-image-container {
-    order: 2;
-
-    height: 300px;
-    width:100%;
+    grid-column: 2;
+    height: 250px;
+    width: 100%
 }
 .new-form {
-    order: 1;
+    grid-column: 1;
 }

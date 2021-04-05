@@ -12,9 +12,7 @@
     /* background-color: mediumpurple; */
   }
 
-  /* .login-new-bathroom-button {
-      background-color: white;
-  } */
+
 
   .submit-new-bathroom-button:hover{
       cursor: pointer;
@@ -48,13 +46,18 @@
     width: 120px;
     background-color: white;
     border-radius: 15px;
+    padding: 10px;
+    
 }
 .login-new-bathroom-button{
     margin-bottom: 30px;
+
+
 }
 
 .login-new-bathroom-button {
     margin-left: 40px;
+
 }
 .submit-new-bathroom-button {
     margin: 40px;
@@ -62,5 +65,6 @@
 }
 
 .not-logged-in{
-    margin: 40px;
+    /* margin: 40px; */
+    margin-left: 30px;
 }

@@ -4,7 +4,10 @@ function ReviewBox (){
     return (
         <>
             <h1>
+                <div className = "star" style={{margin:"10px"}}>
                 <i class="fas fa-star" style={{color:"pink"}}></i>
+                </div>
+
 
                 {bathroom.Reviews.rating.reduce((accum, value) => accum + value
 
