@@ -17,3 +17,29 @@
 .button-container{
     display: flex;
 }
+.profile-dropdown {
+    height: 255px;
+    width: 240px;
+
+
+    border-radius: 15px;
+    background-color: white;
+    text-align: -webkit-match-parent;
+    position: absolute;
+    outline-style:none;
+    margin-top: 10px;
+
+}
+
+.drop-down-links {
+    border-top: 1px solid grey;
+
+}
+.profile-dropdown div {
+    margin-top: 15px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+.log-out-drop-down-links{
+    border-top: 1px solid grey;
+}

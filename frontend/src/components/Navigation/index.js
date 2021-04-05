@@ -18,11 +18,14 @@ function Navigation({ isLoaded }){  //isLoaded ?
     dispatch(sessionActions.demoLogin())
 
   }
+  //if there's a login user than profile button will render
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <ProfileButton user={sessionUser} />
     );
+
+
   } else {
     sessionLinks = (   // not sure if this is right. the modal sign up doesn't work.
       <>
@@ -34,8 +37,25 @@ function Navigation({ isLoaded }){  //isLoaded ?
             <LoginFormModal />
           </div>
           <div>
-            <Link to="/" onClick={handleClick} style={{textDecoration:"none"}}>Demo User</Link>
+            <Link to="/" onClick={handleClick} style={{textDecoration:"none"}}>Demo</Link>
           </div>
+          <div>
+            <h1 > <a href="/" style={{textDecoration:"none", color:"black"}}><i class="fas fa-poop" style={{color:"pink", marginRight:"10px"}}></i>unkobnb</a></h1>
+          </div>
+
+
+          <div>
+            <Link to="/new" onClick={handleClick} style={{marginRight:"10px", textDecoration:"none"}}>Share</Link>
+          </div>
+          <div>
+            <Link to="/best" onClick={handleClick} style={{textDecoration:"none"}}>Discover</Link>
+          </div>
+
+
+          {/* <div>
+            <button className="nav-button" style={{color:"blue"}}type="button" onClick={() => history.push('/best')}>Discover</button>
+          </div> */}
+
         </div>
 
 
@@ -62,19 +82,20 @@ function Navigation({ isLoaded }){  //isLoaded ?
           <div>
             <h1 > <a href="/" style={{textDecoration:"none", color:"black"}}><i class="fas fa-poop" style={{color:"pink", marginRight:"10px"}}></i>unkobnb</a></h1>
           </div>
-          {isLoaded && sessionLinks}
+                {/* {isLoaded} */}
+                {sessionLinks}
         {/* <div>
           {mappedBathrooms}
         </div> */}
       </ul>
       <div className="button-container">
-          {/* <div>
+          <div>
             <button className="nav-button" type="button" onClick={() => history.push('/feed')}>Feed</button>
-          </div> */}
+          </div>
 
-          {/* <div>
+          <div>
             <button className="nav-button" type="button" onClick={() => history.push('/coolbathroom')}>Cool Bathrooms</button>
-          </div> */}
+          </div>
 
           <div>
             <button className="nav-button" style={{color:"blue"}}type="button" onClick={() => history.push('/best')}>Discover</button>

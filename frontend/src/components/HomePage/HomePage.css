@@ -18,6 +18,7 @@
 .info-image-container {
     display: flex;
     background-color: black;
+    height: 493pt;
 }
 
 .home-page-text {

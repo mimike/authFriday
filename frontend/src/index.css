@@ -3,6 +3,9 @@
 
 body {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    margin-right: 0px;
+    margin-left: 0px;
+
 }
 
 #root {

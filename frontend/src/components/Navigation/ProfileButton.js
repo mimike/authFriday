@@ -34,22 +34,40 @@ function ProfileButton({ user }) {
     <>
     {/* <i class="fas fa-toilet" style={{fontSize:"1.5em"}}></i> */}
 
-      <button onClick={openMenu} style={{border:"red", width:"60px", height:"30px", borderRadius:"20px", backgroundColor:"white"}}>
-        <i class="fas fa-toilet"></i>
+      <button onClick={openMenu} style={{border:"red", width:"60px", outline:"none",height:"30px", borderRadius:"40px", backgroundColor:"white"}}>
+        <i class="fas fa-toilet" style={{fontSize:"1.5em"}}></i><i class="far fa-grin-hearts" style={{fontSize:"1.5em"}}></i>
 
       </button>
 
 
       {showMenu && (
-        <button className="profile-dropdown" style={{height:"200px", width:"200px", backgroundColor:"white", borderRadius:"10px", margin:"10px"}}>
+        <button className="profile-dropdown">
           <div>Welcome {user.firstName}!</div>
-          <div>{user.email}</div>
-          <div>
+          {/* <div>{user.email}</div> */}
+          {/* <div>
             <Link onClick={logout} style={{textDecoration:"none", color:"blue"}}>Help</Link>
+          </div> */}
+          <div className="drop-down-links">
+            <div>
+              <Link onClick={logout} style={{textDecoration:"none", color:"black", fontWeight:"bold"}}>Messages</Link>
+            </div>
+            <div>
+              <Link onClick={logout} style={{textDecoration:"none", color:"black", fontWeight:"bold" }}>Notifications</Link>
+            </div>
+            <div>
+              <Link onClick={logout} style={{textDecoration:"none", color:"black", fontWeight:"bold"}}>RSVPeed</Link>
+            </div>
           </div>
-          <div>
-            <Link onClick={logout} style={{textDecoration:"none", color:"blue"}}>Log out</Link>
+          <div className="log-out-drop-down-links">
+            <div>
+              <Link onClick={logout} style={{textDecoration:"none", color:"black"}}>Help</Link>
+            </div>
+            <div>
+              <Link onClick={logout} style={{textDecoration:"none", color:"black"}}>Log out</Link>
+            </div>
           </div>
+
+
         </button>
       )}
     </>
