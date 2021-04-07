@@ -18,14 +18,14 @@ const router = express.Router();
 //   ];
 
 //http://localhost:5000/api/bathroom GET request WORKS!
-router.get('/', asyncHandler(async(req, res) => {
-    const bathrooms = await Bathroom.findAll( { limit: 100 });
+router.get('/', asyncHandler(async (req, res) => {
+    const bathrooms = await Bathroom.findAll({ limit: 100 });
 
     return res.json(bathrooms)
 }));
 
 //http://localhost:5000/api/bathroom POST request WORKS!
-router.post('/create', asyncHandler(async(req, res) => {
+router.post('/create', asyncHandler(async (req, res) => {
     //console.log("DSIfjlaiogfhpeaoiufhwedpil")
     const {
         ownerId,
@@ -50,11 +50,10 @@ router.post('/create', asyncHandler(async(req, res) => {
         bathroomImgUrl
     });
 
-    if(bathroom) {
-        res.json(bathroom)      //
+    if (bathroom) {
+        res.json({ bathroom })      //
     }
-    return bathroom;
-    // res.json(bathroom)
+    res.json({ bathroom })
 }))
 
 
@@ -62,14 +61,14 @@ router.post('/create', asyncHandler(async(req, res) => {
 
 //just wrote this wednesday night, needs help?
 //http://localhost:5000/api/bathroom/:id GET by ID WORKS!
-router.get('/:id', asyncHandler(async(req, res) => {
+router.get('/:id', asyncHandler(async (req, res) => {
     const bathroomId = Number(req.params.id);  //parsing into an actual num
 
     const bathroom = await Bathroom.findByPk(bathroomId, {
         include:
         {      // include the model Review assoc w/the Bathrm.
-             model: Review,
-             include: User  // inlcude the model User assoc w/the review
+            model: Review,
+            include: User  // inlcude the model User assoc w/the review
         }
     })    // object that is the br of that ID
 
@@ -77,12 +76,12 @@ router.get('/:id', asyncHandler(async(req, res) => {
 }))
 
 //http://localhost:5000/api/bathroom/:id PATCH not done...
-router.patch('/:id', asyncHandler(async(req, res) => {
+router.patch('/:id', asyncHandler(async (req, res) => {
 
 }))
 
 //http://localhost:5000/api/bathroom/id DELETE WORKS!
-router.delete('/:id', asyncHandler(async(req, res) => {
+router.delete('/:id', asyncHandler(async (req, res) => {
 
     const bathroomId = req.params.id;
     const bathroom = await Bathroom.findByPk(bathroomId)
