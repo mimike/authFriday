@@ -98,7 +98,6 @@ module.exports = {
       }
       return reviewText.join(" ");
     };
-
     let seederData = [];
     for (let i = 0; i < 1550; i++) {
       seederData.push({

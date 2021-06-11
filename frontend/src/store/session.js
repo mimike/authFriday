@@ -52,7 +52,7 @@ export const login = (user) => async (dispatch) => {
 };
 
 export const demoLogin = () => async (dispatch) => {
-  //console.log("asdfdsafdfa")
+
   const response = await csrfFetch('/api/session', {
     method: 'POST',
     body: JSON.stringify({

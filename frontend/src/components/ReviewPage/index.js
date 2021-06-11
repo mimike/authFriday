@@ -26,7 +26,7 @@ function ReviewPage(){
     //On submit of the form, dispatch the login thunk action with the form input values. Make sure to handle and display errors from the login thunk action if there are any.
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         setErrors([]);
 
         dispatch(createReview({ reviewerId: user.id, bathroomId, reviewText, rating, reviewImgUrl }))

@@ -20,7 +20,6 @@ function Footer(){
 
                     <div>
                         <Link to="/about" style={{textDecoration:"none"}}>Investors</Link>
-                    </div>
                 </div>
 
                 <div className="host-container">

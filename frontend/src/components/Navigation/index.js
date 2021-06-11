@@ -26,7 +26,6 @@ function Navigation({ isLoaded }){  //isLoaded ?
       <ProfileButton user={sessionUser} />
     );
 
-
   } else {
     sessionLinks = (   // not sure if this is right. the modal sign up doesn't work.
       <>

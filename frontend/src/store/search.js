@@ -16,7 +16,6 @@ export const getSearch = (param) => async dispatch => {
 }
 
 
-
 const searchReducer = (state = [], action) => {
     switch(action.type){
         case LOAD:

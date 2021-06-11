@@ -12,18 +12,13 @@ function BestPage( {bathroom} ){
     const bathroomTest = useSelector(state => state.bathroom.test)
 
     const arrayBathrooms = Object.values(bathrooms);
-    // console.log("ARRAYBR", arrayBathrooms)
-    // const mappedComponents = [];
-    // for(let bathroom in bathrooms){
-    //     mappedComponents.push(bathroom)
-
-    // }
+  
     const mappedComponents = bathroomTest?.map(bathroom => (
 
         <BathroomTile bathroom={bathroom} key= {bathroom.id}/>
 
     ) )
-    
+
     //const [ mappedComponents, setMappedComponents] = useState(mappedComponents);
     let count = 0;
 

@@ -39,11 +39,11 @@ function App() {
       }
     }
 
-  useEffect(() => {     // clarify this!
+  useEffect(() => {     
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-console.log(isLoaded)  // delete this
+
   return (
     <>
       <Navigation isLoaded={isLoaded} />

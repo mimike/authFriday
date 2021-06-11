@@ -26,7 +26,7 @@ router.get('/', asyncHandler(async (req, res) => {
 
 //http://localhost:5000/api/bathroom POST request WORKS!
 router.post('/create', asyncHandler(async (req, res) => {
-    //console.log("DSIfjlaiogfhpeaoiufhwedpil")
+    
     const {
         ownerId,
         title,
@@ -55,9 +55,6 @@ router.post('/create', asyncHandler(async (req, res) => {
     }
     res.json({ bathroom })
 }))
-
-
-
 
 //just wrote this wednesday night, needs help?
 //http://localhost:5000/api/bathroom/:id GET by ID WORKS!

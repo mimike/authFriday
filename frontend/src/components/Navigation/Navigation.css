@@ -16,16 +16,12 @@
 }
 
 
-
-
 .button-container{
     display: flex;
 }
 .profile-dropdown {
     height: 255px;
     width: 240px;
-
-
     border-radius: 15px;
     background-color: white;
     text-align: -webkit-match-parent;

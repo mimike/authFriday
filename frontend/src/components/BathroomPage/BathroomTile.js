@@ -6,9 +6,7 @@ import { useHistory } from "react-router-dom";
 
 function BathroomTile( {bathroom} ){
     let history = useHistory();
-// useEffect (() => {
-//     console.log("baaaathrile", bathroom)
-// }, [])
+
     let bathroomLink = () => {
         history.push(`/bathroom/${bathroom.id}`)
     }
