@@ -6,7 +6,7 @@ import SignupFormModal from '../SignupFormModal';
 //import BathroomTile from '../BathroomPage/BathroomTile';
 import SearchBar from '../SearchBar';
 import './Navigation.css';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import NewBathroomModal from '../NewBathroomModal';
 
@@ -42,9 +42,11 @@ function Navigation({ isLoaded }){  //isLoaded ?
           </div>
 
 
-          <div>
-            <Link to="/" onClick={handleClick} style={{textDecoration:"none", fontSize:"medium", marginLeft: "10px"}}>Demo</Link>
+          <div className="demo-link">
+            <button onClick={handleClick} style={{textDecoration:"none", fontWeight:"900", fontSize:"medium"}}>Demo</button>
           </div>
+
+
           {/* <div>
             <h1 > <a href="/" style={{textDecoration:"none", color:"black"}}><i class="fas fa-poop" style={{color:"pink", marginRight:"10px"}}></i>unkoooobnb</a></h1>
           </div> */}

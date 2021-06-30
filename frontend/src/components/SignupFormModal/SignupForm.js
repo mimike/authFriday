@@ -31,7 +31,7 @@ function SignupForm(){
                     const data = await res.json();
                     if (data && data.errors) setErrors(data.errors);
                 });
-            
+
         //}
         //If the confirm password is not the same as the password, display an error message for this.
         //return setErrors(['Confirm Password field must be the same as the Password field']);
@@ -143,7 +143,7 @@ function SignupForm(){
               </div>
 
               <div className="signup-submit-button">
-                <button type="submit">Sign Up</button>
+                <button type="submit">Join now</button>
               </div>
 
               <div className="already-have-account">
@@ -156,7 +156,7 @@ function SignupForm(){
 
               {/* <button className="login-link" type="button" onClick={() => history.push('/')}>Log in!!!</button> */}
 
-              <button className="login-link" style={{backgroundColor: "white"}}onClick={() => setShowModal(true)}>Log in</button>
+              <button className="login-link" style={{backgroundColor: "white"}}onClick={() => setShowModal(true)}>Sign in</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <LoginForm />
