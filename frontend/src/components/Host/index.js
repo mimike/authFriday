@@ -56,7 +56,7 @@ function Host() {
             </div>
 
 
-            <div class-name="new-loo-container">
+            <div id="upload" class-name="new-loo-container">
                 <img className="unko-image-container" src="/images/unko3.jpeg" alt="poo" />
 
 

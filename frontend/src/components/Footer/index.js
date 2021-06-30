@@ -22,6 +22,7 @@ function Footer(){
                         <Link to="/about" style={{textDecoration:"none"}}>Investors</Link>
                 </div>
 
+            </div>
                 <div className="host-container">
                     <div>
                         <h3>HOST</h3>
@@ -54,10 +55,6 @@ function Footer(){
                     <div className="instagram-link">
                     <a href="https://www.facebook.com"  style={{textDecoration:'none', fontSize:"1.1em"}}><i class="fab fa-facebook" style={{fontSize: '3em'}}></i></a>
                     </div>
-
-
-
-
                 </div>
             </div>
         </>
