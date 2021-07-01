@@ -16,6 +16,7 @@
   order: 2;
   margin: 20px;
   padding: 50px;
+  margin-left: -600px;
 }
 .social-media-container {
   order: 3;

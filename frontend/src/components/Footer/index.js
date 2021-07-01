@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 import './Footer.css'
 import HostBathroomModal from "./HostBathroomModal";
 
@@ -19,7 +19,7 @@ function Footer(){
                     </div>
 
                     <div>
-                        <Link to="/about" style={{textDecoration:"none"}}>Investors</Link>
+                        <NavLink to="/about" style={{textDecoration:"none"}}>Investors</NavLink>
                 </div>
 
             </div>
@@ -29,7 +29,7 @@ function Footer(){
                     </div>
 
                     {/* <HostBathroomModal/> */}
-                    <Link to="/new" style={{textDecoration:"none"}}>Share Your Loo</Link>
+                    <NavLink to="/new" activeStyle={{ color: 'red' }} style={{textDecoration:"none"}}>Share Your Loo</NavLink>
 
                     {/* <div>
                         <Link to="/host" style={{textDecoration:"none"}}>Responsible hosting</Link>
