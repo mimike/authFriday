@@ -2,15 +2,18 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import LoginForm from './LoginForm';
+import { useSelector, useDispatch } from 'react-redux';
+import {hideLogin, showLogin} from "../../store/modal"
 
 function LoginFormModal() {
-  const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch();
+  const loginModal = useSelector(state => state.modal.showLogin)
 
   return (
     <>
-      <button style={{backgroundColor: "white", border:"none", fontSize:"1rem"}}onClick={() => setShowModal(true)}>Log in</button>
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
+      <button style={{backgroundColor: "white", border:"none", fontSize:"1rem"}} onClick={() => dispatch(showLogin())}>Log in</button>
+      {loginModal && (
+        <Modal onClose={() => dispatch(hideLogin())}>
           <LoginForm />
         </Modal>
       )}

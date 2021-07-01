@@ -5,13 +5,16 @@ import { useDispatch } from 'react-redux';
 //import { useSelector } from 'react-redux'
 //import { Redirect } from 'react-router-dom';
 import { useHistory} from 'react-router-dom';
+import { hideLogin } from "../../store/modal";
 import './LoginForm.css';
+
 
 //Render a form with a controlled input for the user login credential (username or email) and a controlled input for the user password.
 function LoginForm(){
     const history = useHistory();
     const dispatch = useDispatch();
     //const sessionUser = useSelector(state => state.session.user);
+
     const [credential, setCredential ] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -23,6 +26,8 @@ function LoginForm(){
     //On submit of the form, dispatch the login thunk action with the form input values. Make sure to handle and display errors from the login thunk action if there are any.
     const handleSubmit = (e) => {
         e.preventDefault();
+        dispatch(hideLogin())
+
         setErrors([]);
         return dispatch(sessionActions.login({ credential, password }))
             .catch(async (res) => {

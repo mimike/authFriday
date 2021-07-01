@@ -6,11 +6,13 @@ import "./SignupForm.css"
 import { useHistory} from 'react-router-dom';
 import { Modal } from '../../context/Modal';
 import LoginForm from '../LoginFormModal/LoginForm';
+import { hideSignup, showLogin } from "../../store/modal"
 
 function SignupForm(){
     const dispatch = useDispatch();
     const history = useHistory();
-    const [showModal, setShowModal] = useState(false);
+
+    const [showModal, setShowModal] = useState(false); //login form modal
     //const sessionUser = useSelector((state) => state.session.user);
     const [ email, setEmail ] = useState("");
     const [ username, setUsername ] = useState("")
@@ -22,8 +24,18 @@ function SignupForm(){
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors ] = useState([]);
+
     //On submit of the form, validate that the confirm password is the same as the password fields, then dispatch the signup thunk action with the form input values. Make sure to handle and display errors from the signup thunk action if there are any.
+
+    //this function will handle hideSignup and
+    const handleHide = () => {
+      dispatch(hideSignup());
+      dispatch(showLogin()); //
+
+    }
     const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(hideSignup());
         // if (password === confirmPassword) {
             setErrors([]);
             return dispatch(sessionActions.signup({ email, username, firstName, lastName, address, city, state, password}))
@@ -38,6 +50,7 @@ function SignupForm(){
     }
     //Render form with controlled inputs for the new user's username, email, and password, and confirm password fields.
     return (
+      <>
         <form onSubmit={handleSubmit}>
           <ul>
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -156,25 +169,17 @@ function SignupForm(){
 
               {/* <button className="login-link" type="button" onClick={() => history.push('/')}>Log in!!!</button> */}
 
-              <button className="login-link" style={{backgroundColor: "white"}}onClick={() => setShowModal(true)}>Sign in</button>
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <LoginForm />
-        </Modal>
-      )}
     {/* </> */}
 
               <div>
 
           </div>
-
-
-
-
           </div>
 
-
         </form>
+
+      <button className="login-link" style={{backgroundColor: "white"}} onClick={handleHide}>Login</button>
+      </>
       );
       // how to get this link to go to login or home page ?
 }

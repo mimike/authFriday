@@ -31,9 +31,9 @@ function Footer(){
                     {/* <HostBathroomModal/> */}
                     <Link to="/new" style={{textDecoration:"none"}}>Share Your Loo</Link>
 
-                    <div>
+                    {/* <div>
                         <Link to="/host" style={{textDecoration:"none"}}>Responsible hosting</Link>
-                    </div>
+                    </div> */}
                 </div>
 
 

@@ -4,6 +4,7 @@ import sessionReducer from './session';
 import bathroomReducer from './bathroom';
 import searchReducer from './search';
 import reviewReducer from './review';
+import modalReducer from './modal';
 //import reservationReducer from './reservation';
 
 const rootReducer = combineReducers({  //these all get run when root. but the switch statement default just return the state.
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({  //these all get run when root. but the sw
   bathroom: bathroomReducer,
   search: searchReducer,
   //reservation: reservationReducer,
-  review: reviewReducer
+  review: reviewReducer,
+  modal: modalReducer
 
 });
 
