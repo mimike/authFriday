@@ -1,18 +1,7 @@
-  /* .form-input{
-    background-color: hotpink;
-    text-align: center;
-  } */
-
-  /* .description-form-input{
-      text-align: center;
-  } */
 
   .submit-new-bathroom-button {
     margin: 10px;
-    /* background-color: mediumpurple; */
   }
-
-
 
   .submit-new-bathroom-button:hover{
       cursor: pointer;
@@ -21,38 +10,38 @@
   .new-bathroom-title {
     color: blue;
     text-align: center;
-
 }
 
-.form-input {
+input [type=text]{
     /* background-color: maroon; */
-    margin: 10px;
-    margin-left: 30px;
+    background: red;
+    margin: 30px;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    color: black;
 
     /* text-align: center; */
 }
 .new-form {
     /* text-align:center; */
+    padding: 20px;
+    width: 500px;
+    text-align: left;
+    display:inline-block;
+    background: white;
 }
 
-.ugh1 {
-    background-color: white;
-    height: 40px;
-    width: 250px;
-    border-radius: 15px;
-}
-
-.ugh2 {
+.not-logged-in-btn{
     width: 120px;
     background-color: white;
     border-radius: 15px;
     padding: 10px;
-    
 }
 .login-new-bathroom-button{
     margin-bottom: 30px;
-
-
 }
 
 .login-new-bathroom-button {
@@ -60,8 +49,16 @@
 
 }
 .submit-new-bathroom-button {
-    margin: 40px;
-
+    margin-left: 250px;
+    margin-top: 50px;
+}
+.add-bathroom{
+    background-image: linear-gradient(45deg, #BA00B4, #1D0AC9);
+    height: 40px;
+    width: 220px;
+    border-radius: 15px;
+    color: white;
+    border: none;
 }
 
 .not-logged-in{

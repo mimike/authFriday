@@ -1,6 +1,6 @@
 .div {
     font-family: Roboto;
-    
+
 }
 .bathroom-div {
     margin: 10px;
@@ -10,9 +10,6 @@
     color: blue;
 }
 
-/* .bathroom-container > div {
-    /* background-color: rosybrown; */
-    /* text-decoration: none; */
 .title-result {
     border-top: 1px solid rgba(196, 196, 196, 0.829);
     padding-top: 25px;
@@ -36,20 +33,3 @@
     font-size: 2rem;
     text-decoration: none;
 }
-/*
- .bathroom-div-1 {
-    height: 100vh;
-    display: flex;
-    background-color: teal;
-    justify-content: space-between;
-
-}
-.text-tile {
-    order: 1;
-    background-color: skyblue;
-}
-.bathroom-tile-image img{
-    order: 2;
-    text-align: right;
-}
-*/

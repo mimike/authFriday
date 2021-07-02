@@ -48,18 +48,20 @@ function Host() {
 
     return (
         <>
-            <div className="host-title" style={{ color: "blue", marginLeft: "30px", marginTop: "40px" }}>
+            <div className="host-title" style={{ color: "orange", marginLeft: "30px", marginTop: "40px" }}>
                 <h1>Host Your Bathroom</h1>
             </div>
-            <div className="host-text" style={{ marginLeft: "40px" }}>
-                <p>Everyone needs a bathroom. Share your bathroom here.</p>
+            <div className="host-text" style={{ marginLeft: "30px" }}>
+                <p>Everyone needs a bathroom.
+                <br></br>
+                <br></br>
+                Have an account? Share your bathroom.</p>
             </div>
-
+            {/* <div className="login-new-bathroom-button">
+                <button className="not-logged-in-btn" type="submit" onClick={() => history.push('/')}>log in to add you bathroom</button>
+            </div> */}
 
             <div id="upload" class-name="new-loo-container">
-                <img className="unko-image-container" src="/images/unko3.jpeg" alt="poo" />
-
-
                 <form className="new-form"
                     onSubmit={handleSubmit}
                 >
@@ -67,105 +69,94 @@ function Host() {
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                     </ul> */}
                     <div className="form-input">
-                        {/* <label> */}
-                        {/* Catchy title: */}
+                        <label>Posting Title</label>
                         <input
                             style={{ width: "450px" }}
                             type="text"
-                            placeholder="Title of bathroom"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                             required
                         />
-                        {/* </label> */}
                     </div>
                     <div className="form-input">
-                        {/* <label> */}
-                        {/* Description: */}
+                        <label>Bathroom Description</label>
                         <input
                             style={{ width: "450px" }}
-                            type="text"
-                            placeholder="Description"
+                            type="textarea"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             required
                         />
-                        {/* </label> */}
                     </div>
 
                     <div className="form-input">
-                        {/* <label> */}
-                        {/* Address: */}
+
+                        <label>Address</label>
                         <input
                             style={{ width: "450px" }}
                             type="text"
-                            placeholder="Address"
+
                             value={address}
                             onChange={(e) => setAddress(e.target.value)}
                             required
                         />
-                        {/* </label> */}
+
                     </div>
 
                     <div className="form-input">
-                        {/* <label> */}
-                        {/* City: */}
+                        <label>City</label>
                         <input
                             style={{ width: "450px" }}
                             type="text"
                             value={city}
-                            placeholder="City"
                             onChange={(e) => setCity(e.target.value)}
                             required
                         />
-                        {/* </label> */}
                     </div>
 
                     <div className="form-input">
-                        {/* <label> */}
-                        {/* State: */}
+
+                        <label>State</label>
                         <input
                             style={{ width: "450px" }}
                             type="text"
                             value={state}
-                            placeholder="State"
+
                             onChange={(e) => setState(e.target.value)}
                             required
                         />
-                        {/* </label> */}
+
                     </div>
 
                     <div className="form-input">
-                        {/* <label> */}
-                        {/* Cost: */}
+
+                        <label>Cost</label>
                         <input
                             style={{ width: "450px" }}
                             type="text"
                             value={costPerDay}
-                            placeholder="How much is this bathroom"
                             onChange={(e) => setCostPerDay(e.target.value)}
                             required
                         />
-                        {/* </label> */}
                     </div>
 
                     <div className="form-input">
-                        {/* <label> */}
-                        {/* Location Type: */}
+                        <label>Type of Bathroom</label>
                         <input
                             style={{ width: "450px" }}
                             type="text"
-                            placeholder="What kinda bathroom"
+                            placeholder="Public, Private, Luxury, Primitive, Basic, Scenic, Outdoor, Family "
                             value={locationType}
                             onChange={(e) => setLocationType(e.target.value)}
                             required
                         />
-                        {/* </label> */}
+
                     </div>
 
                     <div className="form-input">
-                        {/* <label> */}
+
                         {/* Add a photo: */}
+                        <label>Add Photo</label>
                         <input
                             style={{ width: "450px" }}
                             type="text"
@@ -174,28 +165,19 @@ function Host() {
                             onChange={(e) => setBathroomImgUrl(e.target.value)}
                             required
                         />
-                        {/* </label> */}
+
                     </div>
 
                     <div className="submit-new-bathroom-button">
-                        <button className="ugh1" type="submit">Add bathroom</button>
+                        <button className="add-bathroom" type="submit">Add bathroom</button>
                     </div>
-                    <div className="not-logged-in">
+                    {/* <div className="not-logged-in">
                         <h3>Not logged in?</h3>
-                    </div>
-
-
-                    <div className="login-new-bathroom-button">
-                        <button className="ugh2" type="submit" onClick={() => history.push('/')}>log in!</button>
-                    </div>
+                    </div> */}
 
                     {/* <Link to="/" className="login-link">Log in</Link> */}
                 </form>
-
-
-                {/* <div className="unku-image-container">
-                    <img src="/images/unko3.jpeg" alt="poo"/>
-                    </div> */}
+                <img className="unko-image-container" src="/images/unko3.jpeg" alt="poo" />
 
             </div>
         </>
