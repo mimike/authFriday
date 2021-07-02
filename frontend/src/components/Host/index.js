@@ -16,7 +16,7 @@ function Host() {
     const [description, setDescription] = useState("")
     const [address, setAddress] = useState("");
     const [city, setCity] = useState("")
-    const [state, setState] = useState("");
+    const [state, setState] = useState("AL");
 
     const [costPerDay, setCostPerDay] = useState("");
     const [locationType, setLocationType] = useState("");
@@ -192,7 +192,7 @@ function Host() {
                                 {state}
                                 </option>
                             ))}
-                </select>
+                        </select>
 
 
                     </div>

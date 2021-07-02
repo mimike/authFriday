@@ -29,7 +29,7 @@ input [type=text]{
     display: inline-block;
     border: none;
     background: #f1f1f1;
-    opacity: 0.4;
+    opacity: 0.8;
     margin: 15px;
     background-color: #ddd;
     outline: none;
@@ -77,18 +77,19 @@ input [type=text]{
     margin-left: 30px;
 }
 select {
-    opacity: 0.9;
+    opacity: 0.8;
     margin-left: 0px;
+
   }
 
 .state-dropdown{
-    width: 96%;
+    width: 100%;
     padding: 10px;
     margin: 0 0 22px 0;
     display: inline-block;
     border: none;
     background: #f1f1f1;
-    opacity: 0.4;
+    opacity: 0.5;
 
     margin-top: 15px;
     margin-bottom: 15px;
@@ -96,9 +97,7 @@ select {
     background-color: #ddd;
     outline: none;
 }
-.state-dropdown input[type="text"]{
 
-}
 .form-input input[type="text"], input[type="textarea"] {
     width: 100%;
     padding: 10px;
@@ -106,7 +105,7 @@ select {
     display: inline-block;
     border: none;
     background: #f1f1f1;
-    opacity: 0.4;
+    opacity: 0.8;
     margin: 15px;
     margin-left: 0px;
     background-color: #ddd;

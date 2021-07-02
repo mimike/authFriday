@@ -8,7 +8,6 @@ import { useHistory} from 'react-router-dom';
 import { hideLogin } from "../../store/modal";
 import './LoginForm.css';
 
-
 //Render a form with a controlled input for the user login credential (username or email) and a controlled input for the user password.
 function LoginForm(){
     const history = useHistory();
@@ -34,7 +33,6 @@ function LoginForm(){
                 const data = await res.json();
                 if (data && data.errors) setErrors(data.errors)
             });
-            history.push('/')
     }
     return (
         <form onSubmit={handleSubmit}>
@@ -70,7 +68,7 @@ function LoginForm(){
             </div>
             <label>
                 <div className="login-modal-button">
-                  <button type="submit">Continue</button>
+                  <button className= "login-modal-btn" type="submit">Continue</button>
                 </div>
 
                 <div class="soc">

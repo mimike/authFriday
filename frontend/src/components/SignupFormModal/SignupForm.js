@@ -20,7 +20,7 @@ function SignupForm(){
     const [ lastName, setLastName] = useState("");
     const [ address, setAddress ] = useState("");
     const [ city, setCity ] = useState("");
-    const [ state, setState ] = useState("");
+    const [ state, setState ] = useState("AL");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors ] = useState([]);
@@ -49,6 +49,58 @@ function SignupForm(){
         //return setErrors(['Confirm Password field must be the same as the Password field']);
     }
     //Render form with controlled inputs for the new user's username, email, and password, and confirm password fields.
+    const states = [
+      "AL",
+      "AK",
+      "AZ",
+      "AR",
+      "CA",
+      "CO",
+      "CT",
+      "DE",
+      "FL",
+      "GA",
+      "HI",
+      "ID",
+      "IL",
+      "IN",
+      "IA",
+      "KS",
+      "KY",
+      "LA",
+      "ME",
+      "MD",
+      "MA",
+      "MI",
+      "MN",
+      "MS",
+      "MO",
+      "MT",
+      "NE",
+      "NV",
+      "NH",
+      "NJ",
+      "NM",
+      "NY",
+      "NC",
+      "ND",
+      "OH",
+      "OK",
+      "OR",
+      "PA",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "UT",
+      "VT",
+      "VA",
+      "WA",
+      "WV",
+      "WI",
+      "WY",
+    ];
     return (
       <>
         <form onSubmit={handleSubmit}>
@@ -125,13 +177,29 @@ function SignupForm(){
               </div>
 
               <div className="state">
-                <input
+                {/* <input
                   type="text"
                   value={state}
                   placeholder="State"
                   onChange={(e) => setState(e.target.value)}
                   required
-                />
+                /> */}
+                 <select
+                            className="state-dropdown"
+                            value={state}
+                            onChange={(e) => setState(e.target.value)}
+                            required
+                            >
+                            <option value={0} disabled>
+                                Select State
+                            </option>
+                            {states.map((state) => (
+                                <option type="text" value={state} key={state}>
+                                {state}
+                                </option>
+                            ))}
+                </select>
+
               </div>
 
               <div className="password">
@@ -144,8 +212,7 @@ function SignupForm(){
                   required
                 />
               </div>
-              <div className="password">
-                {/* Confirm Password */}
+              {/* <div className="password">
                 <input
                   type="password"
                   placeholder="Confirm Password"
@@ -153,10 +220,10 @@ function SignupForm(){
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                 />
-              </div>
+              </div> */}
 
               <div className="signup-submit-button">
-                <button type="submit">Join now</button>
+                <button className="signup-submit-btn" type="submit">Create Account</button>
               </div>
 
               <div className="already-have-account">
@@ -168,14 +235,11 @@ function SignupForm(){
               </div> */}
 
               {/* <button className="login-link" type="button" onClick={() => history.push('/')}>Log in!!!</button> */}
-
     {/* </> */}
-
               <div>
 
           </div>
           </div>
-
         </form>
 
       <button className="login-link" style={{backgroundColor: "white"}} onClick={handleHide}>Login</button>
