@@ -14,14 +14,25 @@
 
 input [type=text]{
     /* background-color: maroon; */
-    background: red;
+    /* background: red;
     margin: 30px;
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
-    color: black;
+    color: black; */
+
+    width: 100%;
+    padding: 10px;
+    /* margin: 5px 0 22px 0; */
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    opacity: 0.4;
+    margin: 15px;
+    background-color: #ddd;
+    outline: none;
 
     /* text-align: center; */
 }
@@ -64,4 +75,40 @@ input [type=text]{
 .not-logged-in{
     /* margin: 40px; */
     margin-left: 30px;
+}
+select {
+    opacity: 0.9;
+    margin-left: 0px;
+  }
+
+.state-dropdown{
+    width: 96%;
+    padding: 10px;
+    margin: 0 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    opacity: 0.4;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    background-color: #ddd;
+    outline: none;
+}
+.state-dropdown input[type="text"]{
+
+}
+.form-input input[type="text"], input[type="textarea"] {
+    width: 100%;
+    padding: 10px;
+    /* margin: 5px 0 22px 0; */
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    opacity: 0.4;
+    margin: 15px;
+    margin-left: 0px;
+    background-color: #ddd;
+    outline: none;
 }
