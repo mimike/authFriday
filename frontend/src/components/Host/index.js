@@ -246,7 +246,7 @@ function Host() {
 
                     {/* <Link to="/" className="login-link">Log in</Link> */}
                 </form>
-                <img className="unko-image-container" src="/images/unko3.jpeg" alt="poo" />
+                <img className="unko-image-container" src="/images/unko-toilet.jpeg" alt="poo" />
 
             </div>
         </>
