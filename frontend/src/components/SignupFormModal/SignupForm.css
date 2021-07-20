@@ -8,8 +8,24 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-    overflow-y: scroll;
-    height: 100vh;
+    /* position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    overflow-y: scroll; */
+  }
+  .modal-padding{
+
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    z-index: 10;
+    content: "";
   }
 
   #modal-background {
@@ -24,23 +40,23 @@
   #modal-content {
     position: absolute;
     background-color: white;
-    padding: 50px;
+    padding: 30px;
     /* height: 100vh; */
     border: 2px solid yellow;
     border-radius: 20px;
-    /* overflow-y: hidden; */
+    overflow-y: scroll;
+    height: 80%;
   }
   .sign-up-container{
     /* background-color: hotpink; */
     /* text-align: center; */
     width: 400px;
-
-
   }
 
   .signup-submit-button{
     margin: 10px;
     width: 300px;
+    margin-left: 60px;
   }
   .email {
     margin: 10px;
@@ -68,7 +84,7 @@
   }
 
   input[type="text"], input[type="password"]{
-    height: 14px;
+    height: 16px;
     width: 100%;
     padding: 8px;
     display: inline-block;
@@ -82,7 +98,11 @@
   }
   select {
     height: 34px;
-
+  }
+  .modal-button-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
 .login-link{
   color: white;
@@ -92,6 +112,9 @@
   width: 200px;
   border-radius: 50px;
   padding: 10px;
+  margin-left: 10px;
+
+  /* margin-left: 60px; */
 }
 .signup-title{
   margin-top: 0px;
@@ -108,7 +131,8 @@
 }
 .already-have-account h3 {
   margin: 5px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   font-size: 16px;
   font-weight: bold;
+  margin-left: 10px;
 }

@@ -6,6 +6,7 @@ import SignupForm from './SignupForm';
 import { useDispatch } from "react-redux";
 import { showSignup, hideSignup} from "../../store/modal"
 
+
 function SignupFormModal() {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);

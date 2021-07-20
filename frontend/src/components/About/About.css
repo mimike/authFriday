@@ -1,7 +1,21 @@
-.about-container {
+.about-unko-container {
     /* height: 100vh; */
 
         /* font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; */
 
         font-family: Roboto;
+        background-color:black;
+        color: white;
+}
+.about-text-container{
+    display: flex;
+    flex-direction: row;
+}
+.about-headline{
+    font-weight: 900;
+    margin: 64px;
+
+}
+.about-explained{
+    margin: 64px;
 }

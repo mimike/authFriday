@@ -11,6 +11,7 @@ import ReviewPage from "./components/ReviewPage";
 import BestPage from "./components/BestPage";
 import About from "./components/About";
 import Host from "./components/Host";
+import Why from "./components/Why"
 import * as sessionActions from "./store/session";
 
 import SingleResult from "./components/SingleResult";
@@ -80,6 +81,10 @@ function App() {
 
           <Route path="/about">
             <About />
+          </Route>
+          
+          <Route path="/why">
+            <Why />
           </Route>
 
           <Route path="/host">

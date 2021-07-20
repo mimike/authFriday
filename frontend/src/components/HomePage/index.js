@@ -21,10 +21,11 @@ function HomePage(){
                     <div className="info-box">
                         <div className="home-page-text">
                             <h1>Your bathroom is worth sharing</h1>
-                            <ul>a bunch of text about how awesome this is</ul>
-                            <ul>a bunch of text about how quirky this application is</ul>
-                            <ul>some cool info</ul>
-                            <ul> more cool stuff </ul>
+                            <br></br>
+                            <ul>We've all been there</ul>
+                            <ul>You're out and the sudden urge to go to the bathroom strikes</ul>
+                            <ul>You race to the find a bathroom, hoping that the conditions of the facilaty are acceptable.</ul>
+                            <ul>That's no fun at all!</ul>
                         </div>
                     </div>
 

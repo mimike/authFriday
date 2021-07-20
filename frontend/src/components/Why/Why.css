@@ -1,0 +1,27 @@
+.why-container{
+    background: black;
+    color: white;
+
+}
+.why-text-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.why-headline{
+    font-weight: 900;
+    margin: 64px;
+}
+.why-explained{
+   margin: 64px;
+}
+
+.quote-author{
+    font-style: italic;
+    font-family:cursive;
+    font-size: 24px;
+}
+.quote-headline{
+    color: rgb(173, 169, 169);
+    font-weight: 200;
+}

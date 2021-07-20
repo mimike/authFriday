@@ -86,7 +86,8 @@ function SignupForm(){
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(password === confirmPassword){
+        let errorsArray = [];
+        if(password === confirmPassword  && password.length > 6){
           setErrors([]);
           dispatch(hideSignup())
           return dispatch(
@@ -97,22 +98,24 @@ function SignupForm(){
                 }
               });
         }
-        return setErrors([
-          "Confirm Password field must be the same as Password field"
-        ]);
-        //}
-        //If the confirm password is not the same as the password, display an error message for this.
-        //return setErrors(['Confirm Password field must be the same as the Password field']);
+        if(password.length< 6){
+          errorsArray.push("Too short")
+        }
+        if(password !== confirmPassword){
+          errorsArray.push("Doesn't match")
+        }
+        setErrors(errorsArray)
+        // return setErrors([
+        //   "Confirm Password field must be the same as Password field",
+        //   "Password must be 6 characters of more"
+        // ]);
     };
     //Render form with controlled inputs for the new user's username, email, and password, and confirm password fields.
 
     return (
       <>
-        <form onSubmit={handleSubmit}>
-          <ul>
-            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-          </ul>
-
+      <div className="modal-padding"> </div>
+        <form className="sign-up-form" onSubmit={handleSubmit}>
             <div className="signup-title">
                 <h2><i class="fas fa-poop" style={{color:"pink"}}></i>    join the unkobnb community </h2>
             </div>
@@ -227,13 +230,23 @@ function SignupForm(){
                   required
                 />
               </div>
+              <ul>
+                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+              </ul>
 
-              <div className="signup-submit-button">
-                <button className="signup-submit-btn" type="submit">Create Account</button>
-              </div>
+              <div className = "modal-button-container">
 
-              <div className="already-have-account">
-                <h3>Already have an account?</h3>
+                <div className="signup-submit-button">
+                  <button className="signup-submit-btn" type="submit">Create Account</button>
+                </div>
+
+                <div className="already-have-account">
+                  <h3>Already have an account?</h3>
+                </div>
+                <div>
+                  <button className="login-link" style={{backgroundColor: "white"}} onClick={handleHide} type="button">Login</button>
+                </div>
+
               </div>
 {/*
               <div>
@@ -242,15 +255,15 @@ function SignupForm(){
 
               {/* <button className="login-link" type="button" onClick={() => history.push('/')}>Log in!!!</button> */}
     {/* </> */}
+
               <div>
 
           </div>
           </div>
         </form>
 
-      <button className="login-link" style={{backgroundColor: "white"}} onClick={handleHide}>Login</button>
+
       </>
       );
-      // how to get this link to go to login or home page ?
 }
 export default SignupForm;

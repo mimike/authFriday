@@ -2,22 +2,22 @@ import "./About.css"
 
 function About(){
     return (
+        <>
+            <div className="about-unko-container">
+                <div className="about-text-container">
+                    <div className="about-headline">
+                        <h1>How does unko work?</h1>
+                    </div>
+                    <div className="about-explained">
+                        <p>Start by exploring Cool Bathrooms or Experiences.</p>
+                        <p>Apply filters like entire bathrooms, self check-in, or by bathroom type to narrow your options.</p>
 
-        <div className="about-container">
-            <h1>how does unko work</h1>
-                <p>Start by exploring Cool Bathrooms or Experiences.</p>
-                <p>Apply filters like entire bathrooms, self check-in, or by bathroom type to narrow your options.</p>
-                <p>You can also save favorites to a wishlist</p>
-
-                <p> Find the coolest bathrooms in the world from travelers and toilet connoiseures of the globe.</p>
-                <p>Host your unique bathroom or share your bathroom adventures with other bathroom lovers.</p><h1>how does unko work</h1>
-                <p>Start by exploring Cool Bathrooms or Experiences.</p>
-                <p>Apply filters like entire bathrooms, self check-in, or by bathroom type to narrow your options.</p>
-                <p>You can also save favorites to a wishlist</p>
-
-                <p> Find the coolest bathrooms in the world from travelers and toilet connoiseures of the globe.</p>
-                <p>Host your unique bathroom or share your bathroom adventures with other bathroom lovers.</p>
-        </div>
+                        <p> Find the coolest bathrooms in the world from travelers and toilet connoiseures of the globe.</p>
+                        <p>Share your bathroom adventures with other bathroom lovers.</p>
+                    </div>
+                </div>
+            </div>
+        </>
 
 
     )
