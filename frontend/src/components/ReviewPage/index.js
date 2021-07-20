@@ -23,7 +23,7 @@ function ReviewPage(){
     //const bathroomId = useSelector((state) => state.session.bathroom.id)
     //const bathroomId = useSelector(state => state.bathroom.id)
     const user = useSelector(state => state.session.user)  || []; // object w/all the properties
-    //On submit of the form, dispatch the login thunk action with the form input values. Make sure to handle and display errors from the login thunk action if there are any.
+    //On submit of the form, dispatch the create review action with the form input values. Make sure to handle and display errors from the thunk action if there are any.
 
     const handleSubmit = (e) => {
         // e.preventDefault();

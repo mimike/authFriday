@@ -9,7 +9,7 @@
     align-items: center;
     padding: 15px;
     overflow-y: scroll;
-
+    height: 100vh;
   }
 
   #modal-background {
@@ -19,22 +19,21 @@
     left: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
-
   }
 
   #modal-content {
     position: absolute;
     background-color: white;
-    padding: 30px;
-
+    padding: 50px;
+    /* height: 100vh; */
     border: 2px solid yellow;
     border-radius: 20px;
-    overflow-y: hidden;
-
+    /* overflow-y: hidden; */
   }
   .sign-up-container{
     /* background-color: hotpink; */
-    text-align: center;
+    /* text-align: center; */
+    width: 400px;
 
 
   }
@@ -69,7 +68,7 @@
   }
 
   input[type="text"], input[type="password"]{
-    height: 16px;
+    height: 14px;
     width: 100%;
     padding: 8px;
     display: inline-block;
@@ -79,9 +78,11 @@
     margin-left: 0px;
     background-color: #ddd;
     outline: none;
+    margin-top: 4px;
   }
   select {
     height: 34px;
+
   }
 .login-link{
   color: white;
@@ -91,7 +92,6 @@
   width: 200px;
   border-radius: 50px;
   padding: 10px;
-  margin-left: 60px;
 }
 .signup-title{
   margin-top: 0px;

@@ -26,7 +26,7 @@ router.get('/', asyncHandler(async (req, res) => {
 
 //http://localhost:5000/api/bathroom POST request WORKS!
 router.post('/create', asyncHandler(async (req, res) => {
-    
+
     const {
         ownerId,
         title,
@@ -56,7 +56,7 @@ router.post('/create', asyncHandler(async (req, res) => {
     res.json({ bathroom })
 }))
 
-//just wrote this wednesday night, needs help?
+
 //http://localhost:5000/api/bathroom/:id GET by ID WORKS!
 router.get('/:id', asyncHandler(async (req, res) => {
     const bathroomId = Number(req.params.id);  //parsing into an actual num

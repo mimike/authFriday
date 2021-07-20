@@ -2,12 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import  BathroomModalContext from "./context/NewBathroomModal";
-// import LoginForm from "./components/LoginFormModal/LoginForm"; //??
-// import SignupForm from "./components/SignupFormModal"; //??
-// how do i add these components/routes
+
 import HomePage from "./components/HomePage";
 import FeedPage from "./components/FeedPage";
-import BathroomPage from "./components/BathroomPage";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ReviewPage from "./components/ReviewPage";
@@ -15,10 +12,10 @@ import BestPage from "./components/BestPage";
 import About from "./components/About";
 import Host from "./components/Host";
 import * as sessionActions from "./store/session";
-import NewBathroomPage from "./components/NewBathroomModal/NewBathroomPage";
+
 import SingleResult from "./components/SingleResult";
 
-// import NewBathroom from "./components/NewBathroomModal/NewBathroom";
+
 function App() {
   const dispatch = useDispatch();
   const [ isLoaded, setIsLoaded] = useState(false);
@@ -39,7 +36,7 @@ function App() {
       }
     }
 
-  useEffect(() => {     
+  useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
@@ -61,10 +58,6 @@ function App() {
             <BestPage />
           </Route>
 
-        {/* COOL BR
-          <Route path="/bathroom">
-            <BathroomPage />
-          </Route> */}
 
          {/* how to do THIS make sure u do EXACT bc styles will bleed and u already have /bathroom above. */}
           <Route exact path="/bathroom/:id">

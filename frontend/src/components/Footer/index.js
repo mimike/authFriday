@@ -19,7 +19,7 @@ function Footer(){
                     </div>
 
                     <div>
-                        <NavLink to="/about" style={{textDecoration:"none"}}>Investors</NavLink>
+                        <NavLink to="/why" style={{textDecoration:"none"}}>Why</NavLink>
                 </div>
 
             </div>

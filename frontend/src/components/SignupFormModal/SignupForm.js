@@ -24,31 +24,6 @@ function SignupForm(){
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors ] = useState([]);
-
-    //On submit of the form, validate that the confirm password is the same as the password fields, then dispatch the signup thunk action with the form input values. Make sure to handle and display errors from the signup thunk action if there are any.
-
-    //this function will handle hideSignup and
-    const handleHide = () => {
-      dispatch(hideSignup());
-      dispatch(showLogin()); //
-
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(hideSignup());
-        // if (password === confirmPassword) {
-            setErrors([]);
-            return dispatch(sessionActions.signup({ email, username, firstName, lastName, address, city, state, password}))
-                .catch(async (res) => {
-                    const data = await res.json();
-                    if (data && data.errors) setErrors(data.errors);
-                });
-
-        //}
-        //If the confirm password is not the same as the password, display an error message for this.
-        //return setErrors(['Confirm Password field must be the same as the Password field']);
-    }
-    //Render form with controlled inputs for the new user's username, email, and password, and confirm password fields.
     const states = [
       "AL",
       "AK",
@@ -101,6 +76,36 @@ function SignupForm(){
       "WI",
       "WY",
     ];
+
+    //On submit of the form, validate that the confirm password is the same as the password fields, then dispatch the signup thunk action with the form input values. Make sure to handle and display errors from the signup thunk action if there are any.
+
+    //this function will handle hideSignup and
+    const handleHide = () => {
+      dispatch(hideSignup());
+      dispatch(showLogin()); //
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if(password === confirmPassword){
+          setErrors([]);
+          dispatch(hideSignup())
+          return dispatch(
+              sessionActions.signup({email, username, firstName, lastName, address, city, state, password})).catch(async (res) => {
+                const data = await res.json();
+                if(data && data.errors){
+                  setErrors(data.errors)
+                }
+              });
+        }
+        return setErrors([
+          "Confirm Password field must be the same as Password field"
+        ]);
+        //}
+        //If the confirm password is not the same as the password, display an error message for this.
+        //return setErrors(['Confirm Password field must be the same as the Password field']);
+    };
+    //Render form with controlled inputs for the new user's username, email, and password, and confirm password fields.
+
     return (
       <>
         <form onSubmit={handleSubmit}>
@@ -115,9 +120,10 @@ function SignupForm(){
             <div className="sign-up-container">
 
               <div className="email">
+                <label>Email</label>
                 <input
                   type="text"
-                  placeholder="Email Address"
+
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -125,9 +131,10 @@ function SignupForm(){
               </div>
 
               <div className="user-name">
+              <label>Username</label>
                 <input
                   type="text"
-                  placeholder="User name"
+
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
@@ -135,9 +142,10 @@ function SignupForm(){
               </div>
 
               <div className="first-name">
+              <label>First Name</label>
                 <input
                   type="text"
-                  placeholder= "First Name"
+
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   required
@@ -145,11 +153,11 @@ function SignupForm(){
               </div>
 
               <div className="last-name">
-                {/* Last Name */}
+              <label>Last Name</label>
                 <input
                   type="text"
                   value={lastName}
-                  placeholder="Last name"
+
                   onChange={(e) => setLastName(e.target.value)}
                   required
                 />
@@ -157,19 +165,21 @@ function SignupForm(){
 
               <div className="address">
                 {/* Address */}
+                <label>Address</label>
                 <input
                   type="text"
                   value={address}
-                  placeholder="Address"
+
                   onChange={(e) => setAddress(e.target.value)}
                   required
                 />
               </div>
 
               <div className="city">
+              <label>City</label>
                 <input
                   type="text"
-                  placeholder="City"
+
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   required
@@ -177,13 +187,7 @@ function SignupForm(){
               </div>
 
               <div className="state">
-                {/* <input
-                  type="text"
-                  value={state}
-                  placeholder="State"
-                  onChange={(e) => setState(e.target.value)}
-                  required
-                /> */}
+                <label>State</label>
                  <select
                             className="state-dropdown"
                             value={state}
@@ -204,23 +208,25 @@ function SignupForm(){
 
               <div className="password">
                 {/* Password */}
+                <label>Password</label>
                 <input
                   type="password"
-                  placeholder="Create a Password"
+
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
               </div>
-              {/* <div className="password">
+              <div className="password">
+              <label>Confirm Password</label>
                 <input
                   type="password"
-                  placeholder="Confirm Password"
+
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                 />
-              </div> */}
+              </div>
 
               <div className="signup-submit-button">
                 <button className="signup-submit-btn" type="submit">Create Account</button>
