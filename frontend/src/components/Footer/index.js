@@ -12,13 +12,12 @@ function Footer(){
                     <div>
                         <h3>ABOUT</h3>
                     </div>
-
                     <div>
-                        <Link to="/about" style={{textDecoration:"none"}}>How Unkobnb Works</Link>
+                        <Link to="/about" className= "new" style={{textDecoration:"none"}}>How Unkobnb Works</Link>
                     </div>
 
                     <div>
-                        <NavLink to="/why" style={{textDecoration:"none"}}>Why</NavLink>
+                        <NavLink to="/why" className= "new" style={{textDecoration:"none"}}>Why</NavLink>
                 </div>
 
             </div>
@@ -27,10 +26,10 @@ function Footer(){
                         <h3>HOST</h3>
                     </div>
                     {/* <HostBathroomModal/> */}
-                    <NavLink to="/new" style={{textDecoration:"none"}}>Share Your Loo</NavLink>
-                    {/* <div>
-                        <Link to="/host" style={{textDecoration:"none"}}>Responsible hosting</Link>
-                    </div> */}
+                    <NavLink to="/new" className="new"
+                    // style={{textDecoration:"none"}}
+                    >Share Your Loo</NavLink>
+                  
                 </div>
 
 
@@ -54,5 +53,3 @@ function Footer(){
 }
 
 export default Footer;
-{/* <i class="fab fa-github-alt" style={{fontSize: '3em'}}></i>
-<i class="fab fa-linkedin" style={{fontSize: '3em'}}></i> */}

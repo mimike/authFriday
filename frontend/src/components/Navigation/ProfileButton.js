@@ -31,6 +31,7 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    history.push("/")
   };
 
   return (
@@ -54,13 +55,13 @@ function ProfileButton({ user }) {
           </div> */}
           <div className="drop-down-links">
             <div>
-              <Link onClick={() => history.push('/about')} style={{textDecoration:"none", color:"black", fontWeight:"bold"}}>Messages</Link>
+              <Link onClick={() => history.push('/about')} style={{textDecoration:"none", color:"black"}}>Messages</Link>
             </div>
             <div>
-              <Link onClick={() => history.push('/about')} style={{textDecoration:"none", color:"black", fontWeight:"bold" }}>Notifications</Link>
+              <Link onClick={() => history.push('/about')} style={{textDecoration:"none", color:"black" }}>Notifications</Link>
             </div>
             <div>
-              <Link onClick={() => history.push('/about')} style={{textDecoration:"none", color:"black", fontWeight:"bold"}}>Saved</Link>
+              <Link onClick={() => history.push('/about')} style={{textDecoration:"none", color:"black"}}>Saved</Link>
             </div>
           </div>
           <div className="log-out-drop-down-links">

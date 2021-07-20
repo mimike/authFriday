@@ -19,11 +19,10 @@ useEffect(()=>{
 const bathroomFromSearch = useSelector(state => state.bathroom.singleBathroom) || {};
         // ? prevents code from stopping when the first render. dont key into the prop if the obj is undef. else key into it if it's defined
 
-
-
          return (
             <>
                 <SingleResultTile bathroom={bathroomFromSearch}/>
+
             </>
     );
 }

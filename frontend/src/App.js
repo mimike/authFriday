@@ -13,7 +13,6 @@ import About from "./components/About";
 import Host from "./components/Host";
 import Why from "./components/Why"
 import * as sessionActions from "./store/session";
-
 import SingleResult from "./components/SingleResult";
 
 
@@ -41,7 +40,6 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-
   return (
     <>
       <Navigation isLoaded={isLoaded} />
@@ -51,52 +49,47 @@ function App() {
             <HomePage />
           </Route>
 
-          <Route path="/feed/:value">
+          <Route exact path="/feed/:value">
             <FeedPage />
           </Route>
 
-          <Route path="/best">
+          <Route exact path="/best">
             <BestPage />
           </Route>
-
 
          {/* how to do THIS make sure u do EXACT bc styles will bleed and u already have /bathroom above. */}
           <Route exact path="/bathroom/:id">
             <SingleResult />
           </Route>
 
-          <Route path="/reservation">
-            {/* <Reservation /> */}
-          </Route>
-
-          <Route path="/review/:id">
+          <Route exact path="/review/:id">
             <ReviewPage />
+
           </Route>
 
-          <Route path="/new">
+          <Route exact path="/new">
             <Host />
-            {/* <NewBathroomPage /> */}
-
           </Route>
 
-          <Route path="/about">
+          <Route exact path="/about">
             <About />
           </Route>
-          
-          <Route path="/why">
+
+          <Route exact path="/why">
             <Why />
           </Route>
 
-          <Route path="/host">
+          <Route exact path="/host">
             <Host />
           </Route>
-
         </Switch>
       )}
-      <div className="background" ref={backgroundRef} onClick={hideShowBackground}></div>
+      {/* <div className="background" ref={backgroundRef} onClick={hideShowBackground}></div>
       <BathroomModalContext.Provider value={{formModalRef, hideShowBackground}}>
         <Footer/>
-      </BathroomModalContext.Provider>
+      </BathroomModalContext.Provider> */}
+      <Footer/>
+
 
     </>
   );

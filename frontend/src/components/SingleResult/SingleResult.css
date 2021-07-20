@@ -1,3 +1,41 @@
 .review-container {
     border-top: solid;
 }
+.footer-container {
+    /* position: sticky; */
+    display: flex;
+    justify-content: space-between;
+    max-height: 300px;
+    bottom: 0;
+    background-color:pink;
+  }
+
+  .about-container {
+    order: 1;
+    margin: 20px;
+    padding: 50px;
+  }
+  .host-container {
+    order: 2;
+    margin: 20px;
+    padding: 50px;
+    margin-left: -600px;
+  }
+  .social-media-container {
+    order: 3;
+    margin-top: 30px;
+    margin-right: 50px;
+  }
+
+  .new{
+    font-weight: 900;
+    color: yellow;
+    text-decoration: none;
+    font-family: Roboto, Helvetica;
+  }
+  .social-media-container div {
+    margin: 20px;
+  }
+  .host-modal-button {
+    cursor: pointer;
+  }

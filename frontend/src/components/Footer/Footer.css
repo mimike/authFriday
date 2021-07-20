@@ -4,6 +4,12 @@
   justify-content: space-between;
   max-height: 300px;
   bottom: 0;
+  background-image: url("../../images/unko4.jpeg");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   /* font-family: Roboto; */
 }
 
@@ -22,13 +28,16 @@
   order: 3;
   margin-top: 30px;
   margin-right: 50px;
+}
 
-
+.new{
+  font-weight: 900;
+  color: yellow;
+  text-decoration: none;
+  font-family: Roboto, Helvetica;
 }
 .social-media-container div {
   margin: 20px;
-
-
 }
 .host-modal-button {
   cursor: pointer;

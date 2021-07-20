@@ -1,6 +1,7 @@
 import "./SingleResult.css"
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import Footer from "../Footer"
 
 function SingleResultTile ( {bathroom}){
     let history = useHistory();
@@ -83,6 +84,12 @@ function SingleResultTile ( {bathroom}){
                                 </div>
                             ))}
                 </div>
+                <div>
+
+                    
+
+                </div>
+
 
                 {/* <div className="reviewer-text" style={{marginTop:"10px", marginBottom:"10px"}}>{bathroom.Reviews.map(review => (
                     <div>
