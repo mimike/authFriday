@@ -24,7 +24,7 @@ function HomePage(){
                             <br></br>
                             <ul>We've all been there</ul>
                             <ul>You're out and the sudden urge to go to the bathroom strikes</ul>
-                            <ul>You race to the find a bathroom, hoping that the conditions of the facilaty are acceptable.</ul>
+                            <ul>You race to the find a bathroom, hoping that the conditions of the facility are acceptable.</ul>
                             <ul>That's no fun at all!</ul>
                         </div>
                     </div>

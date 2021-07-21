@@ -25,6 +25,7 @@ div {
 
 .home-page-text {
     color: white;
+    line-height: 1.5;
     /* font-family: 'Roboto', sans-serif; */
     margin-left: 20px;
 }
