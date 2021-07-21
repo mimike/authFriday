@@ -16,6 +16,14 @@ function About(){
                         <p><a href="./new" className = "share-link">Share</a> your bathroom experiences with other bathroom users.</p>
                     </div>
                 </div>
+
+                <div className="about-photos-container">
+                    <img className="about-pic" src="/images/restrooms.jpeg" alt="a wooden sign pointing to restrooms"/>
+                    <img className="about-pic" src="/images/unko6.jpg" alt="urinals made from beer kegs"/>
+                    <img className="about-pic" src="/images/yellow.jpeg"/>
+
+
+                </div>
             </div>
         </>
 

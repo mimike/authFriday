@@ -6,10 +6,12 @@
         font-family: Roboto;
         background-color:black;
         color: white;
+
 }
 .about-text-container{
     display: flex;
     flex-direction: row;
+
 }
 .about-headline{
     font-weight: 900;
@@ -24,5 +26,21 @@
     color: white;
     font-weight: 700;
     text-decoration-line: none;
+
+}
+.about-photos-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    padding-left: 80px;
+    padding-right: 80px;
+
+}
+
+.about-pic{
+    margin: 24px 36px 56px 24px;
+    width: 30%;
+    border-radius: 20px;
 
 }
