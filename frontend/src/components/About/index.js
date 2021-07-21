@@ -9,11 +9,11 @@ function About(){
                         <h1>How does unko work?</h1>
                     </div>
                     <div className="about-explained">
-                        <p>Start by discovering cool bathrooms around the world.</p>
+                        <p>Start by <a className = "share-link" href="./best">discovering</a> cool bathrooms around the world.</p>
                         <p>Apply filters like entire bathrooms, self check-in, or by bathroom type to narrow your options.</p>
 
                         <p> Find the coolest bathrooms in the world from travelers and toilet connoiseures of the globe.</p>
-                        <p>Share your bathroom experiences with other bathroom users.</p>
+                        <p><a href="./new" className = "share-link">Share</a> your bathroom experiences with other bathroom users.</p>
                     </div>
                 </div>
             </div>
