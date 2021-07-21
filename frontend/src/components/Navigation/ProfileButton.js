@@ -45,7 +45,6 @@ function ProfileButton({ user }) {
 
       </button>
 
-
       {showMenu && (
         <button className="profile-dropdown">
           <div>Welcome {user.firstName}!</div>

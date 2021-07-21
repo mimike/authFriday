@@ -38,7 +38,9 @@ function SingleResultTile ( {bathroom}){
                         <p>${bathroom.costPerDay} / day </p>
                     </div>
 
-                    <a href={`/review/${bathroom.id}`} style={{textDecoration:"none"}}>Rate this Loo</a>
+                    <Link onClick={() => history.push(`/review/${bathroom.id}`)}>Rate this Bathroom</Link>
+
+                    {/* <a href={`/review/${bathroom.id}`} style={{textDecoration:"none"}}>Rate this Loo</a> */}
                      {/* <div className="reviews-container">
                         <p>Reviews:</p>
                     </div> */}
@@ -86,7 +88,7 @@ function SingleResultTile ( {bathroom}){
                 </div>
                 <div>
 
-                    
+
 
                 </div>
 
