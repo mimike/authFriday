@@ -34,72 +34,81 @@ function ReviewPage({bathroom}){
 
     return (
         <>
-          <div className="review-form-container">
-              <h1>Review</h1>
-              <div>{bathroomToReview.title} </div>
+          <div className="review-container">
+            <div className="review-form-container">
+                <h1>Review</h1>
+                <div>{bathroomToReview.title} </div>
+
+            </div>
+
+            <div className="lower-container">
+
+                <form className="review-form"
+                  onSubmit={handleSubmit}
+                  >
+                    <ul>
+                      {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                    </ul>
+
+                    <div className="form-input">
+                      {/* <label> */}
+                          {/* Description: */}
+                          <input
+                          style={{width:"450px"}}
+                          type="text"
+                          placeholder="Review of Loo"
+                          value={reviewText}
+                          onChange={(e) => setReviewText(e.target.value)}
+                          required
+                          />
+                      {/* </label> */}
+                    </div>
+
+                    <div className="form-input">
+                      {/* <label> */}
+                          {/* Address: */}
+                          <input
+                          style={{width:"450px"}}
+                          type="text"
+                          placeholder= "Rating 1 - 5"
+                          value={rating}
+                          onChange={(e) => setRating(e.target.value)}
+                          required
+                          />
+                      {/* </label> */}
+                    </div>
+
+                  <div className="form-input">
+                      {/* <label> */}
+                          {/* Add a photo: */}
+                          <input
+                          style={{width:"450px"}}
+                          type="text"
+                          placeholder="Review photo url here"
+                          value={reviewImgUrl}
+                          onChange={(e) => setReviewImgUrl(e.target.value)}
+                          required
+                          />
+                      {/* </label> */}
+                  </div>
+
+                  <div className="submit-review-btn">
+                    <button className="submit-review-button" disabled={!user} type="submit">Submit Loo Review</button>
+                  </div>
+                  <div className="not-logged-in">
+                    <h3>Not logged in?</h3>
+                  </div>
+
+                  <div className="login-new-bathroom-button">
+                    <button className="new-bathroom-login" type="submit" onClick={() => history.push('/')}>Log in</button>
+                  </div>
+                  {/* <Link to="/" className="login-link">Log in</Link> */}
+              </form>
+              <div className="bathroom-review-image">
+                  <img className= "bathroom-review-img" src={`${bathroomToReview.bathroomImgUrl}`} alt="bathroom image"/>
+                </div>
+            </div>
           </div>
-
-          <form className="review-form"
-                onSubmit={handleSubmit}
-                >
-                  <ul>
-                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                  </ul>
-
-                  <div className="form-input">
-                    {/* <label> */}
-                        {/* Description: */}
-                        <input
-                        style={{width:"450px"}}
-                        type="text"
-                        placeholder="Review of Loo"
-                        value={reviewText}
-                        onChange={(e) => setReviewText(e.target.value)}
-                        required
-                        />
-                    {/* </label> */}
-                  </div>
-
-                  <div className="form-input">
-                    {/* <label> */}
-                        {/* Address: */}
-                        <input
-                        style={{width:"450px"}}
-                        type="text"
-                        placeholder= "Rating 1 - 5"
-                        value={rating}
-                        onChange={(e) => setRating(e.target.value)}
-                        required
-                        />
-                    {/* </label> */}
-                  </div>
-
-                <div className="form-input">
-                    {/* <label> */}
-                        {/* Add a photo: */}
-                        <input
-                        style={{width:"450px"}}
-                        type="text"
-                        placeholder="Review photo url here"
-                        value={reviewImgUrl}
-                        onChange={(e) => setReviewImgUrl(e.target.value)}
-                        required
-                        />
-                    {/* </label> */}
-                </div>
-
-                <div className="submit-review-btn">
-                  <button className="submit-review-button" disabled={!user} type="submit">Submit Loo Review</button>
-                </div>
-                <div className="not-logged-in">
-                  <h3>Not logged in?</h3>
-                </div>
-
-                <div className="login-new-bathroom-button">
-                  <button className="new-bathroom-login" type="submit" onClick={() => history.push('/')}>Log in</button>
-                </div>
-                {/* <Link to="/" className="login-link">Log in</Link> */}
-                </form>
         </>
 
     )

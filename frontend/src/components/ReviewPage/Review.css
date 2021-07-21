@@ -3,6 +3,7 @@
 }
 .submit-review-button {
     margin-left: 30px;
+    margin-top: 40px;
     background-image: linear-gradient(
         45deg
         ,#ba00b4,#1d0ac9);
@@ -28,4 +29,15 @@
             border-radius: 15px;
             color: #fff;
             border: none;
+}
+.lower-container{
+    display: flex;
+    flex-direction: row;
+
+}
+.bathroom-review-image{
+    margin-left: 150px;
+}
+.bathroom-review-img{
+    max-width: 400px;
 }
