@@ -1,5 +1,6 @@
 .review-container {
     border-top: solid;
+    padding: 32px;
 }
 .footer-container {
     /* position: sticky; */
@@ -8,6 +9,9 @@
     max-height: 300px;
     bottom: 0;
     background-color:pink;
+  }
+  .review-text{
+      line-height: 1.8;
   }
 
   .about-container {
@@ -39,3 +43,6 @@
   .host-modal-button {
     cursor: pointer;
   }
+.bathroom-tile-image img{
+    margin-top: 36px;
+}

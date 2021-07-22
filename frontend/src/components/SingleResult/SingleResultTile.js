@@ -68,7 +68,7 @@ function SingleResultTile ( {bathroom}){
                                     {review.User.firstName} {review.User.lastName[0]}.
                                     </div>
 
-                                   <div style={{margin:"20px"}}>
+                                   <div className="review-text" style={{margin:"20px"}}>
                                     {review.reviewText}
                                    </div>
 
