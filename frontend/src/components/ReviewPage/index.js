@@ -56,7 +56,7 @@ function ReviewPage({bathroom}){
                           <input
                           style={{width:"450px"}}
                           type="text"
-                          placeholder="Review of Loo"
+                          placeholder="How was this bathroom?"
                           value={reviewText}
                           onChange={(e) => setReviewText(e.target.value)}
                           required
@@ -78,22 +78,20 @@ function ReviewPage({bathroom}){
                       {/* </label> */}
                     </div>
 
-                  <div className="form-input">
-                      {/* <label> */}
-                          {/* Add a photo: */}
+                  {/* <div className="form-input">
+
                           <input
                           style={{width:"450px"}}
                           type="text"
-                          placeholder="Review photo url here"
+                          placeholder="Photo url (optional)"
                           value={reviewImgUrl}
                           onChange={(e) => setReviewImgUrl(e.target.value)}
                           required
                           />
-                      {/* </label> */}
-                  </div>
+                  </div> */}
 
                   <div className="submit-review-btn">
-                    <button className="submit-review-button" disabled={!user} type="submit">Submit Loo Review</button>
+                    <button className="submit-review-button" disabled={!user} type="submit">Submit Review</button>
                   </div>
                   <div className="not-logged-in">
                     <h3>Not logged in?</h3>

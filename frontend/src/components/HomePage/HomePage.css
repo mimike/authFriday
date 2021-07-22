@@ -28,6 +28,12 @@ div {
     line-height: 1.5;
     /* font-family: 'Roboto', sans-serif; */
     margin-left: 20px;
+    line-height: 1.8;
+
+}
+.home-page-description{
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .info-box {
@@ -39,5 +45,4 @@ div {
     margin-left: 20px;
     /* padding: 20px; */
     order: 2;
-
 }
